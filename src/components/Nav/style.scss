@@ -1,5 +1,29 @@
 .nav-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: rgb(24, 114, 225);
   height: 100vh;
   width: 100px;
+
+  p{
+    text-align: center;
+    padding: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+
+  }
+}
+
+.hamburger {
+  position: absolute;
+  display: flex;
+  top: 10px;
+  left: 20px;
+  height: 1vh;
+  width: 50px;
+  cursor: pointer;
+  z-index: 100;
 }

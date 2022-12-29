@@ -1,0 +1,7 @@
+.about-container,
+.home-container {
+  position: absolute;
+  left: 100px;
+  margin-top: 1rem;
+  width: 100%;
+}
