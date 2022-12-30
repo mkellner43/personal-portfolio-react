@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+.about-container,
+.home-container,
+.contact-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(175, 172, 172);
+  border-radius: 0.25rem;
+
+  h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 70px;
+    font-weight: 300;
+    color: #1d1e21;
+  }
+}
+html {
+  background-color: #1d1e21;
+}

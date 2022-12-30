@@ -9,11 +9,14 @@ const Hamburger = ({isOpen}) => {
       rotate: 0,
       stroke: 'black',
       translateY: 0,
+      transition: {
+        delay: 0.5
+      }
     },
     opened: {
       rotate: 45,
       stroke: 'white',
-      translateY: 20,
+      translateY: 10,
     }
   };
   
@@ -21,6 +24,9 @@ const Hamburger = ({isOpen}) => {
     closed: {
       opacity: 1,
       stroke: 'black',
+      transition: {
+        delay: 0.5
+      }
     },
     opened: {
       opacity: 0,
@@ -33,10 +39,13 @@ const Hamburger = ({isOpen}) => {
       rotate: 0,
       stroke: 'black',
       translateY: 0,
+      transition: {
+        delay: 0.5
+      }
     },
     opened: {
       rotate: -45,
-      translateY: -20,
+      translateY: -10,
       stroke: 'white',
     }
   };
@@ -65,7 +74,7 @@ const Hamburger = ({isOpen}) => {
     >
       <motion.line
         x1="0"
-        x2='50'
+        x2='30'
         y1="0"
         y2="0"
         variants={top}
@@ -73,17 +82,17 @@ const Hamburger = ({isOpen}) => {
       />
       <motion.line
         x1="0"
-        x2='50'
-        y1="20"
-        y2="20"
+        x2='30'
+        y1="10"
+        y2="10"
         variants={center}
         {...lineProps}
       />
       <motion.line
         x1="0"
-        x2='50'
-        y1="40"
-        y2="40"
+        x2='30'
+        y1="20"
+        y2="20"
         variants={bottom}
         {...lineProps}
       />
