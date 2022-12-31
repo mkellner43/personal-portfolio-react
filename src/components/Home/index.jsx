@@ -2,6 +2,7 @@ import './style.scss'
 import Pic from '../../Images/profilePic2.png';
 import { motion } from 'framer-motion';
 import Footer from '../Footer';
+import Projects from '../Projects';
 
 const Home = ({navIsOpen}) => {
   const open = {
@@ -38,6 +39,7 @@ const Home = ({navIsOpen}) => {
         animate={{opacity: 1, boxShadow: '0 0 20px', x: "25%", y: "0%", transition: {duration: 2}}} 
         whileHover={{rotate: 10, transition: {duration: 2}}} />
     </div>
+    <Projects />
     <Footer />
   </motion.section>
  )
