@@ -30,17 +30,17 @@ const Contact = ({navIsOpen}) => {
 
   }
   const open = {
-    x: 100,
-    boxShadow: '0 0 8px black',
-    width: 'calc(100% - 100px - 1rem)',
-    height: 'calc(100vh - 2rem)',
-    marginTop: '1rem',
+    x: '5vw',
+    width: 'calc(100% - 5.5vw)',
+    height: 'calc(100% - 1vh)',
+    marginTop: '0.5vh',
   }
   const closed = {
     x: 0,
     width: '100%',
     height: '100%',
     marginTop: '0rem',
+    borderRadius: '0',
     transition: {
       delay: 0.4,
     }

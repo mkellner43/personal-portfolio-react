@@ -6,16 +6,17 @@ import Projects from '../Projects';
 
 const Home = ({navIsOpen}) => {
   const open = {
-      x: 100,
-      width: 'calc(100% - 100px - 1rem)',
-      height: 'calc(100% - 2rem)',
-      marginTop: '1rem',
+      x: '5vw',
+      width: 'calc(100% - 5.5vw)',
+      height: 'calc(100% - 1vh)',
+      marginTop: '0.5vh',
     }
   const closed = {
     x: 0,
     width: '100%',
     height: '100%',
     marginTop: '0rem',
+    borderRadius: '0',
     transition: {
       delay: 0.4,
     }
@@ -39,7 +40,7 @@ const Home = ({navIsOpen}) => {
         animate={{opacity: 1, boxShadow: '0 0 20px', transition: {duration: 2}}} 
         whileHover={{rotate: 10, transition: {duration: 2}}} />
     </div>
-    <motion.svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" height={40} width={40} style={{zIndex: 1, position: 'relative', top: '-3%', left: '48.5%'}}>
+    <motion.svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" height={40} width={40} style={{zIndex: 1, position: 'relative', top: '5vh', left: '48.5%'}}>
       <motion.path 
         strokeLinecap="round"
         strokeWidth={20}
