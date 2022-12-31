@@ -26,17 +26,17 @@ const Home = ({navIsOpen}) => {
   <motion.section className='home-container'  animate={navIsOpen ? open : closed} initial={false}>
     <div className="flex">
       <div>
-        <motion.h1 animate={{x: -200, opacity: [0, 0.1, 1], transition: {delay: .5, duration: 1}}}>
+        <motion.h1 initial={{x: '30vw', y: '10vh'}} animate={{x: 0, y: 0, opacity: [0, 0.1, 1], transition: {delay: .5, duration: 1}}}>
           Matthew Kellner
         </motion.h1>
-        <motion.h2 initial={{x: 100, y: 150}} animate={{x: -190, y: 0, opacity: [0, 0.1, 1], transition: {delay: 1, duration: 1}}}>
+        <motion.h2 initial={{x: '30vw', y: '10vh'}} animate={{x: 0, y: 0, opacity: [0, 0.1, 1], transition: {delay: 1, duration: 1}}}>
           Full Stack Web Developer
         </motion.h2>
       </div>
       <motion.img 
         src={Pic} 
         initial={{opacity: 0}} 
-        animate={{opacity: 1, boxShadow: '0 0 20px', x: "25%", y: "0%", transition: {duration: 2}}} 
+        animate={{opacity: 1, boxShadow: '0 0 20px', transition: {duration: 2}}} 
         whileHover={{rotate: 10, transition: {duration: 2}}} />
     </div>
     <motion.svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" height={40} width={40} style={{zIndex: 1, position: 'relative', top: '-3%', left: '48.5%'}}>

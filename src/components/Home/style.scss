@@ -3,24 +3,26 @@
 .home-container {
 h1 {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 70px;
+  font-size: 5vw;
   font-weight: 300;
   color: #1d1e21;
 }
 h2 {
   font-family: 'Dancing Script', cursive;
-  font-size: 30px;
+  font-size: 2vw;
   color: white;
 }
 img {
-  max-width: 500px;
-  min-width: 200px;
+  max-width: 30vw;
   border-radius: 1rem;
   rotate: -10deg;
   opacity: 0;
+  flex-shrink: 3;
 }
 .flex {
+  margin-top: 5rem;
   display: flex;
+  justify-content: space-evenly;
 }
 
 }
