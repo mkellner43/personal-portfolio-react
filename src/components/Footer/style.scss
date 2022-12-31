@@ -1,4 +1,8 @@
 footer {
+  padding-bottom: 3rem;
+  background-color: #1d1e21;
+  width: 100%;
+  border-radius: -0.5rem;
 
   .links {
     display: flex;
@@ -11,6 +15,6 @@ footer {
   }
 
   a {
-    color: #1d1e21;
+    color: #fff;
   }
 }

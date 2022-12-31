@@ -1,7 +1,22 @@
-.projects-container {
+.projects-wrapper {
+  display: flex;
+  justify-content: center;
+
+  .projects-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    max-width: 70%;
+    margin-bottom: 2rem;
+  }
+
   img {
-    width: 100px;
+    max-width: 400px;
+    min-width: 200px;
+    max-height: 400px;
+    min-height: 200px;
     rotate: 0deg;
-    opacity: 1;
+    opacity: 0;
+    margin: 1rem 1rem 0;
   }
 }
