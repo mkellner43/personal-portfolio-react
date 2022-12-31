@@ -1,3 +1,16 @@
 footer {
-  
+
+  .links {
+    display: flex;
+    justify-content: center;
+    
+    svg {
+      padding: 3rem 5rem 0;
+      font-size: 30px;
+    }
+  }
+
+  a {
+    color: #1d1e21;
+  }
 }

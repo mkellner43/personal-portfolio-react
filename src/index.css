@@ -9,4 +9,5 @@
 
 #root {
   display: flex;
+  overflow: scroll;
 }
