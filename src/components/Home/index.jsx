@@ -9,6 +9,7 @@ const Home = ({navIsOpen}) => {
       x: '5vw',
       width: 'calc(100% - 5.5vw)',
       height: 'calc(100% - 1vh)',
+      borderRadius: '0.25rem',
       marginTop: '0.5vh',
     }
   const closed = {
