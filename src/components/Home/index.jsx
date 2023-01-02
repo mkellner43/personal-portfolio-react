@@ -59,6 +59,5 @@ const Home = ({navIsOpen}) => {
 
 export default Home;
 
-// make arrow bounce when animation is drawn
 // dynamic background to surround name and pic (:
 // in about create cool animations to display what tech you know

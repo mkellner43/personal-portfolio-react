@@ -4,6 +4,8 @@ import emailjs from "@emailjs/browser";
 import { useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import Footer from '../Footer';
+
 
 
 const Contact = ({navIsOpen}) => {
@@ -61,6 +63,7 @@ return (
         </motion.button>
       </form>
     </motion.div>
+    <Footer />
   </motion.section>
 )
 }

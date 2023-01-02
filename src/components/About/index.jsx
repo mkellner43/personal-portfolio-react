@@ -1,5 +1,7 @@
 import './style.scss';
 import { motion } from 'framer-motion';
+import Footer from '../Footer';
+
 
 const About = ({navIsOpen}) => {
   const open = {
@@ -52,6 +54,7 @@ return (
       Diam maecenas sed enim ut sem viverra. Vel pharetra vel turpis nunc eget lorem dolor sed viverra. Accumsan sit amet nulla facilisi morbi tempus. Ipsum dolor sit amet consectetur adipiscing. Scelerisque felis imperdiet proin fermentum. Elit scelerisque mauris pellentesque pulvinar pellentesque. Mattis enim ut tellus elementum. Imperdiet sed euismod nisi porta lorem mollis aliquam. A condimentum vitae sapien pellentesque habitant morbi tristique senectus. Nunc congue nisi vitae suscipit tellus mauris a diam maecenas. Egestas pretium aenean pharetra magna ac placerat. Non enim praesent elementum facilisis leo vel fringilla est. Lectus mauris ultrices eros in. Tincidunt id aliquet risus feugiat in ante metus dictum at. Velit sed ullamcorper morbi tincidunt ornare massa eget. Diam sit amet nisl suscipit adipiscing bibendum est. Magna ac placerat vestibulum lectus mauris ultrices eros in cursus.
       </motion.p>
     </div>
+    <Footer />
   </motion.section>
 )
 }

@@ -53,6 +53,11 @@
     justify-content: center;
     padding-top: 5rem;
   }
+
+  footer {
+    position: absolute;
+    top: 83vh;
+  }
   @media (max-width: 500px){
     form{
       min-width: 80%;
