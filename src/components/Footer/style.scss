@@ -1,8 +1,5 @@
 footer {
-  padding-bottom: 3rem;
-  background-color: #1d1e21;
-  width: 100%;
-  border-radius: -0.5rem;
+  margin: 3rem;
 
   .links {
     display: flex;
@@ -11,6 +8,7 @@ footer {
     svg {
       padding: 3rem 5rem 0;
       font-size: 30px;
+
     }
   }
 

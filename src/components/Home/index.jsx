@@ -52,6 +52,7 @@ const Home = ({navIsOpen}) => {
       />
     </motion.svg>
     <Projects />
+    <Footer />
   </motion.section>
  )
 }

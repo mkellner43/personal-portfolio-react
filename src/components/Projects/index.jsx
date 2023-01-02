@@ -4,40 +4,96 @@ import myShop from '../../Images/myShop.png';
 import cvBuilder from '../../Images/cvBuilder.png';
 import weatherChecker from '../../Images/weatherChecker.png';
 import ticTacToe from '../../Images/ticTacToe.png';
-
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronCircleLeft, faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
 
 const Projects = () => {
+  const photos = [
+    {image: memoryGame, link: "https://mkellner43.github.io/memory-game/"},
+    {image: myShop, link: "https://mkellner43.github.io/shop_react/"},
+    {image: cvBuilder, link: "https://mkellner43.github.io/cv-project/"},
+    {image: weatherChecker, link: "https://mkellner43.github.io/weather_api/"},
+    {image: ticTacToe, link: "https://mkellner43.github.io/ticTacToeJs/"}
+  ]
+  const [index, setIndex] = useState(0)
+  const [direction, setDirection] = useState()
+
+  const handleClickLeft = () => {
+    setDirection(1)
+    setIndex(prevState => {
+      if(prevState === 0) {
+        return 4
+      } else {
+        return prevState - 1
+      }
+    })
+  }
+
+  const handleClickRight = () => {
+    setDirection(-1)
+    setIndex(prevState => {
+      if(prevState === 4) {
+        return 0
+      } else {
+        return prevState + 1
+      }
+    })
+  }
+
+  const variants = {
+    enter: (direction) => {
+      return {
+        x: direction > 0 ? 1000 : -1000,
+        opacity: 0,
+      };
+    },
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1
+    },
+    exit: (direction) => {
+      return {
+        zIndex: 0,
+        x: direction < 0 ? 1000 : -1000,
+        opacity: 0
+      };
+    }
+  };
+
   return (
-    <section className="projects-wrapper">
-      <div className='projects-container'>
-        <div>
-          <a href="https://mkellner43.github.io/memory-game/" target="_blank" rel="noopener noreferrer">
-            <motion.img whileInView={{opacity: 1, transition: {duration: 2}}} viewport={{ once: true }} src={memoryGame} alt="memory game" />
-          </a>
-        </div>
-        <div>
-          <a href="https://mkellner43.github.io/shop_react/" target="_blank" rel="noopener noreferrer">
-            <motion.img whileInView={{opacity: 1, transition: { duration: 1}}} viewport={{ once: true }} src={myShop} alt="shop" />
-          </a>
-        </div>
-        <div>
-          <a href="https://mkellner43.github.io/cv-project/" target="_blank" rel="noopener noreferrer">
-            <motion.img whileInView={{opacity: 1, transition: {duration: 2}}} viewport={{ once: true }} src={cvBuilder} alt="cv builder" />
-          </a>
-        </div>
-        <div>
-          <a href="https://mkellner43.github.io/weather_api/" target="_blank" rel="noopener noreferrer">
-            <motion.img whileInView={{opacity: 1, transition: {duration: 1}}} viewport={{ once: true }} src={weatherChecker} alt="weather checker" />
-          </a>
-        </div>
-        <div>
-          <a href="https://mkellner43.github.io/ticTacToeJs/" target="_blank" rel="noopener noreferrer">
-            <motion.img whileInView={{opacity: 1, transition: {duration: 1}}} viewport={{ once: true }} src={ticTacToe} alt="weather checker" />
-          </a>
-        </div>
-      </div>
-    </section>
+    <motion.section className="projects-wrapper" initial={{opacity: 0}} whileInView={{opacity: 1, transition: {duration: 2}}} viewport={{ amount: 0.2, once: true }}>
+      <motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.9}}>
+        <FontAwesomeIcon key={'left'} icon={faChevronCircleLeft} onClick={handleClickLeft} />
+      </motion.div>
+        <motion.a 
+          href={photos[index].link}
+          target="_blank" 
+          rel="noopener noreferrer"
+        > 
+        <AnimatePresence initial={false}>
+          <motion.img
+            key={index}
+            src={photos[index].image}
+            variants={variants}
+            custom={direction}
+            initial='enter'
+            animate='center'
+            exit='exit'
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.2 }
+            }}
+            alt="memory game"
+            />
+        </AnimatePresence>
+          </motion.a>
+        <motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.9}}>
+          <FontAwesomeIcon key={'right'} icon={faChevronCircleRight} onClick={handleClickRight}/>
+        </motion.div>
+    </motion.section>
   )
 }
 

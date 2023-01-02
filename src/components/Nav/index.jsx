@@ -96,6 +96,3 @@ const Nav = ({isOpen, setIsOpen}) => {
 }
 
 export default Nav;
-
-// dynamic background created with framer motion would be sick af
-// drawing SVG with a cool symbol or your name would be sick af
