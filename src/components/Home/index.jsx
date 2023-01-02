@@ -40,7 +40,7 @@ const Home = ({navIsOpen}) => {
         animate={{opacity: 1, boxShadow: '0 0 20px', transition: {duration: 2}}} 
         whileHover={{rotate: 10, transition: {duration: 2}}} />
     </div>
-    <motion.svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" height={40} width={40} style={{zIndex: 1, position: 'relative', top: '10vh', left: '48.5%'}} initial={{y: 0}} animate={{y: 100, transition: {duration: 2, repeat: Infinity, repeatType: 'reverse'}}}>
+    <motion.svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" height={40} width={40} style={{zIndex: 1, position: 'relative', top: '10vh', left: '48%'}} initial={{y: 0}} animate={{y: 100, transition: {duration: 2, repeat: Infinity, repeatType: 'reverse'}}}>
       <motion.path 
         strokeLinecap="round"
         strokeWidth={20}
