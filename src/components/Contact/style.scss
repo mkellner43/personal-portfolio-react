@@ -1,5 +1,4 @@
 .contact-container {
-
   form {
     display: flex;
     flex-direction: column;
@@ -56,7 +55,10 @@
 
   footer {
     position: absolute;
-    top: 83vh;
+    width: 100vw;
+    padding-right: 5vw;
+    top: 91vh;
+    margin: 0;
   }
   @media (max-width: 500px){
     form{
