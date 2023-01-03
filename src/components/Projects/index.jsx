@@ -11,11 +11,11 @@ import { faChevronCircleLeft, faChevronCircleRight } from '@fortawesome/free-sol
 
 const Projects = () => {
   const photos = [
-    {image: memoryGame, link: "https://mkellner43.github.io/memory-game/"},
-    {image: myShop, link: "https://mkellner43.github.io/shop_react/"},
-    {image: cvBuilder, link: "https://mkellner43.github.io/cv-project/"},
-    {image: weatherChecker, link: "https://mkellner43.github.io/weather_api/"},
-    {image: ticTacToe, link: "https://mkellner43.github.io/ticTacToeJs/"}
+    {image: memoryGame, link: "https://mkellner43.github.io/memory-game/", code: 'https://github.com/mkellner43/memory-game'},
+    {image: myShop, link: "https://mkellner43.github.io/shop_react/", code: 'https://github.com/mkellner43/shop_react'},
+    {image: cvBuilder, link: "https://mkellner43.github.io/cv-project/", code: 'https://github.com/mkellner43/cv-project'},
+    {image: weatherChecker, link: "https://mkellner43.github.io/weather_api/", code: 'https://github.com/mkellner43/weather_api'},
+    {image: ticTacToe, link: "https://mkellner43.github.io/ticTacToeJs/", code: 'https://github.com/mkellner43/ticTacToeJs'}
   ]
   const [index, setIndex] = useState(0)
   const [direction, setDirection] = useState()
@@ -64,6 +64,7 @@ const Projects = () => {
   };
 
   return (
+    <div className='container'>
     <motion.section className="projects-wrapper" initial={{opacity: 0}} whileInView={{opacity: 1, transition: {duration: 2}}} viewport={{ amount: 0.2, once: true }}>
       <motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.9}}>
         <FontAwesomeIcon key={'left'} icon={faChevronCircleLeft} onClick={handleClickLeft} />
@@ -72,7 +73,7 @@ const Projects = () => {
           href={photos[index].link}
           target="_blank" 
           rel="noopener noreferrer"
-        > 
+          > 
         <AnimatePresence initial={false}>
           <motion.img
             key={index}
@@ -94,6 +95,19 @@ const Projects = () => {
           <FontAwesomeIcon key={'right'} icon={faChevronCircleRight} onClick={handleClickRight}/>
         </motion.div>
     </motion.section>
+    <div className='btn-container'>
+      <motion.a  
+        className='btn' 
+        href={photos[index].code} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        whileHover={{scale: 1.05}}
+        whileTap={{scale: 0.90}}
+      >
+          View Code
+      </motion.a >
+    </div>
+    </div>
   )
 }
 
