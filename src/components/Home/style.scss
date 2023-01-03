@@ -32,4 +32,14 @@ img {
   justify-content: space-evenly;
 }
 
+.svg-container {
+  z-index: 100;
+  margin-top: 3vh;
+  height: 20vh;
+  margin-bottom: 10vh;
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+}
 }

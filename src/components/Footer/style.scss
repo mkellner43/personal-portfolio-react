@@ -1,15 +1,12 @@
 footer {
   margin: 3rem 0;
-  width: 100%;
 
   .links {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     
     svg {
-      padding: 3rem 5rem 0;
       font-size: 30px;
-
     }
   }
 
