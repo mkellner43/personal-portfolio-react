@@ -1,0 +1,61 @@
+@function random_range($min, $max) {
+  $rand: random();
+  $random_range: $min + floor($rand * (($max - $min) + 1));
+  @return $random_range;
+}
+
+
+$circle_count: random_range(20, 50);
+
+.circles {
+  position: absolute;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.circle {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  opacity: 0;
+
+  left: var(--circle-left);
+  top: var(--circle-top);
+  height: var(--circle-size);
+  width: var(--circle-size);
+  background-color: var(--circle-color);
+  z-index: 1;
+  animation: var(--animation-name);
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-delay: var(--animation-delay);
+  box-shadow: 0 0 3px white;
+
+  @for $i from 0 through $circle_count {
+    &:nth-child(#{$i}) {
+      --circle-left: #{random_range(0vw, 100vw)};
+      --circle-top: #{random_range(0vh, 100vh)};
+      --circle-size: #{random_range(1px, 2px)};
+      --circle-color: #{white};
+      --animation-name: #{move#{$i}};
+      --animation-delay: #{floor(random(30)) + s};
+    }
+  }
+}
+
+@for $i from 0 through $circle_count {
+  @keyframes move#{$i}{
+    0% {
+      transform: rotate(random(50) + deg) scale(floor(random(5))) translateX(random(50) + px);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.85;
+    }
+    100% {
+      transform: rotate(random(50) + deg) scale(floor(random(5))) translateX(random(50) + px);
+      opacity: 0;
+    }
+  }
+}

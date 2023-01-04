@@ -3,6 +3,7 @@ import Pic from '../../Images/profilePic2.png';
 import { motion } from 'framer-motion';
 import Footer from '../Footer';
 import Projects from '../Projects';
+import Background from '../Background';
 
 const Home = ({navIsOpen}) => {
   const open = {
@@ -26,6 +27,7 @@ const Home = ({navIsOpen}) => {
 
  return (
   <motion.section className='home-container'  animate={navIsOpen ? open : closed} initial={false}>
+    <Background />
     <div className="flex">
       <div>
         <motion.h1 initial={{x: '30vw', y: '10vh'}} animate={{x: 0, y: 0, opacity: [0, 0.1, 1], transition: {delay: .5, duration: 1}}}>
