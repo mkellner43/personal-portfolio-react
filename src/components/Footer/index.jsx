@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { motion } from 'framer-motion';
 
-const Footer = () => {
+const Footer = ({className}) => {
   return (
-    <footer>
+    <footer className={className ? className : ''}>
       <motion.div className='links'>
         <motion.div whileHover={{scale: 1.1}}>
           <motion.a href='https://linkedin.com/in/mkellner43/' target={'_blank'} rel='noreferrer'>

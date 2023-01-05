@@ -17,10 +17,10 @@ h2 {
 }
 img {
   position: relative;
-  top: 5vh;
+  top: 2vh;
   max-width: 25rem;
   width: 30vw;
-  height:fit-content;
+  height: fit-content;
   min-width: 15rem;
   border-radius: 1rem;
   rotate: -10deg;
@@ -31,14 +31,18 @@ img {
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  flex-shrink: 3;
-  margin-top: 100px;
-  height: fit-content;
+  height: 65vh;
   justify-content: center;
   align-items: center;
   div{
     height: fit-content;
   }
+  
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
 }
 
 footer {
@@ -46,12 +50,9 @@ footer {
 }
 
 .svg-container {
+  min-height: 140px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-width: fit-content;
-  z-index: 100;
-  width: 100vw;
-  margin: 10vh 0;
 }
+
 }

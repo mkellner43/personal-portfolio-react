@@ -6,19 +6,21 @@ import Footer from '../Footer';
 const About = ({navIsOpen}) => {
   const open = {
     x: '5vw',
-    width: 'calc(100% - 5.5vw)',
+    width: 'calc(100% - 5.5vw - 26px)',
     height: 'calc(100% - 1vh)',
     borderRadius: '0.25rem',
     marginTop: '0.5vh',
+    marginLeft: '26px'
   }
   const closed = {
     x: 0,
     width: '100%',
     height: '100%',
     marginTop: '0rem',
+    marginLeft: '0rem',
     borderRadius: '0',
     transition: {
-      delay: 0.4,
+      delay: 0.4
     }
   }
 return (
