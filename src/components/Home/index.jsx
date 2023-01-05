@@ -70,5 +70,3 @@ const Home = ({navIsOpen}) => {
 
 export default Home;
 
-// dynamic background to surround name and pic (:
-// in about create cool animations to display what tech you know
