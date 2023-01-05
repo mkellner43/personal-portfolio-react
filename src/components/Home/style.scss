@@ -6,8 +6,8 @@ h1 {
   font-size: 5vh;
   font-weight: 300;
   color: #1d1e21;
-  z-index: 1000;
-  padding-right: 2vw;
+  z-index: 10;
+  padding-right: 6vw;
 }
 h2 {
   font-family: 'Dancing Script', cursive;
@@ -16,29 +16,42 @@ h2 {
   z-index: 1000;
 }
 img {
-  max-width: 30vw;
-  min-width: 10rem;
+  position: relative;
+  top: 5vh;
+  max-width: 25rem;
+  width: 30vw;
+  height:fit-content;
+  min-width: 15rem;
   border-radius: 1rem;
   rotate: -10deg;
   opacity: 0;
-  flex-shrink: 3;
   margin-right: 2vw;
-  margin-top: 2rem;
 }
 .flex {
-  margin-top: 5rem;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-shrink: 3;
+  margin-top: 100px;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+  div{
+    height: fit-content;
+  }
+}
+
+footer {
+  margin-top: 20vh;
 }
 
 .svg-container {
-  position: relative;
-  left: 48.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: fit-content;
   z-index: 100;
-  width: fit-content;
-  margin-top: 3vh;
-  margin-bottom: 1rem;
-  height: 20vh;
+  width: 100vw;
+  margin: 10vh 0;
 }
 }

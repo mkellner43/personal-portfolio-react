@@ -50,64 +50,62 @@ const Projects = () => {
       };
     },
     center: {
-      zIndex: 1,
       x: 0,
       opacity: 1
     },
     exit: (direction) => {
       return {
-        zIndex: 0,
         x: direction < 0 ? 1000 : -1000,
-        opacity: 0
+        opacity: 0,
+        zIndex: 0
       };
     }
   };
 
   return (
-    <div className='container'>
     <motion.section className="projects-wrapper" initial={{opacity: 0}} whileInView={{opacity: 1, transition: {duration: 2}}} viewport={{ amount: 0.2, once: true }}>
-      <motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.9}}>
-        <FontAwesomeIcon key={'left'} icon={faChevronCircleLeft} onClick={handleClickLeft} />
-      </motion.div>
-        <motion.a 
-          href={photos[index].link}
-          target="_blank" 
-          rel="noopener noreferrer"
-          > 
-        <AnimatePresence initial={false}>
-          <motion.img
-            key={index}
-            src={photos[index].image}
+      <motion.div className='flex-row'>
+        <motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.9}}>
+          <FontAwesomeIcon key={'left'} icon={faChevronCircleLeft} onClick={handleClickLeft} />
+        </motion.div>
+          <a
+            className='image-container'
+            href={photos[index].link}
+            target="_blank" 
+            rel="noopener noreferrer"
+            > 
+          <AnimatePresence initial={false}>
+            <motion.img
             variants={variants}
             custom={direction}
             initial='enter'
             animate='center'
             exit='exit'
             transition={{
-              x: { type: "spring", stiffness: 300, damping: 30 },
-              opacity: { duration: 0.2 }
-            }}
+                x: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.2 }
+              }}
+            key={index}
+            src={photos[index].image}
             alt="memory game"
             />
-        </AnimatePresence>
-          </motion.a>
+          </AnimatePresence>
+        </a>
         <motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.9}}>
           <FontAwesomeIcon key={'right'} icon={faChevronCircleRight} onClick={handleClickRight}/>
         </motion.div>
-    </motion.section>
-    <div className='btn-container'>
-      <motion.a  
+      </motion.div>
+      <motion.a
         className='btn' 
         href={photos[index].code} 
         target="_blank" 
         rel="noopener noreferrer"
         whileHover={{scale: 1.05}}
         whileTap={{scale: 0.90}}
-      >
+        >
           View Code
       </motion.a >
-    </div>
-    </div>
+    </motion.section>
   )
 }
 

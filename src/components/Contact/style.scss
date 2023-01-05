@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center;
     margin-top: 2rem;
+    margin-bottom: 31.7vh;
     
     input {
       height: 2vh;
@@ -53,13 +54,6 @@
     padding-top: 5rem;
   }
 
-  footer {
-    position: absolute;
-    width: 100vw;
-    padding-right: 5vw;
-    top: 91vh;
-    margin: 0;
-  }
   @media (max-width: 500px){
     form{
       min-width: 80%;

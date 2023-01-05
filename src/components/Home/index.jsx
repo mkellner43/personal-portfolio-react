@@ -26,6 +26,7 @@ const Home = ({navIsOpen}) => {
   const transition = { duration: 2, repeat: Infinity, repeatType: 'reverse', ease: "easeInOut" }
 
  return (
+  <>
   <motion.section className='home-container'  animate={navIsOpen ? open : closed} initial={false}>
     <Background />
     <div className="flex">
@@ -59,6 +60,7 @@ const Home = ({navIsOpen}) => {
     <Projects />
     <Footer />
   </motion.section>
+  </>
  )
 }
 

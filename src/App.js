@@ -5,7 +5,6 @@ import Nav from './components/Nav';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
-// import Footer from './components/Footer';
 
 
 function App() {
@@ -18,7 +17,6 @@ function App() {
       <Route default path='/about' element={<About navIsOpen={isOpen} />} />
       <Route default path='/contact' element={<Contact navIsOpen={isOpen} />} />
     </Routes>
-    {/* <Footer /> */}
     </>
     
   );

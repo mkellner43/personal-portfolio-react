@@ -8,18 +8,6 @@ const Background = () => {
   return (
     <div className='circles'>
       {arr}
-      {/* <div className='circle'></div>
-      <div className='circle'></div>
-      <div className='circle'></div>
-      <div className='circle'></div>
-      <div className='circle'></div>
-      <div className='circle'></div>
-      <div className='circle'></div>
-      <div className='circle'></div>
-      <div className='circle'></div>
-      <div className='circle'></div>
-      <div className='circle'></div>
-      <div className='circle'></div> */}
     </div>
   )
 }

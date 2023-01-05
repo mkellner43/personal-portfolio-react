@@ -1,10 +1,17 @@
 footer {
-  margin: 3rem 0;
-  margin-top: 10rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100px;
 
   .links {
+    position: absolute;
     display: flex;
     justify-content: space-evenly;
+    align-items: flex-end;
+    width: 50vw;
 
     svg {
       font-size: 30px;
