@@ -58,12 +58,12 @@ const Nav = ({isOpen, setIsOpen}) => {
 
   return (
     <>
-      <motion.div className='hamburger' onClick={() => setIsOpen(!isOpen)} whileHover={{scale: 1.05}} whileTap={{scale: 0.90}}>
-        <Hamburger isOpen={isOpen} setIsOpen={setIsOpen}/>
+      <motion.div className='hamburger-container'>
+        <Hamburger className="" isOpen={isOpen} setIsOpen={setIsOpen}/>
       </motion.div>
       <AnimatePresence>
       { isOpen && 
-        <motion.nav className='nav-container' variants={variant} animate='visible' initial='initial' exit='exit'>
+        <motion.nav layout className='nav-container' variants={variant} animate='visible' initial='initial' exit='exit'>
           <Link to="/">
             <motion.p variants={item} whileHover={{scale: 1.15}} whileTap={{scale: 0.90}}>
               <FontAwesomeIcon icon={faHouse} style={{color: 'white'}}/>
@@ -82,15 +82,15 @@ const Nav = ({isOpen, setIsOpen}) => {
         </motion.nav>
       }
       </AnimatePresence>
-      <motion.div animate={{x: -5, zIndex: 1, color: ['#000','#fff'], position:'absolute', transition: {duration: 1, repeat: Infinity, repeatType: 'reverse'}}}>
+      {/* <motion.div animate={{x: -5, zIndex: 1000, color: ['#000','#fff'], position:'absolute', transition: {duration: 1, repeat: Infinity, repeatType: 'reverse'}}}>
         <FontAwesomeIcon icon={faChevronLeft} style={{color: 'inherit', zIndex: 1, position:'absolute', left: 110, top: 20}}/>
       </motion.div>
-      <motion.div animate={{x: -5, zIndex: 1, color: ['#000','#fff'], position:'absolute', transition: {duration: 1, delay: 0.1, repeat: Infinity, repeatType: 'reverse'}}}>
+      <motion.div animate={{x: -5, zIndex: 1000, color: ['#000','#fff'], position:'absolute', transition: {duration: 1, delay: 0.1, repeat: Infinity, repeatType: 'reverse'}}}>
         <FontAwesomeIcon icon={faChevronLeft} style={{color: 'inherit', zIndex: 1, position:'absolute', left: 120, top: 20}}/>
       </motion.div>
-      <motion.div animate={{x: -5, zIndex: 1, color: ['#000','#fff'], position:'absolute', transition: {duration: 1,delay: 0.2, repeat: Infinity, repeatType: 'reverse'}}}>
+      <motion.div animate={{x: -5, zIndex: 1000, color: ['#000','#fff'], position:'absolute', transition: {duration: 1,delay: 0.2, repeat: Infinity, repeatType: 'reverse'}}}>
         <FontAwesomeIcon icon={faChevronLeft} style={{color: 'inherit', zIndex: 1, position:'absolute', left: 130, top: 20}}/>
-      </motion.div>
+      </motion.div> */}
     </>
   )
 }

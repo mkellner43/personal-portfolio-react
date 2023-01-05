@@ -1,7 +1,7 @@
 import './style.scss';
 import { motion } from 'framer-motion';
 
-const Hamburger = ({isOpen}) => {
+const Hamburger = ({isOpen, setIsOpen}) => {
   const variant = isOpen ? 'opened' : 'closed';
 
   const top = {
@@ -66,36 +66,40 @@ const Hamburger = ({isOpen}) => {
 
   return (
     <motion.svg
+      onClick={() => setIsOpen(!isOpen)} 
+      whileHover={{scale: 1.05}}
+      whileTap={{scale: 0.90}}
       viewBox='0 0 50 50'
       overflow="visible"
       preserveAspectRatio="none"
       width='50'
       height='50'
-    >
+      >
+      <div className='background'></div>
       <motion.line
-        x1="0"
-        x2='30'
-        y1="0"
-        y2="0"
+        x1="10"
+        x2='40'
+        y1="12.6"
+        y2="12.6"
         variants={top}
         {...lineProps}
-      />
+        />
       <motion.line
-        x1="0"
-        x2='30'
-        y1="10"
-        y2="10"
+        x1="10"
+        x2='40'
+        y1="22.6"
+        y2="22.6"
         variants={center}
         {...lineProps}
-      />
+        />
       <motion.line
-        x1="0"
-        x2='30'
-        y1="20"
-        y2="20"
+        x1="10"
+        x2='40'
+        y1="32.6"
+        y2="32.6"
         variants={bottom}
         {...lineProps}
-      />
+        />
     </motion.svg>
   )
 }

@@ -13,15 +13,8 @@
 
   a {
     text-decoration: none;
-
+    padding-left: 26px;
   }
 }
 
-.hamburger {
-  position: absolute;
-  display: flex;
-  top: 2vh;
-  left: 1.5vw;
-  cursor: pointer;
-  z-index: 100;
-}
+
