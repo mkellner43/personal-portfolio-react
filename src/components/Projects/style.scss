@@ -5,10 +5,13 @@
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
+  height: 30vh;
+  min-width: 350px;
+
   img {
     rotate: 0deg;
     position: absolute;
-    width: 20vw;
+    width: 100%;
     min-width: 200px;
     top: 0;
     margin: 0;
@@ -17,10 +20,16 @@
   }
 
   svg {
-    color: white;
+    color: #fff;
+    background-color: #1d1e21;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #1d1e21;
     font-size: 4vh;
     position: relative;
     margin: 1rem;
+    &:hover {
+      box-shadow: 0 0 20px #1d1e21;
+    }
   }
 
   a {
@@ -37,11 +46,13 @@
       cursor: pointer;
       user-select: none;
       margin-top: 1%;
+      box-shadow: 0 0 10px black;
     }
     &.image-container {
-      width: 20vw;
+      max-width: 300px;
       min-width: 200px;
-      height: 17vw;
+      width: 100%;
+      height: 100%;
       min-height: 180px;
       user-select: none;
     }
@@ -52,13 +63,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   height: 100%;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 40vh;
 }
