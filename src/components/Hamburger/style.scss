@@ -1,11 +1,9 @@
+@import '../../index.scss';
+
 .hamburger-container {
   position: absolute;
   display: flex;
   width: 100%;
   cursor: pointer;
   z-index: 1000;
-  
-  .background {
-    
-  }
 }

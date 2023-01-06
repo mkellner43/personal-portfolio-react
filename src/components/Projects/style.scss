@@ -1,3 +1,5 @@
+@import '../../index.scss';
+
 .projects-wrapper {
   position: relative;
   display: flex;
@@ -25,13 +27,13 @@
   svg {
     color: #fff;
     border-radius: 50%;
-    background-color: #1d1e21bf;
-    box-shadow: 0 0 10px #1d1e21;
+    background-color: $primary-color;
+    box-shadow: 0 0 10px $primary-color;
     font-size: 4vh;
     position: relative;
     margin: 1rem;
     &:hover {
-      box-shadow: 0 0 15px #1d1e21;
+      box-shadow: 0 0 15px $primary-color;
     }
   }
 
@@ -41,18 +43,18 @@
       width: 6rem;
       padding: 0.25rem;
       text-align: center;
-      background-color: #fff;
+      background-color: $secondary-color;
       border: none;
       border-radius: 0.25rem;
       text-decoration: none;
-      color: #1d1e21;
+      color: $primary-color;
       cursor: pointer;
       user-select: none;
       margin-top: 1%;
-      box-shadow: 0 0 10px #1d1e21;
+      box-shadow: 0 0 10px $primary-color;
 
       &:hover {
-        box-shadow: 0 0 15px #1d1e21;
+        box-shadow: 0 0 15px $primary-color;
       }
     }
     &.image-container {
@@ -72,5 +74,6 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  max-width: 642px;
   height: 100%;
 }

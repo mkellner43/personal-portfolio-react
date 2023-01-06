@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import '../../index.scss';
 
 .home-container {
 h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 5vh;
   font-weight: 300;
-  color: #1d1e21;
+  color: $primary-color;
   z-index: 10;
   padding-right: 6vw;
 }
 h2 {
   font-family: 'Dancing Script', cursive;
   font-size: 3vh;
-  color: white;
+  color: $secondary-color;
   z-index: 1000;
 }
 img {

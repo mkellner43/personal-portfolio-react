@@ -1,3 +1,6 @@
+@import '../../index.scss';
+$button-color: #2da2ec;
+
 .contact-container {
   form {
     display: flex;
@@ -34,8 +37,8 @@
     button {
       padding: 1rem;
       margin-top: 1rem;
-      background-color: #2da2ec;
-      color: #fff;
+      background-color: $button-color;
+      color: $secondary-color;
       border-radius: 0.5rem;
       border: none;
       font-size: 1vh;

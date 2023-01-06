@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import './index.scss';
 
 .about-container,
 .home-container,
@@ -6,7 +6,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgb(175, 172, 172);
+  background-color: $background-color;
   border-radius: 0.25rem;
   overflow: scroll;
 
@@ -14,10 +14,11 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 5vh;
     font-weight: 300;
-    color: #1d1e21;
+    color: $primary-color;
   }
 }
+
 html {
-  background-color: #1d1e21;
+  background-color: $primary-color;
 }
 
