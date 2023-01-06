@@ -5,17 +5,16 @@ import Footer from '../Footer';
 
 const About = ({navIsOpen}) => {
   const open = {
-    x: '5vw',
-    width: 'calc(100% - 5.5vw - 26px)',
-    height: 'calc(100% - 1vh)',
+    left: 'calc(50px)',
+    width: 'calc(100% - 50px - 5px',
+    height: 'calc(100% - 10px)',
     borderRadius: '0.25rem',
-    marginTop: '0.5vh',
-    marginLeft: '26px'
+    marginTop: '5px',
   }
   const closed = {
-    x: 0,
-    width: '100%',
-    height: '100%',
+    left: 0,
+    width: '100vw',
+    height: '100vh',
     marginTop: '0rem',
     marginLeft: '0rem',
     borderRadius: '0',
