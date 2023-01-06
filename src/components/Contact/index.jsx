@@ -4,9 +4,8 @@ import emailjs from "@emailjs/browser";
 import { useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import {open, closed} from '../Variants/Variants';
 import Footer from '../Footer';
-
-
 
 const Contact = ({navIsOpen}) => {
   const refForm = useRef()
@@ -31,24 +30,7 @@ const Contact = ({navIsOpen}) => {
     sending = false;
 
   }
-  const open = {
-    left: 'calc(50px)',
-    width: 'calc(100% - 50px - 5px',
-    height: 'calc(100% - 10px)',
-    borderRadius: '0.25rem',
-    marginTop: '5px',
-  }
-  const closed = {
-    left: 0,
-    width: '100vw',
-    height: '100vh',
-    marginTop: '0rem',
-    marginLeft: '0rem',
-    borderRadius: '0',
-    transition: {
-      delay: 0.4
-    }
-  }
+  
 return (
   <motion.section className='contact-container'  animate={navIsOpen ? open : closed} initial={false}>
     <motion.div className="flex" initial={{opacity: 0}} animate={{opacity: 1, transition: {duration: 1.2}}}>
