@@ -16,23 +16,18 @@ h2 {
   z-index: 1000;
 }
 img {
-  position: relative;
-  top: 2vh;
-  max-width: 25rem;
   width: 30vw;
-  height: fit-content;
   min-width: 15rem;
   border-radius: 1rem;
   rotate: -10deg;
   opacity: 0;
-  margin-right: 2vw;
 }
 .flex {
   position: relative;
   display: flex;
   flex-wrap: wrap;
   height: 65vh;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   div{
     height: fit-content;
@@ -42,7 +37,8 @@ img {
 .flex-column {
   display: flex;
   flex-direction: column;
-  height: fit-content;
+  justify-content: space-evenly;
+  height: 100vh;
 }
 
 footer {
