@@ -1,3 +1,5 @@
+@import "../../index.scss";
+
 footer {
   position: relative;
   display: flex;
@@ -15,11 +17,11 @@ footer {
 
     svg {
       font-size: 30px;
-      color: #fff;
+      color: inherit;
     }
   }
 
   a {
-    color: #fff;
+    color: $secondary-color;
   }
 }
