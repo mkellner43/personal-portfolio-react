@@ -8,19 +8,38 @@
   width: 100%;
 
   .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: $primary-color;
+    overflow: hidden;
+  }
+  .before {
+    position: absolute;
+    background: linear-gradient(10deg, white, black);
+    animation: animate 15s infinite linear;
+  }
+  .after {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inset: 5px;
+    border-radius: 50%;
+    background-color: $background-color;
+    z-index: 100;
+  }
 
-    &::before {
-      content: '';
-      position: absolute;
-      inset: -10px 140px;
-      background: linear-gradient(315deg, white, black);
+  @keyframes animate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
     }
   }
+  
 }
-
-// play with making a cool ass logo (: 
