@@ -27,7 +27,6 @@ const Home = ({navIsOpen}) => {
           src={Pic} 
           initial={{opacity: 0}} 
           animate={{opacity: 1, boxShadow: '0 0 20px', transition: {duration: 2}}} 
-          whileHover={{scale: 1.1, transition: {duration: 2}}}
         />
       </div>
       <div className='svg-container'>

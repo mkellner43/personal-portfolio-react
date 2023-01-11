@@ -4,106 +4,87 @@ import { useState } from 'react';
 
 const Logo = () => {
   const variants = {
+    // initial: {
+    //   borderRadius: ['5%','50%', '50%' ,'5%'],
+    //   width: ['150px', '100px'],
+    //   height: ['150px', '100px'],
+    //   transform: ['rotate(0deg)','rotate(0deg)','rotate(360deg)'],
+    //   transition: {
+    //     duration: 2,
+    //     times: [0.2, 0.5, 0.8]
+    //   }
+    // },
     stateOneAnimate: {
-      borderRadius: '50%',
-      width: ['100px','150px', '100px'],
-      height: ['100px','150px', '100px'],
-      rotate: '1turn',
+      borderRadius: ['50%', '50%', '5%', '5%', '5%'],
+      width: ['100px','150px', '100px', '100px', '150px'],
+      height: ['100px','150px', '100px', '100px', '100px'],
+      rotate: [null, null, null, 360, 360],
       transition: {
-        duration: 1,
-        type: 'spring',
+        duration: 2,
+        times: [0, 0.2, 0.5, 0.7, 1],
       }
     },
     stateTwoAnimate: {
-      borderRadius: '5%',
-      width: '150px',
-      height: '100px',
-        transition: {
-        duration: 1,
-        width: {duration: 1, delay: 1},
-        type: 'spring',
-      }
-    },
-    stateThreeAnimate: {
-      width: ['150px', '100px'],
-      height: '100px',
-      borderRadius: '5%',
+      borderRadius: ['5%','5%'],
+      width: ['150px','100px'],
+      height: ['100px', '100px'],
+      rotate: 360,
       transition: {
-        duration: 1,
-        transform: {duration: 0.2, delay: 1},
-        type: 'spring',
+        duration: 2,
       }
     }
   }
 
   const afterVars = {
     stateOneAnimate: {
-      inset: ['30px','5px'],
+      inset: ['30px','30px', '5px', '5px', '5px'],
+      borderRadius: ['50%','50%', '5%', '5%', '5%'],
       transition: {
-        type: 'spring',
-        duration: 1
+        duration: 2,
+        times: [0, 0.2, 0.5, 0.7, 1],
       }
     },
     stateTwoAnimate: {
-      inset: '5px',
-      borderRadius: '5%',
+      inset: ['5px', '5px'],
+      borderRadius: ['5%','5%'],
       transition: {
-        type: 'spring',
         duration: 2
       }
-    },
-    stateThreeAnimate: {
-      inset: '5px',
-      borderRadius: '5%',
-      transition: {
-        type: 'spring',
-        duration: 2,
-        transform: {duration: 1}
-      }
     }
   }
 
-  const beforeVars = {
+  const logoContent = {
     stateOneAnimate: {
-      width: '250px',
-      height: '250px',
+      opacity: 1,
       transition: {
-        duration: 1,
-        type: 'spring',
+        duration: 2,
       }
     },
     stateTwoAnimate: {
-      width: '250px',
-      height: '250px',
+      opacity: 1,
       transition: {
-        duration: 1,
-        type: 'spring',
-      }
-    },
-    stateThreeAnimate: {
-      width: '250px',
-      height: '250px',
-      transition: {
-        duration: 1,
-        type: 'spring',
+        duration: 2,
       }
     }
   }
 
-  const counterRotate = {
-    stateTwoAnimate: {
-      // transform: 'rotate(-180deg)',
-      transition: {
-        duration: 2,
-        type: 'spring',
-      }
+  const nameVars = {
+    stateOneAnimate: {
+      opacity:[0, 1], 
+      transition: {delay: 2, duration: 1}
     },
-    stateThreeAnimate: {
-      // transform: 'rotate(0deg)',
-      transition: {
-        duration: 2,
-        type: 'spring',
-      }
+    stateTwoAnimate: {
+      opacity:[1, 0], 
+      transition: {delay: 2, duration: 1}
+    }
+  }
+
+  const initialVars = {
+    stateOneAnimate: {
+      x: 20
+    },
+    stateTwoAnimate: {
+      x: -30
     }
   }
 
@@ -113,8 +94,6 @@ const Logo = () => {
     setLogo(prevState => {
       if(prevState === 'stateOneAnimate') {
         return 'stateTwoAnimate'
-      } else if(prevState === 'stateTwoAnimate') {
-        return 'stateThreeAnimate'
       } else {
         return 'stateOneAnimate'
       }
@@ -129,26 +108,55 @@ const Logo = () => {
         animate={logo}
         onClick={handleChange}
       >
-        <motion.p style={{zIndex: 10000, position: 'absolute',color: 'white', transform: 'rotate(0deg) !important'}}
-        >
-        MK
-        </motion.p>
         <motion.div 
           className='before'
-          variants={beforeVars}
-          animate={logo}
-          >
-            
+        >
         </motion.div>
         <motion.div 
           className='after'
           variants={afterVars}
           animate={logo}
-          >
+        >
         </motion.div>
+      </motion.div>
+      <motion.div 
+        className='logo-content-container'
+        onClick={handleChange}
+      >
+        <motion.span
+        className='letters'
+        variants={initialVars}
+        animate={logo}
+        >
+          M
+        </motion.span>
+        <motion.span
+        className='letters'
+        variants={nameVars}
+        animate={logo}
+        >
+          atthew
+        </motion.span>
+        {' '}
+        <motion.span
+        className='letters'
+        variants={initialVars}
+        animate={logo}
+        >
+          K
+        </motion.span>
+        <motion.span
+        className='letters'
+        variants={nameVars}
+        animate={logo}
+        >
+          ellner
+        </motion.span>
       </motion.div>
     </div>
   )
 }
 
 export default Logo;
+
+//find out why letters arent moving x and y

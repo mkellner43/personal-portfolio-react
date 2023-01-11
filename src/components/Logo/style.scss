@@ -16,10 +16,13 @@
     height: 100px;
     border-radius: 50%;
     overflow: hidden;
+    background-color: transparent;
   }
   .before {
     position: absolute;
-    background: linear-gradient(10deg, white, black);
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(white, black);
     animation: animate 15s infinite linear;
   }
   .after {
@@ -31,6 +34,16 @@
     border-radius: 50%;
     background-color: $background-color;
     z-index: 100;
+  }
+  
+  .logo-content-container {
+    position: absolute;
+    color: $secondary-color;
+    z-index: 10000;
+  }
+
+  .letters {
+    position: relative;
   }
 
   @keyframes animate {
