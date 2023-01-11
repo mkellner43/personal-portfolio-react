@@ -4,20 +4,10 @@ import { useState } from 'react';
 
 const Logo = () => {
   const variants = {
-    // initial: {
-    //   borderRadius: ['5%','50%', '50%' ,'5%'],
-    //   width: ['150px', '100px'],
-    //   height: ['150px', '100px'],
-    //   transform: ['rotate(0deg)','rotate(0deg)','rotate(360deg)'],
-    //   transition: {
-    //     duration: 2,
-    //     times: [0.2, 0.5, 0.8]
-    //   }
-    // },
     stateOneAnimate: {
-      borderRadius: ['50%', '50%', '5%', '5%', '5%'],
-      width: ['100px','150px', '100px', '100px', '150px'],
-      height: ['100px','150px', '100px', '100px', '100px'],
+      borderRadius: ['50%', '50%', '3%', '3%', '3%'],
+      width: ['100px','170px', '100px', '100px', '170px'],
+      height: ['100px','170px', '100px', '100px', '100px'],
       rotate: [null, null, null, 360, 360],
       transition: {
         duration: 2,
@@ -25,12 +15,12 @@ const Logo = () => {
       }
     },
     stateTwoAnimate: {
-      borderRadius: ['5%','5%'],
-      width: ['150px','100px'],
+      borderRadius: ['3%','3%'],
+      width: ['160px','100px'],
       height: ['100px', '100px'],
       rotate: 360,
       transition: {
-        duration: 2,
+        duration: 1,
       }
     }
   }
@@ -38,32 +28,17 @@ const Logo = () => {
   const afterVars = {
     stateOneAnimate: {
       inset: ['30px','30px', '5px', '5px', '5px'],
-      borderRadius: ['50%','50%', '5%', '5%', '5%'],
+      borderRadius: ['50%','50%', '1%', '1%', '1%'],
       transition: {
         duration: 2,
         times: [0, 0.2, 0.5, 0.7, 1],
       }
     },
     stateTwoAnimate: {
-      inset: ['5px', '5px'],
-      borderRadius: ['5%','5%'],
+      inset: '5px',
+      borderRadius: '1%',
       transition: {
         duration: 2
-      }
-    }
-  }
-
-  const logoContent = {
-    stateOneAnimate: {
-      opacity: 1,
-      transition: {
-        duration: 2,
-      }
-    },
-    stateTwoAnimate: {
-      opacity: 1,
-      transition: {
-        duration: 2,
       }
     }
   }
@@ -75,16 +50,34 @@ const Logo = () => {
     },
     stateTwoAnimate: {
       opacity:[1, 0], 
-      transition: {delay: 2, duration: 1}
     }
   }
 
-  const initialVars = {
+  const mVar = {
     stateOneAnimate: {
-      x: 20
+      x: [50, 0],
+      transition: {
+        delay: 1.2,
+        duration: 1,
+      }
     },
     stateTwoAnimate: {
-      x: -30
+      x: [0, 50],
+      transition: {
+        duration: 1,
+      }
+    }
+  }
+
+  const kVar = {
+    stateOneAnimate: {
+      x: [-15, -5],
+      transition: {
+        delay: 1.5,
+      }
+    },
+    stateTwoAnimate: {
+      x: [-5, -15],
     }
   }
 
@@ -121,37 +114,45 @@ const Logo = () => {
       </motion.div>
       <motion.div 
         className='logo-content-container'
+        animate={logo}
         onClick={handleChange}
       >
-        <motion.span
-        className='letters'
-        variants={initialVars}
-        animate={logo}
+        <motion.div 
+          className="left"
+          variants={mVar}
+          animate={logo}
         >
-          M
-        </motion.span>
-        <motion.span
-        className='letters'
-        variants={nameVars}
-        animate={logo}
+          <motion.span
+            className='initial-letter'
+          >
+            M
+          </motion.span>
+          <motion.span
+          className='letters'
+          variants={nameVars}
+          animate={logo}
+          >
+            atthew
+          </motion.span>
+        </motion.div>
+        <motion.div 
+          className='right'
+          variants={kVar}
+          animate={logo}
         >
-          atthew
-        </motion.span>
-        {' '}
-        <motion.span
-        className='letters'
-        variants={initialVars}
-        animate={logo}
-        >
-          K
-        </motion.span>
-        <motion.span
-        className='letters'
-        variants={nameVars}
-        animate={logo}
-        >
-          ellner
-        </motion.span>
+          <motion.span
+          className='initial-letter'
+          >
+            K
+          </motion.span>
+          <motion.span
+          className='letters'
+          variants={nameVars}
+          animate={logo}
+          >
+            ellner
+          </motion.span>
+        </motion.div>
       </motion.div>
     </div>
   )
