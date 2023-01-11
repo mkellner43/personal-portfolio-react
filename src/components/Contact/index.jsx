@@ -1,20 +1,21 @@
 import './style.scss';
 import { motion } from 'framer-motion';
 import emailjs from "@emailjs/browser";
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import {open, closed} from '../Variants/Variants';
 import Footer from '../Footer';
+import Modal from '../Modal';
 
 const Contact = ({navIsOpen}) => {
   const refForm = useRef()
-  let sending = false
+  const [sent, setSent] = useState(true)
+  const [send, setSend] = useState(true)
 
   const sendEmail = (e) => {
     e.preventDefault();
-    sending = true;
-    console.log(sending)
+    setSend(prevState => !prevState)
     emailjs.sendForm(
       'default_service',
       'template_wdn4rtp',
@@ -23,12 +24,11 @@ const Contact = ({navIsOpen}) => {
     )
     .then(function(response) {
       console.log('SUCCESS!', response.status, response.text);
+      setSent(prevState => !prevState)
       refForm.current.reset()
    }, function(error) {
       console.log('FAILED...', error);
     });
-    sending = false;
-
   }
   
 return (
@@ -42,10 +42,11 @@ return (
         </motion.div>
         <input name='subject' placeholder='Subject' required/>
         <textarea name='content' placeholder='Message' rows= '8' cols= '40' required></textarea>
-        <motion.button whileHover={{scale: 1.05}} whileTap={{scale: 0.95}} type='submit' disabled={sending}>
+        <motion.button whileHover={{scale: 1.05}} whileTap={{scale: 0.95}} type='submit' disabled={send}>
           <FontAwesomeIcon icon={faPaperPlane} size={'2x'}/>
         </motion.button>
       </form>
+    { send && <Modal sent={sent} setSent={setSent} setSend={setSend}/>}
     </motion.div>
     <Footer />
   </motion.section>
