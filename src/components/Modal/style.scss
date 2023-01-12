@@ -47,13 +47,19 @@
       font-size: 40px;
     }
     .check {
-      font-size: 40px;
-      color: rgb(64, 232, 64);
+      position: absolute;
+      top: 120px;
     }
     h1 {
+      position: absolute;
+      top: 50px;
       color: $secondary-color;
       font-size: 40px;
       margin: 0;
+    }
+    .error {
+      font-size: 40px;
+      color: red;
     }
 
   }

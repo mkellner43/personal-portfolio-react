@@ -12,6 +12,7 @@ const Contact = ({navIsOpen}) => {
   const refForm = useRef()
   const [sent, setSent] = useState(true)
   const [send, setSend] = useState(true)
+  const [error, setError] = useState(false)
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -28,6 +29,7 @@ const Contact = ({navIsOpen}) => {
       refForm.current.reset()
    }, function(error) {
       console.log('FAILED...', error);
+      setError(error)
     });
   }
   
@@ -46,7 +48,7 @@ return (
           <FontAwesomeIcon icon={faPaperPlane} size={'2x'}/>
         </motion.button>
       </form>
-    { send && <Modal sent={sent} setSent={setSent} setSend={setSend}/>}
+    { send && <Modal sent={sent} setSent={setSent} setSend={setSend} sendError={error} setError={setError}/>}
     </motion.div>
     <Footer />
   </motion.section>
