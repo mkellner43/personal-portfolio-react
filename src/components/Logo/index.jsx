@@ -55,14 +55,14 @@ const Logo = () => {
 
   const mVar = {
     stateOneAnimate: {
-      x: [50, 0],
+      x: [50, 5],
       transition: {
         delay: 1.2,
         duration: 1,
       }
     },
     stateTwoAnimate: {
-      x: [0, 50],
+      x: [5, 50],
       transition: {
         duration: 1,
       }
@@ -114,7 +114,6 @@ const Logo = () => {
       </motion.div>
       <motion.div 
         className='logo-content-container'
-        animate={logo}
         onClick={handleChange}
       >
         <motion.div 

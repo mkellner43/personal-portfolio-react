@@ -13,6 +13,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    top: 10px;
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -44,8 +45,10 @@
     justify-content: space-between;
     align-items: center;
     color: $secondary-color;
+    top: 39px;
     z-index: 10000;
     width: 150px;
+    height: 90px;
     font-family: 'Allerta Stencil', sans-serif;
   }
 
