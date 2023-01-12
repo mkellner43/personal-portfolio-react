@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpinner, faCheck, faXmark, faSkullCrossbones } from '@fortawesome/free-solid-svg-icons';
+import { faSpinner, faXmark, faSkullCrossbones } from '@fortawesome/free-solid-svg-icons';
 import './style.scss';
 import Check from './Check';
 
@@ -29,7 +29,6 @@ const Modal = ({sent, sendError, setSent, setSend, setError}) => {
             <FontAwesomeIcon icon={faXmark}/>
           </motion.button>
           <h1>Message Sent!</h1>
-        {/* <FontAwesomeIcon icon={faCheck} className='check'/> */}
         <Check />
         </>
         }

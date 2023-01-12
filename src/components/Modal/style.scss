@@ -45,10 +45,16 @@
     .loader {
       color: $secondary-color;
       font-size: 40px;
+      position: absolute;
+      top: 120px;
     }
     .check {
       position: absolute;
       top: 120px;
+    }
+    .hollow-circle {
+      position: absolute;
+      top: 108px;
     }
     h1 {
       position: absolute;
