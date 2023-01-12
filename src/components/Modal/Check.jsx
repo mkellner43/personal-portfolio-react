@@ -4,12 +4,9 @@ const Check = () => {
   const zoom = {
     height: ['40px','45px', '40px'],
     width: ['40px','45px', '40px'],
+    originX: 0,
     transition: {
-      duration: 0.5,
       delay: 1.5,
-      type: 'spring',
-      stiffness: 800,
-
     }
   }
   return (
