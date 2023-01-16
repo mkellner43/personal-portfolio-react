@@ -12,11 +12,11 @@ const Skills = () => {
       </div>
       <div className='skills'>
         <h3>Back-End</h3>
-        <Scroll data={backend}/>
+        <Scroll data={backend} />
       </div>
       <div className='skills'>
         <h4>Other Technologies</h4>
-        <Scroll data={other}/>
+        <Scroll data={other} />
       </div>
     </section>
   )
