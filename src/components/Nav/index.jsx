@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Hamburger from '../Hamburger';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faAddressCard, faFileSignature, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faAddressCard, faFileSignature } from '@fortawesome/free-solid-svg-icons';
 
 const Nav = ({isOpen, setIsOpen}) => {
   const variant = {
