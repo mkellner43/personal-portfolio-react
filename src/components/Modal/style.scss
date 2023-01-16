@@ -54,7 +54,9 @@
     }
     .hollow-circle {
       position: absolute;
-      top: 108px;
+      top: 112px;
+      transform-origin: center !important;
+      transform-style: preserve-3d;
     }
     h1 {
       position: absolute;
