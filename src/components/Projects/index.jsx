@@ -71,7 +71,7 @@ const Projects = () => {
       <h1 style={{padding: 0, position: 'relative', top: '-10px'}}>Projects</h1>
       <motion.div className='flex-row'>
         <motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.9}}>
-          <FontAwesomeIcon key={'left'} icon={faChevronCircleLeft} onClick={handleClickLeft} />
+          <FontAwesomeIcon key={'left'} icon={faChevronCircleLeft} onClick={handleClickLeft} style={{color: 'var(--secondary-color)'}}/>
         </motion.div>
           <a
             className='image-container'
@@ -97,7 +97,7 @@ const Projects = () => {
           </AnimatePresence>
         </a>
         <motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.9}}>
-          <FontAwesomeIcon key={'right'} icon={faChevronCircleRight} onClick={handleClickRight}/>
+          <FontAwesomeIcon key={'right'} icon={faChevronCircleRight} onClick={handleClickRight} style={{color: 'var(--secondary-color)'}}/>
         </motion.div>
       </motion.div>
       <motion.a

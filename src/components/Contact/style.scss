@@ -38,7 +38,7 @@ $button-color: #2da2ec;
       padding: 1rem;
       margin-top: 1rem;
       background-color: $button-color;
-      color: $secondary-color;
+      color: var(--secondary-color);
       border-radius: 0.5rem;
       border: none;
       font-size: 1vh;

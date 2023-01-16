@@ -27,13 +27,13 @@
   svg {
     color: #fff;
     border-radius: 50%;
-    background-color: $primary-color;
-    box-shadow: 0 0 10px $primary-color;
+    background-color: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
     font-size: 4vh;
     position: relative;
     margin: 1rem;
     &:hover {
-      box-shadow: 0 0 15px $primary-color;
+      box-shadow: 0 0 15px var(--primary-color);
     }
   }
 
@@ -43,18 +43,18 @@
       width: 6rem;
       padding: 0.25rem;
       text-align: center;
-      background-color: $secondary-color;
+      background-color: var(--secondary-color);
       border: none;
       border-radius: 0.25rem;
       text-decoration: none;
-      color: $primary-color;
+      color: var(--primary-color);
       cursor: pointer;
       user-select: none;
       margin-top: 1%;
-      box-shadow: 0 0 10px $primary-color;
+      box-shadow: 0 0 10px var(--primary-color);
 
       &:hover {
-        box-shadow: 0 0 15px $primary-color;
+        box-shadow: 0 0 15px var(--primary-color);
       }
     }
     &.image-container {

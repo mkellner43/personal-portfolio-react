@@ -5,7 +5,7 @@ import Hamburger from '../Hamburger';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faAddressCard, faFileSignature } from '@fortawesome/free-solid-svg-icons';
 
-const Nav = ({isOpen, setIsOpen}) => {
+const Nav = ({isOpen, setIsOpen, setDarkTheme}) => {
   const variant = {
     initial: {
       opacity: 0,
@@ -56,6 +56,10 @@ const Nav = ({isOpen, setIsOpen}) => {
     }
   }
 
+  const changeTheme = (e) => {
+    setDarkTheme(prevState => !prevState)
+  }
+
   return (
     <>
       <motion.div className='hamburger-container'>
@@ -64,19 +68,22 @@ const Nav = ({isOpen, setIsOpen}) => {
       <AnimatePresence>
       { isOpen && 
         <motion.nav layout className='nav-container' variants={variant} animate='visible' initial='initial' exit='exit'>
+          <motion.button className='default' onClick={changeTheme} animate={{transition: {duration: 1}}}>
+            <motion.span></motion.span>
+          </motion.button>
           <Link to="/">
             <motion.p variants={item} whileHover={{scale: 1.15}} whileTap={{scale: 0.90}}>
-              <FontAwesomeIcon icon={faHouse} style={{color: 'white'}}/>
+              <FontAwesomeIcon icon={faHouse} />
             </motion.p>
           </Link>
           <Link to="/about">
             <motion.p variants={item} whileHover={{scale: 1.15}} whileTap={{scale: 0.90}}>
-              <FontAwesomeIcon initial={{pathLength: 0}} animate={{pathLength: 1}} icon={faAddressCard} style={{color: 'white'}}/>
+              <FontAwesomeIcon initial={{pathLength: 0}} animate={{pathLength: 1}} icon={faAddressCard} />
             </motion.p>
           </Link>
           <Link to='/contact'> 
             <motion.p variants={item} whileHover={{scale: 1.15}} whileTap={{scale: 0.90}}>
-              <FontAwesomeIcon icon={faFileSignature} style={{color: 'white'}}/>
+              <FontAwesomeIcon icon={faFileSignature} />
             </motion.p>
           </Link>
         </motion.nav>

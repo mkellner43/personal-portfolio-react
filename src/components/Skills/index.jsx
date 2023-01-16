@@ -6,17 +6,24 @@ const Skills = () => {
   return (
     <section className='skills-container'>
       <h1>Skills</h1>
-      <div className='skills'>
+      <div className="tech-container">
         <h2>Front-End</h2>
-        <Scroll data={frontend}/>
+        <div className='skills'>
+          <Scroll data={frontend}/>
+        </div>
       </div>
-      <div className='skills'>
-        <h3>Back-End</h3>
-        <Scroll data={backend} baseVelocity={-100}/>
+
+      <div className='tech-container'>
+        <h2>Back-End</h2>
+        <div className='skills'>
+          <Scroll data={backend} baseVelocity={-100}/>
+        </div>
       </div>
-      <div className='skills'>
-        <h4>Other Technologies</h4>
-        <Scroll data={other} />
+      <div className='tech-container'>
+        <h2>Other Technologies</h2>
+        <div className='skills'>
+          <Scroll data={other} />
+        </div>
       </div>
     </section>
   )

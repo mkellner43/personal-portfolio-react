@@ -25,14 +25,14 @@ $circle_count: random_range(20, 50);
   width: var(--circle-size);
   background-color: var(--circle-color);
   z-index: 1;
-  box-shadow: 0 0 3px $secondary-color;
+  box-shadow: 0 0 3px var(--secondary-color);
 
   @for $i from 0 through $circle_count {
     &:nth-child(#{$i}) {
       --circle-left: #{random_range(0vw, 100vw)};
       --circle-top: #{random_range(0vh, 100vh)};
       --circle-size: #{random_range(2px, 4px)};
-      --circle-color: #{$secondary-color};
+      --circle-color: #{var(--secondary-color)};
       animation-name: #{animate#{random(99)}};
       animation-duration: random(6000) + 6000ms;
       animation-iteration-count: infinite;

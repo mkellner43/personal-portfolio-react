@@ -5,14 +5,14 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 5vh;
   font-weight: 300;
-  color: $primary-color;
+  color: var(--secondary-color);
   z-index: 10;
   padding-right: 6vw;
 }
 h2 {
   font-family: 'Dancing Script', cursive;
   font-size: 3vh;
-  color: $secondary-color;
+  color: var(--secondary-color);
   z-index: 1000;
 }
 img {

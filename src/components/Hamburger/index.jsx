@@ -7,7 +7,7 @@ const Hamburger = ({isOpen, setIsOpen}) => {
   const top = {
     closed: {
       rotate: 0,
-      stroke: 'black',
+      stroke: 'var(--secondary-color)',
       translateY: 0,
       transition: {
         delay: 0.5
@@ -15,7 +15,7 @@ const Hamburger = ({isOpen, setIsOpen}) => {
     },
     opened: {
       rotate: 45,
-      stroke: 'white',
+      stroke: 'red',
       translateY: 10,
     }
   };
@@ -23,21 +23,21 @@ const Hamburger = ({isOpen, setIsOpen}) => {
   const center = {
     closed: {
       opacity: 1,
-      stroke: 'black',
+      stroke: 'var(--secondary-color)',
       transition: {
         delay: 0.5
       }
     },
     opened: {
       opacity: 0,
-      stroke: 'white',
+      stroke: 'red',
     }
   };
 
   const bottom = {
     closed: {
       rotate: 0,
-      stroke: 'black',
+      stroke: 'var(--secondary-color)',
       translateY: 0,
       transition: {
         delay: 0.5
@@ -46,7 +46,7 @@ const Hamburger = ({isOpen, setIsOpen}) => {
     opened: {
       rotate: -45,
       translateY: -10,
-      stroke: 'white',
+      stroke: 'red',
     }
   };
 

@@ -19,7 +19,7 @@
     border-radius: 50%;
     overflow: hidden;
     background-color: transparent;
-    box-shadow: 0 0 20px $primary-color;
+    box-shadow: 0 0 20px var(--primary-color);
   }
   .before {
     position: absolute;
@@ -35,7 +35,7 @@
     align-items: center;
     inset: 5px;
     border-radius: 50%;
-    background-color: $primary-color;
+    background-color: var(--primary-color);
     z-index: 100;
   }
   
@@ -44,7 +44,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: $secondary-color;
+    color: var(--secondary-color);
     top: 39px;
     z-index: 10000;
     width: 150px;

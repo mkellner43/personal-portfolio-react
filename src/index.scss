@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-
-$primary-color: #1d1e21;
-$secondary-color: #fff;
-$background-color: rgb(175, 172, 172);
+#root{
+  $primary-color: #1d1e21;
+  $secondary-color: #fff;
+  $background-color: #afacac;
+}
 
 * {
   margin: 0;

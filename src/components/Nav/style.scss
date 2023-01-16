@@ -11,11 +11,30 @@
   p{
     text-align: center;
     padding: 1rem;
+    color: var(--secondary-color);
   }
 
   a {
     text-decoration: none;
   }
-}
 
+  .default {
+    position: relative;
+    width: 80%;
+    height: 1.5rem;
+    border-radius: 500px;
+    border: none;
+    background-color: var(--secondary-color);
+
+    span {
+      position: absolute;
+      height: 1.2rem;
+      width: 1.2rem;
+      background-color: var(--primary-color);
+      border-radius: 50%;
+      top: 12%;
+      left: 1px;
+    }
+  }
+}
 
