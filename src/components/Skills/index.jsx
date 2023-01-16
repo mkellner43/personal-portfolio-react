@@ -12,7 +12,7 @@ const Skills = () => {
       </div>
       <div className='skills'>
         <h3>Back-End</h3>
-        <Scroll data={backend} />
+        <Scroll data={backend} baseVelocity={-100}/>
       </div>
       <div className='skills'>
         <h4>Other Technologies</h4>

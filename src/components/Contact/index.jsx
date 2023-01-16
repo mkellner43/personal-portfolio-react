@@ -10,8 +10,8 @@ import Modal from '../Modal';
 
 const Contact = ({navIsOpen}) => {
   const refForm = useRef()
-  const [sent, setSent] = useState(true)
-  const [send, setSend] = useState(true)
+  const [sent, setSent] = useState(false)
+  const [send, setSend] = useState(false)
   const [error, setError] = useState(false)
 
   const sendEmail = (e) => {

@@ -16,10 +16,12 @@ const Scroll = ({data=[], baseVelocity=100}) => {
   });
 
   return (
+    <>
       <motion.div className='scroll-container' style={{x}}>
         {data}
         {data}
       </motion.div>
+    </>
   )
 }
 
