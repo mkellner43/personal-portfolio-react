@@ -4,6 +4,8 @@ import myShop from '../../Images/myShop.png';
 import cvBuilder from '../../Images/cvBuilder.png';
 import weatherChecker from '../../Images/weatherChecker.png';
 import ticTacToe from '../../Images/ticTacToe.png';
+import toDoList from '../../Images/toDoList.png';
+import restaurant from '../../Images/restaurant.png';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,7 +17,9 @@ const Projects = () => {
     {image: myShop, link: "https://mkellner43.github.io/shop_react/", code: 'https://github.com/mkellner43/shop_react'},
     {image: cvBuilder, link: "https://mkellner43.github.io/cv-project/", code: 'https://github.com/mkellner43/cv-project'},
     {image: weatherChecker, link: "https://mkellner43.github.io/weather_api/", code: 'https://github.com/mkellner43/weather_api'},
-    {image: ticTacToe, link: "https://mkellner43.github.io/ticTacToeJs/", code: 'https://github.com/mkellner43/ticTacToeJs'}
+    {image: ticTacToe, link: "https://mkellner43.github.io/ticTacToeJs/", code: 'https://github.com/mkellner43/ticTacToeJs'},
+    {image: toDoList, link: "https://mkellner43.github.io/toDoListJs/", code: 'https://github.com/mkellner43/toDoListJs'},
+    {image: restaurant, link: "https://mkellner43.github.io/restaurant_page/", code: 'https://github.com/mkellner43/restaurant_page'}
   ]
   const [index, setIndex] = useState(0)
   const [direction, setDirection] = useState()
@@ -24,7 +28,7 @@ const Projects = () => {
     setDirection(1)
     setIndex(prevState => {
       if(prevState === 0) {
-        return 4
+        return 6
       } else {
         return prevState - 1
       }
@@ -34,7 +38,7 @@ const Projects = () => {
   const handleClickRight = () => {
     setDirection(-1)
     setIndex(prevState => {
-      if(prevState === 4) {
+      if(prevState === 6) {
         return 0
       } else {
         return prevState + 1
