@@ -15,7 +15,7 @@ const Modal = ({sent, sendError, setSent, setSend, setError}) => {
       setSend(false)
       setSent(false)
       setError(false)
-    }, 3000)
+    }, 2000)
   }
 
   if(sent){
