@@ -1,5 +1,5 @@
 import './style.scss';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -48,7 +48,9 @@ return (
           <FontAwesomeIcon icon={faPaperPlane} size={'2x'}/>
         </motion.button>
       </form>
-    { send && <Modal sent={sent} setSent={setSent} setSend={setSend} sendError={error} setError={setError}/>}
+      <AnimatePresence>
+        { send && <Modal sent={sent} setSent={setSent} setSend={setSend} sendError={error} setError={setError}/>}
+      </AnimatePresence>
     </motion.div>
     <Footer />
   </motion.section>

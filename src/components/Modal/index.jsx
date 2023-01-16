@@ -10,9 +10,31 @@ const Modal = ({sent, sendError, setSent, setSend, setError}) => {
     setSend(false)
     setError(false)
   }
+  function removeModal() {
+    setTimeout(() => {
+      setSend(false)
+      setSent(false)
+      setError(false)
+    }, 3000)
+  }
+
+  if(sent){
+    removeModal()
+  } 
+
+  const vars = {
+    initial: {
+      opacity: 0
+    },
+    animate: {
+      opacity: 1
+    }
+  }
   return (
     <div className="modal-container">
-      <div className='modal'>
+      <motion.div className='modal' variants={vars} animate="animate" initial="initial"
+        exit='initial'
+      >
         {!sent &&
         <>
           <h1>Sending Message</h1>
@@ -46,7 +68,7 @@ const Modal = ({sent, sendError, setSent, setSend, setError}) => {
         <p className='error'>{sendError}</p>
         </>
         }
-      </div>
+      </motion.div>
     </div>
   )
 }
