@@ -20,10 +20,10 @@ function App() {
     const root = document.documentElement;
     root?.style.setProperty(
       "--primary-color",
-      darkTheme ? "#1d1e21" : "#fff"
+      darkTheme ? "#1d1e21" : "#d9dddc"
     );
     root?.style.setProperty("--secondary-color", darkTheme ? "#fff" : "#262833");
-    root?.style.setProperty("--background-color", darkTheme ? '#48494B' : '#d9dddc')
+    root?.style.setProperty("--background-color", darkTheme ? '#48494B' : '#fff')
 
   }, [darkTheme]);
 

@@ -20,7 +20,7 @@
     max-height: 400px;
     top: 0;
     margin: 0;
-    box-shadow: 0 0 20px black;
+    box-shadow: 0 0 20px var(--secondary-color);
     opacity: 1;
   }
 
@@ -28,12 +28,12 @@
     color: #fff;
     border-radius: 50%;
     background-color: var(--primary-color);
-    box-shadow: 0 0 10px var(--primary-color);
+    box-shadow: 0 0 10px var(--secondary-color);
     font-size: 4vh;
     position: relative;
     margin: 1rem;
     &:hover {
-      box-shadow: 0 0 15px var(--primary-color);
+      box-shadow: 0 0 15px var(--secondary-color);
     }
   }
 
@@ -51,10 +51,10 @@
       cursor: pointer;
       user-select: none;
       margin-top: 1%;
-      box-shadow: 0 0 10px var(--primary-color);
+      box-shadow: 0 0 10px var(--secondary-color);
 
       &:hover {
-        box-shadow: 0 0 15px var(--primary-color);
+        box-shadow: 0 0 15px var(--secondary-color);
       }
     }
     &.image-container {
