@@ -73,29 +73,30 @@ const Projects = () => {
         <motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.9}}>
           <FontAwesomeIcon key={'left'} icon={faChevronCircleLeft} onClick={handleClickLeft} style={{color: 'var(--secondary-color)'}}/>
         </motion.div>
-          <a
+          <motion.a
             className='image-container'
             href={photos[index].link}
             target="_blank" 
             rel="noopener noreferrer"
             > 
-          <AnimatePresence initial={false}>
+      <AnimatePresence initial={false}>
             <motion.img
-            variants={variants}
+            layout
             custom={direction}
+            variants={variants}
             initial='enter'
             animate='center'
             exit='exit'
             transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.2 }
-              }}
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.2 }
+            }}
             key={index}
             src={photos[index].image}
             alt="memory game"
             />
-          </AnimatePresence>
-        </a>
+        </AnimatePresence>
+        </motion.a>
         <motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.9}}>
           <FontAwesomeIcon key={'right'} icon={faChevronCircleRight} onClick={handleClickRight} style={{color: 'var(--secondary-color)'}}/>
         </motion.div>
@@ -110,7 +111,7 @@ const Projects = () => {
         >
           View Code
       </motion.a >
-    </motion.section>
+          </motion.section>
   )
 }
 

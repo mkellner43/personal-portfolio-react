@@ -26,7 +26,7 @@ const Home = ({navIsOpen}) => {
         <motion.img 
           src={Pic} 
           initial={{opacity: 0}} 
-          animate={{opacity: 1, boxShadow: '0 0 20px', transition: {duration: 2}}} 
+          animate={{opacity: 1, boxShadow: '0 0 5px var(--primary-color)', transition: {duration: 2}}} 
         />
       </div>
       <div className='svg-container'>
