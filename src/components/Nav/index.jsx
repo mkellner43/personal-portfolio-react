@@ -74,7 +74,7 @@ const Nav = ({isOpen, setIsOpen, darkTheme, setDarkTheme}) => {
       <AnimatePresence>
       { isOpen && 
         <motion.nav className='nav-container' variants={variant} animate='visible' initial='initial' exit='exit'>
-          <motion.button className='default' data-dark-theme={darkTheme} onClick={changeTheme} transition={spring}>
+          <motion.button className='default' variants={item} whileHover={{scale: 1.15}} whileTap={{scale: 0.90}} data-dark-theme={darkTheme} onClick={changeTheme} transition={spring}>
             <motion.span layout></motion.span>
           </motion.button>
           <Link to="/">
