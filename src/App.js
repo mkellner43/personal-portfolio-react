@@ -11,19 +11,11 @@ function App() {
   const [isOpen, setIsOpen] = useState(false)
   const [darkTheme, setDarkTheme] = useState(false);
   
-  // React useEffect hook that will fire up
-  // when "darkTheme" changes
   useEffect(() => {
-    // Accessing scss variable "--background-color"
-    // and "--text-color" using plain JavaScript
-    // and changing the same according to the state of "darkTheme"
     const root = document.documentElement;
-    root?.style.setProperty(
-      "--primary-color",
-      darkTheme ? "#1d1e21" : "#d9dddc"
-    );
-    root?.style.setProperty("--secondary-color", darkTheme ? "#fff" : "#262833");
-    root?.style.setProperty("--background-color", darkTheme ? '#48494B' : '#fff')
+    root?.style.setProperty("--primary-color",darkTheme ? "#000401" : "#B0B0B0");
+    root?.style.setProperty("--secondary-color", darkTheme ? "#E5E8E8" : "#262833");
+    root?.style.setProperty("--background-color", darkTheme ? '#4E545C' : '#F5F5F5')
 
   }, [darkTheme]);
 
