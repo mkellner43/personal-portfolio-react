@@ -29,7 +29,7 @@ function App() {
 
   return (
     <>
-    <Nav isOpen={isOpen} setIsOpen={setIsOpen} setDarkTheme={setDarkTheme} />
+    <Nav isOpen={isOpen} setIsOpen={setIsOpen} darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
     <Routes>
       <Route default path='/' element={<Home navIsOpen={isOpen} />} />
       <Route default path='/about' element={<About navIsOpen={isOpen} />} />

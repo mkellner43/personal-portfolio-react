@@ -8,17 +8,16 @@ const Logo = () => {
       borderRadius: ['50%', '50%', '3%', '3%', '3%'],
       width: ['100px','170px', '100px', '100px', '170px'],
       height: ['100px','170px', '100px', '100px', '100px'],
-      rotate: [null, null, null, 360, 360],
+      rotate: [0, 360, 360, 0, 0],
       transition: {
         duration: 2,
-        times: [0, 0.2, 0.5, 0.7, 1],
+        times: [0, 0.2, 0.5, 0.7, 0.98, 1],
       }
     },
     stateTwoAnimate: {
       borderRadius: ['3%','3%'],
       width: ['160px','100px'],
       height: ['100px', '100px'],
-      rotate: 360,
       transition: {
         duration: 1,
       }
@@ -100,6 +99,7 @@ const Logo = () => {
         variants={variants}
         animate={logo}
         onClick={handleChange}
+        layout
       >
         <motion.div 
           className='before'
