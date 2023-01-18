@@ -8,9 +8,12 @@ $button-color: #2da2ec;
     justify-content: center;
     margin-top: 2rem;
     margin-bottom: 31.7vh;
+    margin-left: 3rem;
+    margin-right: 3rem;
     background-color: var(--primary-color);
     padding: 1rem;
     border-radius: 0.25rem;
+    width: 95%;
     input {
       height: 2vh;
       padding: 1rem;
@@ -61,11 +64,5 @@ $button-color: #2da2ec;
 
   footer {
     height: 11.1vh;
-  }
-
-  @media (max-width: 500px){
-    form{
-      min-width: 80%;
-    }
   }
 }
