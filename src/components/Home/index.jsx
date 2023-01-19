@@ -16,17 +16,18 @@ const Home = ({navIsOpen}) => {
           <Logo />
       <div className="flex">
         <div>
-          <motion.h1 initial={{x: '30vw', y: '10vh'}} animate={{x: 0, y: 0, opacity: [0, 0.1, 1], transition: {delay: .5, duration: 1}}}>
+          <motion.h1 layout initial={{x: '30vw', y: '10vh'}} animate={{x: 0, y: 0, opacity: [0, 0.1, 1], transition: {delay: .5, duration: 1}}}>
             Matthew Kellner
           </motion.h1>
-          <motion.h2 initial={{x: '30vw', y: '10vh'}} animate={{x: 0, y: 0, opacity: [0, 0.1, 1], transition: {delay: 1, duration: 1}}}>
+          <motion.h2 layout initial={{x: '30vw', y: '10vh'}} animate={{x: 0, y: 0, opacity: [0, 0.1, 1], transition: {delay: 1, duration: 1}}}>
             Full Stack Web Developer
           </motion.h2>
         </div>
-        <motion.img 
+        <motion.img
+        layout 
           src={Pic} 
-          initial={{opacity: 0}} 
-          animate={{opacity: 1, boxShadow: '0 0 5px var(--primary-color)', transition: {duration: 2}}} 
+          initial={{opacity: 0, width: '100px'}} 
+          animate={{opacity: 1, boxShadow: '0 0 5px var(--primary-color)', width: '80vw', transition: {duration: 2}}} 
         />
       </div>
       <div className='svg-container'>
