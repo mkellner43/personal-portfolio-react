@@ -68,7 +68,7 @@ const Projects = () => {
 
   return (
     <motion.section className="projects-wrapper" initial={{opacity: 0}} whileInView={{opacity: 1, transition: {duration: 2}}} viewport={{ amount: 0.2, once: true }}>
-      <h1 style={{padding: 0, position: 'relative', top: '-10px'}}>Projects</h1>
+      <h1 style={{padding: 0, position: 'relative'}}>Projects</h1>
       <motion.div className='flex-row'>
         <motion.div whileHover={{scale: 1.05}} whileTap={{scale: 0.9}}>
           <FontAwesomeIcon key={'left'} icon={faChevronCircleLeft} onClick={handleClickLeft} style={{color: 'var(--secondary-color)'}}/>
