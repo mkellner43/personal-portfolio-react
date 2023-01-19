@@ -56,14 +56,16 @@ $button-color: #2da2ec;
   
   .flex {
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding-top: 5rem;
-    height: 88.9vh;
+    height: 80vh;
   }
 
   footer {
-    height: 11.1vh;
+    position: absolute;
+    height: 80px;
   }
 }
