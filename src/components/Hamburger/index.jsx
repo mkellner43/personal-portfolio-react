@@ -15,7 +15,7 @@ const Hamburger = ({isOpen, setIsOpen}) => {
     },
     opened: {
       rotate: 45,
-      stroke: 'red',
+      stroke: '#FF0000',
       translateY: 10,
     }
   };
@@ -30,7 +30,7 @@ const Hamburger = ({isOpen, setIsOpen}) => {
     },
     opened: {
       opacity: 0,
-      stroke: 'red',
+      stroke: '#FF0000',
     }
   };
 
@@ -46,7 +46,7 @@ const Hamburger = ({isOpen, setIsOpen}) => {
     opened: {
       rotate: -45,
       translateY: -10,
-      stroke: 'red',
+      stroke: '#FF0000',
     }
   };
 
