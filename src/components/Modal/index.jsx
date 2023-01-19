@@ -10,17 +10,17 @@ const Modal = ({sent, sendError, setSent, setSend, setError}) => {
     setSend(false)
     setError(false)
   }
-  function removeModal() {
-    setTimeout(() => {
-      setSend(false)
-      setSent(false)
-      setError(false)
-    }, 2000)
-  }
+  // function removeModal() {
+  //   setTimeout(() => {
+  //     setSend(false)
+  //     setSent(false)
+  //     setError(false)
+  //   }, 2000)
+  // }
 
-  if(sent){
-    removeModal()
-  } 
+  // if(sent){
+  //   removeModal()
+  // } 
 
   const vars = {
     initial: {
@@ -37,7 +37,7 @@ const Modal = ({sent, sendError, setSent, setSend, setError}) => {
       >
         {!sent &&
         <>
-          <h1>Sending Message</h1>
+          <h1>Sending</h1>
         <FontAwesomeIcon icon={faSpinner} className='fa-spin loader'/>
         </>
         }
@@ -64,7 +64,7 @@ const Modal = ({sent, sendError, setSent, setSend, setError}) => {
             <FontAwesomeIcon icon={faXmark}/>
           </motion.button>
           <h1>Message Error</h1>
-        <FontAwesomeIcon icon={faSkullCrossbones} className='error'/>
+        <FontAwesomeIcon icon={faSkullCrossbones} className='error check'/>
         <p className='error'>{sendError}</p>
         </>
         }

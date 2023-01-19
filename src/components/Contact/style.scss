@@ -10,11 +10,11 @@ $button-color: #2da2ec;
     margin-bottom: 31.7vh;
     margin-left: 3rem;
     margin-right: 3rem;
-    background-color: var(--primary-color);
+    background-color: rgba(183, 182, 182, 0.39);
     padding: 1rem;
     border-radius: 0.25rem;
     width: 95%;
-    max-width: 800px;
+    max-width: 600px;
     input {
       height: 2vh;
       padding: 1rem;
@@ -67,5 +67,6 @@ $button-color: #2da2ec;
   footer {
     position: absolute;
     height: 80px;
+    bottom: 0;
   }
 }
