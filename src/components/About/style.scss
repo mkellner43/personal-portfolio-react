@@ -20,6 +20,13 @@
   footer {
     margin-top: 20vh;
   }
+  .downloadResume {
+    text-decoration: none;
+    color: var(--button-color);
+    background-color: #2da2ec;
+    padding: 1rem;
+    border-radius: .25rem;
+  }
 
   @media (max-width: 500px) {
     p {
