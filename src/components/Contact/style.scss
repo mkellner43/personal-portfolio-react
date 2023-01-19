@@ -10,18 +10,23 @@ $button-color: #2da2ec;
     margin-bottom: 31.7vh;
     margin-left: 3rem;
     margin-right: 3rem;
-    background-color: rgba(183, 182, 182, 0.39);
     padding: 1rem;
     border-radius: 0.25rem;
     width: 95%;
     max-width: 600px;
+
     input {
       height: 2vh;
       padding: 1rem;
       margin: 0.5rem;
-      border-radius: 0.25rem;
-      border: none;
       font-size: 1.5vh;
+      color: rgb(42, 36, 36);
+      border: 2px solid #2da2ec;
+      border-radius: 0.25rem;
+      background-color: rgba(255, 255, 255, 0.964);
+      &::placeholder {
+        color: rgba(63, 63, 63, 0.774);
+      }
     }
     .space-between {
       display: flex;
@@ -36,8 +41,13 @@ $button-color: #2da2ec;
       margin: 0.5rem;
       border-radius: 0.25rem;
       font-size: 1.5vh;
-      border: none;
       resize: none;
+      color: rgb(42, 36, 36);
+      border: 2px solid #2da2ec;
+      background-color: rgba(255, 255, 255, 0.964);
+      &::placeholder {
+        color: rgba(63, 63, 63, 0.774);
+      }
     }
     button {
       padding: 1rem;
