@@ -18,7 +18,7 @@ const Projects = () => {
     {image: cvBuilder, link: "https://mkellner43.github.io/cv-project/", code: 'https://github.com/mkellner43/cv-project'},
     {image: weatherChecker, link: "https://mkellner43.github.io/weather_api/", code: 'https://github.com/mkellner43/weather_api'},
     {image: ticTacToe, link: "https://mkellner43.github.io/ticTacToeJs/", code: 'https://github.com/mkellner43/ticTacToeJs'},
-    {image: toDoList, link: "https://mkellner43.github.io/toDoListJs/", code: 'https://github.com/mkellner43/toDoListJs'},
+    {image: toDoList, link: "https://mkellner43.github.io/toDoListJS/", code: 'https://github.com/mkellner43/toDoListJs'},
     {image: restaurant, link: "https://mkellner43.github.io/restaurant_page/", code: 'https://github.com/mkellner43/restaurant_page'}
   ]
   const [index, setIndex] = useState(0)
