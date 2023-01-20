@@ -13,10 +13,10 @@ import { faChevronCircleLeft, faChevronCircleRight } from '@fortawesome/free-sol
 
 const Projects = () => {
   const photos = [
+    {image: weatherChecker, link: "https://mkellner43.github.io/weather_api/", code: 'https://github.com/mkellner43/weather_api'},
     {image: memoryGame, link: "https://mkellner43.github.io/memory-game/", code: 'https://github.com/mkellner43/memory-game'},
     {image: myShop, link: "https://mkellner43.github.io/shop_react/", code: 'https://github.com/mkellner43/shop_react'},
     {image: cvBuilder, link: "https://mkellner43.github.io/cv-project/", code: 'https://github.com/mkellner43/cv-project'},
-    {image: weatherChecker, link: "https://mkellner43.github.io/weather_api/", code: 'https://github.com/mkellner43/weather_api'},
     {image: ticTacToe, link: "https://mkellner43.github.io/ticTacToeJs/", code: 'https://github.com/mkellner43/ticTacToeJs'},
     {image: toDoList, link: "https://mkellner43.github.io/toDoListJS/", code: 'https://github.com/mkellner43/toDoListJs'},
     {image: restaurant, link: "https://mkellner43.github.io/restaurant_page/", code: 'https://github.com/mkellner43/restaurant_page'}

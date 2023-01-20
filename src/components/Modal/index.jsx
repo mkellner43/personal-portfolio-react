@@ -10,17 +10,17 @@ const Modal = ({sent, sendError, setSent, setSend, setError}) => {
     setSend(false)
     setError(false)
   }
-  // function removeModal() {
-  //   setTimeout(() => {
-  //     setSend(false)
-  //     setSent(false)
-  //     setError(false)
-  //   }, 2000)
-  // }
+  function removeModal() {
+    setTimeout(() => {
+      setSend(false)
+      setSent(false)
+      setError(false)
+    }, 2000)
+  }
 
-  // if(sent){
-  //   removeModal()
-  // } 
+  if(sent){
+    removeModal()
+  } 
 
   const vars = {
     initial: {
