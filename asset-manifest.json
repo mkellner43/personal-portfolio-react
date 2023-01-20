@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/personal-portfolio-react/static/css/main.0d71fc94.css",
-    "main.js": "/personal-portfolio-react/static/js/main.067c0d52.js",
+    "main.css": "/personal-portfolio-react/static/css/main.e3e958f0.css",
+    "main.js": "/personal-portfolio-react/static/js/main.0d489c5b.js",
     "static/media/memoryGame.png": "/personal-portfolio-react/static/media/memoryGame.1b1a0f7f48355213b947.png",
     "static/media/profilePic2.png": "/personal-portfolio-react/static/media/profilePic2.4e7fb418b0767d9571ea.png",
-    "static/media/restaurant.png": "/personal-portfolio-react/static/media/restaurant.08d45a5680e021c49013.png",
-    "static/media/myShop.png": "/personal-portfolio-react/static/media/myShop.9cd178c4be48cedecad5.png",
-    "static/media/cvBuilder.png": "/personal-portfolio-react/static/media/cvBuilder.ad2de8826298cec4e0cb.png",
+    "static/media/myShop.png": "/personal-portfolio-react/static/media/myShop.c5a6f571f9454f9e7329.png",
+    "static/media/restaurant.png": "/personal-portfolio-react/static/media/restaurant.40e968024f313855c549.png",
+    "static/media/cvBuilder.png": "/personal-portfolio-react/static/media/cvBuilder.c7d6aa19d5ec22fb4015.png",
     "static/media/resume.pdf": "/personal-portfolio-react/static/media/resume.5b8ed089edaded22d67e.pdf",
-    "static/media/toDoList.png": "/personal-portfolio-react/static/media/toDoList.5efb06dc4c725b3e2264.png",
+    "static/media/toDoList.png": "/personal-portfolio-react/static/media/toDoList.81d1e7d7d48bae57c4df.png",
     "static/media/weatherChecker.png": "/personal-portfolio-react/static/media/weatherChecker.e43311080e64fe9817d7.png",
     "static/media/ticTacToe.png": "/personal-portfolio-react/static/media/ticTacToe.277d95f9e0521f0f73b8.png",
     "index.html": "/personal-portfolio-react/index.html",
     "static/media/framerIcon.svg": "/personal-portfolio-react/static/media/framerIcon.55d00264d0e5d29d5da981eef71e76e1.svg",
-    "main.0d71fc94.css.map": "/personal-portfolio-react/static/css/main.0d71fc94.css.map",
-    "main.067c0d52.js.map": "/personal-portfolio-react/static/js/main.067c0d52.js.map"
+    "main.e3e958f0.css.map": "/personal-portfolio-react/static/css/main.e3e958f0.css.map",
+    "main.0d489c5b.js.map": "/personal-portfolio-react/static/js/main.0d489c5b.js.map"
   },
   "entrypoints": [
-    "static/css/main.0d71fc94.css",
-    "static/js/main.067c0d52.js"
+    "static/css/main.e3e958f0.css",
+    "static/js/main.0d489c5b.js"
   ]
 }
