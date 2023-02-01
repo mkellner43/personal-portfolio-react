@@ -1,6 +1,6 @@
 import './style.scss';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Logo = () => {
   const variants = {
@@ -81,6 +81,12 @@ const Logo = () => {
   }
 
   const [logo, setLogo] = useState('stateOneAnimate')
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLogo('stateTwoAnimate')
+    }, 3000)
+  }, [])
 
   const handleChange = () => {
     setLogo(prevState => {
