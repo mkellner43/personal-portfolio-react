@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/personal-portfolio-react/static/css/main.ea77e459.css",
-    "main.js": "/personal-portfolio-react/static/js/main.62a3effe.js",
+    "main.css": "/personal-portfolio-react/static/css/main.eb636357.css",
+    "main.js": "/personal-portfolio-react/static/js/main.714b6583.js",
     "static/media/memoryGame.png": "/personal-portfolio-react/static/media/memoryGame.1b1a0f7f48355213b947.png",
+    "static/media/Screenshot 2023-01-31 at 6.30.08 PM.png": "/personal-portfolio-react/static/media/Screenshot 2023-01-31 at 6.30.08 PM.3d3d2aa75556df2f6f2e.png",
     "static/media/profilePic2.png": "/personal-portfolio-react/static/media/profilePic2.4e7fb418b0767d9571ea.png",
-    "static/media/myShop.png": "/personal-portfolio-react/static/media/myShop.c5a6f571f9454f9e7329.png",
     "static/media/restaurant.png": "/personal-portfolio-react/static/media/restaurant.40e968024f313855c549.png",
     "static/media/cvBuilder.png": "/personal-portfolio-react/static/media/cvBuilder.c7d6aa19d5ec22fb4015.png",
     "static/media/resume.pdf": "/personal-portfolio-react/static/media/resume.5b8ed089edaded22d67e.pdf",
@@ -13,11 +13,11 @@
     "static/media/ticTacToe.png": "/personal-portfolio-react/static/media/ticTacToe.277d95f9e0521f0f73b8.png",
     "index.html": "/personal-portfolio-react/index.html",
     "static/media/framerIcon.svg": "/personal-portfolio-react/static/media/framerIcon.55d00264d0e5d29d5da981eef71e76e1.svg",
-    "main.ea77e459.css.map": "/personal-portfolio-react/static/css/main.ea77e459.css.map",
-    "main.62a3effe.js.map": "/personal-portfolio-react/static/js/main.62a3effe.js.map"
+    "main.eb636357.css.map": "/personal-portfolio-react/static/css/main.eb636357.css.map",
+    "main.714b6583.js.map": "/personal-portfolio-react/static/js/main.714b6583.js.map"
   },
   "entrypoints": [
-    "static/css/main.ea77e459.css",
-    "static/js/main.62a3effe.js"
+    "static/css/main.eb636357.css",
+    "static/js/main.714b6583.js"
   ]
 }
