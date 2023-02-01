@@ -1,6 +1,6 @@
 import './style.scss';
 import memoryGame from '../../Images/memoryGame.png';
-import myShop from '../../Images/myShop.png';
+import myShop from '../../Images/Screenshot 2023-01-31 at 6.30.08 PM.png';
 import cvBuilder from '../../Images/cvBuilder.png';
 import weatherChecker from '../../Images/weatherChecker.png';
 import ticTacToe from '../../Images/ticTacToe.png';
