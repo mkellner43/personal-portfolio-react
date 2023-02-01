@@ -6,6 +6,8 @@ import weatherChecker from '../../Images/weatherChecker.png';
 import ticTacToe from '../../Images/ticTacToe.png';
 import toDoList from '../../Images/toDoList.png';
 import restaurant from '../../Images/restaurant.png';
+import waldo from '../../Images/Screenshot 2023-02-01 at 3.24.41 PM.png';
+
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -19,7 +21,8 @@ const Projects = () => {
     {image: cvBuilder, link: "https://mkellner43.github.io/cv-project/", code: 'https://github.com/mkellner43/cv-project'},
     {image: ticTacToe, link: "https://mkellner43.github.io/ticTacToeJs/", code: 'https://github.com/mkellner43/ticTacToeJs'},
     {image: toDoList, link: "https://mkellner43.github.io/toDoListJS/", code: 'https://github.com/mkellner43/toDoListJs'},
-    {image: restaurant, link: "https://mkellner43.github.io/restaurant_page/", code: 'https://github.com/mkellner43/restaurant_page'}
+    {image: restaurant, link: "https://mkellner43.github.io/restaurant_page/", code: 'https://github.com/mkellner43/restaurant_page'},
+    {image: waldo, link: "https://mkellner43.github.io/wheres_waldo_frontend/", code: 'https://github.com/mkellner43/wheres_waldo_frontend'}
   ]
   const [index, setIndex] = useState(0)
   const [direction, setDirection] = useState()
@@ -28,7 +31,7 @@ const Projects = () => {
     setDirection(1)
     setIndex(prevState => {
       if(prevState === 0) {
-        return 6
+        return 7
       } else {
         return prevState - 1
       }
@@ -38,7 +41,7 @@ const Projects = () => {
   const handleClickRight = () => {
     setDirection(-1)
     setIndex(prevState => {
-      if(prevState === 6) {
+      if(prevState === 7) {
         return 0
       } else {
         return prevState + 1
@@ -116,3 +119,4 @@ const Projects = () => {
 }
 
 export default Projects;
+//add wheres waldo to projects and maybe remove slide animate as it is choppy af
