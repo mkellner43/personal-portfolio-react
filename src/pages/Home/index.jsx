@@ -1,12 +1,12 @@
 import './style.scss'
 import Pic from '../../Images/profilePic2.png';
 import { motion } from 'framer-motion';
-import Footer from '../Footer';
-import Projects from '../Projects';
-import Background from '../Background';
-import {open, closed} from '../Variants/Variants';
+import Footer from '../../components/Footer';
+import Projects from '../../components/Projects';
+import Background from '../../components/Background';
+import {open, closed} from '../../components/Variants/Variants';
 import Arrow from './Arrow';
-import Logo from '../Logo';
+import Logo from '../../components/Logo';
 
 const Home = ({navIsOpen}) => {
  return (

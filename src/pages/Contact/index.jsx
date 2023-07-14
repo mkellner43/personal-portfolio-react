@@ -4,9 +4,9 @@ import emailjs from "@emailjs/browser";
 import { useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import {open, closed} from '../Variants/Variants';
-import Footer from '../Footer';
-import Modal from '../Modal';
+import { open, closed } from "../../components/Variants/Variants";
+import Footer from '../../components/Footer';
+import Modal from '../../components/Modal';
 
 const Contact = ({navIsOpen}) => {
   const refForm = useRef()
