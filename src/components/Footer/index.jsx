@@ -1,4 +1,3 @@
-import './style.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { motion } from 'framer-motion';
@@ -6,7 +5,7 @@ import { motion } from 'framer-motion';
 const Footer = () => {
   return (
     <footer>
-      <motion.div className='links'>
+      <motion.div>
           <motion.a whileHover={{scale: 1.1, color: '#0072b1'}} href='https://linkedin.com/in/mkellner43/' target={'_blank'} rel='noreferrer'>
             <FontAwesomeIcon icon={faLinkedin}/>
           </motion.a>

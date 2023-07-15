@@ -1,4 +1,3 @@
-import "./style.scss";
 import { motion } from "framer-motion";
 import Footer from "../../components/Footer";
 import { open, closed } from "../../components/Variants/Variants";
@@ -7,12 +6,8 @@ import resume from "../../Images/resume.pdf";
 
 const About = ({ navIsOpen }) => {
   return (
-    <motion.section
-      className="about-container"
-      animate={navIsOpen ? open : closed}
-      initial={false}
-    >
-      <div className="flex">
+    <motion.section animate={navIsOpen ? open : closed} initial={false}>
+      <div>
         <motion.h1
           initial={{ y: -100, opacity: 0 }}
           animate={{ opacity: 1, y: 0, transition: { duration: 1 } }}
@@ -30,7 +25,7 @@ const About = ({ navIsOpen }) => {
           learn new techologies. Lifetime learning and continuous growth is my
           passion!
         </motion.p>
-        <a className="downloadResume" href={resume} download>
+        <a href={resume} download>
           Download Resume
         </a>
         <Skills />

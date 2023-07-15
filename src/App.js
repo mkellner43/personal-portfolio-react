@@ -1,4 +1,3 @@
-import "./App.scss";
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Nav from "./components/Nav";

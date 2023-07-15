@@ -8,7 +8,7 @@ import { wrap } from "@motionone/utils";
 
 const Scroll = ({data=[], baseVelocity=100}) => {
   const baseX = useMotionValue(0);
-  const x = useTransform(baseX, (v) => `${wrap(-50, 0, v)}%`);
+  // const x = useTransform(baseX, (v) => `${wrap(-50, 0, v)}%`);
 
   useAnimationFrame(() => {
     let moveBy = baseVelocity / 2000;
@@ -16,7 +16,7 @@ const Scroll = ({data=[], baseVelocity=100}) => {
   });
 
   return (
-      <motion.div className='scroll-container' style={{x}}>
+      <motion.div>
         {data}
         {data}
       </motion.div>

@@ -1,4 +1,3 @@
-import './style.scss';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
@@ -99,41 +98,34 @@ const Logo = () => {
   }
 
   return (
-    <div className='logo-container'>
+    <div>
       <motion.div
-        className='logo'
         variants={variants}
         animate={logo}
         onClick={handleChange}
         layout
       >
         <motion.div 
-          className='before'
         >
         </motion.div>
         <motion.div 
-          className='after'
           variants={afterVars}
           animate={logo}
         >
         </motion.div>
       </motion.div>
       <motion.div 
-        className='logo-content-container'
         onClick={handleChange}
       >
         <motion.div 
-          className="left"
           variants={mVar}
           animate={logo}
         >
           <motion.span
-            className='initial-letter'
           >
             M
           </motion.span>
           <motion.span
-          className='letters'
           variants={nameVars}
           animate={logo}
           >
@@ -141,17 +133,14 @@ const Logo = () => {
           </motion.span>
         </motion.div>
         <motion.div 
-          className='right'
           variants={kVar}
           animate={logo}
         >
           <motion.span
-          className='initial-letter'
           >
             K
           </motion.span>
           <motion.span
-          className='letters'
           variants={nameVars}
           animate={logo}
           >

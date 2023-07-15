@@ -1,4 +1,3 @@
-import './style.scss';
 import { motion } from 'framer-motion';
 
 const Hamburger = ({isOpen, setIsOpen}) => {
@@ -75,7 +74,6 @@ const Hamburger = ({isOpen, setIsOpen}) => {
       width='50'
       height='50'
       >
-      <div className='background'></div>
       <motion.line
         x1="10"
         x2='40'

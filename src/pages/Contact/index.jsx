@@ -1,4 +1,3 @@
-import './style.scss';
 import { AnimatePresence, motion } from 'framer-motion';
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from 'react';
@@ -34,13 +33,13 @@ const Contact = ({navIsOpen}) => {
   }
   
 return (
-  <motion.section className='contact-container'  animate={navIsOpen ? open : closed} initial={false}>
-    <motion.div className="flex" initial={{opacity: 0}} animate={{opacity: 1, transition: {duration: 1.2}}}>
+  <motion.section   animate={navIsOpen ? open : closed} initial={false}>
+    <motion.div  initial={{opacity: 0}} animate={{opacity: 1, transition: {duration: 1.2}}}>
     <motion.h1 initial={{y: -100, opacity: 0}} animate={{y: 0, opacity: 1, transition: {duration: 1}}}>Contact me.</motion.h1>
       <form ref={refForm} onSubmit={sendEmail}>
-        <motion.div className='space-between'>
-          <input className='half' name='name' placeholder='Name' required/>
-          <input className='half' name='email' placeholder='Email' type="email" required/>
+        <motion.div >
+          <input name='name' placeholder='Name' required/>
+          <input name='email' placeholder='Email' type="email" required/>
         </motion.div>
         <input name='subject' placeholder='Subject' required/>
         <textarea name='content' placeholder='Message' rows= '8' cols= '40' required></textarea>
