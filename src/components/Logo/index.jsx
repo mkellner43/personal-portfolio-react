@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const Logo = () => {
@@ -9,7 +9,7 @@ const Logo = () => {
       height: ["100px", "170px", "100px", "100px", "100px"],
       rotate: [0, 360, 360, 0, 0],
       transition: {
-        duration: 2,
+        duration: 1.5,
         times: [0, 0.2, 0.5, 0.7, 0.98, 1],
       },
     },
@@ -18,7 +18,7 @@ const Logo = () => {
       width: ["160px", "100px"],
       height: ["100px", "100px"],
       transition: {
-        duration: 1,
+        duration: 1.5,
       },
     },
   };
@@ -44,40 +44,17 @@ const Logo = () => {
   const nameVars = {
     stateOneAnimate: {
       opacity: [0, 1],
-      // display: ["none", "block"],
-      transition: { delay: 2, duration: 1 },
+      width: ["0px", "50px"],
+      transition: { duration: 1, delay: 1,
+        opacity: {delay: 1.75, duration: 2}
+      },
     },
     stateTwoAnimate: {
-      // display: "none",
       opacity: [1, 0],
-    },
-  };
-
-  const mVar = {
-    stateOneAnimate: {
-      x: [40, 0],
-      transition: {
-        delay: 1.2,
-        duration: 1,
+      width: ["50px", "0px"],
+      transition: { duration: 1,
+        opacity: {duration: 0.2}
       },
-    },
-    stateTwoAnimate: {
-      x: [5, 40],
-      transition: {
-        duration: 1,
-      },
-    },
-  };
-
-  const kVar = {
-    stateOneAnimate: {
-      x: [-15, -5],
-      transition: {
-        delay: 1.5,
-      },
-    },
-    stateTwoAnimate: {
-      x: [-5, -15],
     },
   };
 
@@ -86,7 +63,7 @@ const Logo = () => {
   useEffect(() => {
     setTimeout(() => {
       setLogo("stateTwoAnimate");
-    }, 3000);
+    }, 5000);
   }, []);
 
   const handleChange = () => {
@@ -98,35 +75,34 @@ const Logo = () => {
       }
     });
   };
-console.log(logo)
+
   return (
     <div
-      className="bg-black text-white flex justify-center items-center top-20 absolute z-50"
+      className="text-teal-600 flex justify-center items-center top-20 absolute z-50"
       onClick={handleChange}
     >
       <motion.div
         variants={variants}
         animate={logo}
         layout
-        className="absolute bg-blue-500 flex items-end justify-center border-blue-950 border-4"
+        className="absolute bg-blue-200 flex items-end justify-center border-gray-500 border-4"
       />
 
-      <motion.div variants={mVar} animate={logo} className="flex items-end justify-center">
-        <AnimatePresence>
-          <motion.span key="1" className="text-4xl">M</motion.span>
-          <motion.span key="2" variants={nameVars} animate={logo} className="pr-2">
-            atthew
-          </motion.span>
-        </AnimatePresence>
+      <motion.div animate={logo} className="flex items-end justify-center">
+        <motion.p key="1" className="text-4xl z-50">
+          M
+        </motion.p>
+        <motion.p key="2" variants={nameVars} animate={logo} className="pb-1">
+          atthew
+        </motion.p>
       </motion.div>
-      <motion.div variants={kVar} animate={logo} className="flex items-end justify-center">
-        <AnimatePresence>
-          <motion.span key="3" className="text-4xl">K
-          </motion.span>
-          <motion.span key="4" variants={nameVars} animate={logo}>
-            ellner
-          </motion.span>
-        </AnimatePresence>
+      <motion.div animate={logo} className="flex items-end justify-center">
+        <motion.p key="3" className="text-4xl z-50">
+          K
+        </motion.p>
+        <motion.p key="4" variants={nameVars} animate={logo} className="pb-1">
+          ellner
+        </motion.p>
       </motion.div>
     </div>
   );
