@@ -73,6 +73,7 @@ const Hamburger = ({isOpen, setIsOpen}) => {
       preserveAspectRatio="none"
       width='50'
       height='50'
+      className='cursor-pointer hidden sm:block'
       >
       <motion.line
         x1="10"

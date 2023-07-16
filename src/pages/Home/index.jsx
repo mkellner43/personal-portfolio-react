@@ -8,7 +8,9 @@ import Logo from "../../components/Logo";
 
 const Home = ({ navIsOpen }) => {
   return (
-    <motion.section layout animate={navIsOpen ? open : closed} initial={false}>
+    <motion.section layout animate={navIsOpen ? open : closed} initial={false}
+    className="flex flex-col justify-center items-center w-screen top-20 relative"
+    >
       <Logo />
       <motion.h1
         layout
@@ -53,3 +55,5 @@ const Home = ({ navIsOpen }) => {
 };
 
 export default Home;
+
+//! removed all styles restyle with tailwind css
