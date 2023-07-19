@@ -13,7 +13,7 @@ const Arrow = () => {
       viewBox="0 0 500 500" 
       height={40}
       width={40}
-      style={{zIndex: 1000, position: 'relative'}}
+      style={{position: 'relative'}}
       initial={{y: 0}} 
       animate={{
         y: 100,

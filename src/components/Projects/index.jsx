@@ -108,23 +108,28 @@ const Projects = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1, transition: { duration: 2 } }}
       viewport={{ amount: 0.2, once: true }}
+      className="flex flex-col items-center justify-center bg-primary-color text-secondary-color"
     >
-      <h1 style={{ padding: 0, position: "relative" }}>Projects</h1>
-      <motion.div>
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }}>
-          <FontAwesomeIcon
-            key={"left"}
-            icon={faChevronCircleLeft}
-            onClick={handleClickLeft}
-            style={{ color: "var(--secondary-color)" }}
-          />
-        </motion.div>
-        <motion.a
-          href={photos[index].link}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <AnimatePresence initial={false}>
+      <h1 className="text-5xl text-center font-nunito">Projects</h1>
+      <motion.div className="flex items-center justify-center p-4 mt-10">
+        <AnimatePresence initial={false}>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
+            className="z-10 text-2xl mr-2"
+          >
+            <FontAwesomeIcon
+              key={"left"}
+              icon={faChevronCircleLeft}
+              onClick={handleClickLeft}
+              style={{ color: "var(--secondary-color)" }}
+            />
+          </motion.div>
+          <motion.a
+            href={photos[index].link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <motion.img
               layout
               custom={direction}
@@ -139,17 +144,22 @@ const Projects = () => {
               key={index}
               src={photos[index].image}
               alt="memory game"
+              className="h-96 w-96 object-cover rounded-lg shadow-xl"
             />
-          </AnimatePresence>
-        </motion.a>
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }}>
-          <FontAwesomeIcon
-            key={"right"}
-            icon={faChevronCircleRight}
-            onClick={handleClickRight}
-            style={{ color: "var(--secondary-color)" }}
-          />
-        </motion.div>
+          </motion.a>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
+            className="z-10 text-2xl ml-2"
+          >
+            <FontAwesomeIcon
+              key={"right"}
+              icon={faChevronCircleRight}
+              onClick={handleClickRight}
+              style={{ color: "var(--secondary-color)" }}
+            />
+          </motion.div>
+        </AnimatePresence>
       </motion.div>
       <motion.a
         href={photos[index].code}
@@ -157,6 +167,7 @@ const Projects = () => {
         rel="noopener noreferrer"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.9 }}
+        className="text-lg font-nunito bg-blue-500 p-2 rounded-full"
       >
         View Code
       </motion.a>

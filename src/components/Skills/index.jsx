@@ -3,27 +3,13 @@ import { frontend, backend, other } from "./data";
 
 const Skills = () => {
   return (
-    <section>
-      <h1>Skills</h1>
-      <div>
-        <h2>Front-End</h2>
-        <div>
-          <Scroll data={frontend} />
-        </div>
-      </div>
-
-      <div>
-        <h2>Back-End</h2>
-        <div>
-          <Scroll data={backend} baseVelocity={-100} />
-        </div>
-      </div>
-      <div>
-        <h2>Other Technologies</h2>
-        <div>
-          <Scroll data={other} />
-        </div>
-      </div>
+    <section className="flex flex-col">
+      <h1
+      className="text-5xl text-center font-nunito mt-10"
+      >Skills</h1>
+      <Scroll data={frontend} baseVelocity={-10} />
+      <Scroll data={backend} baseVelocity={10} />
+      <Scroll data={other} baseVelocity={-10} />
     </section>
   );
 };

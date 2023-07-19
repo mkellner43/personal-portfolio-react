@@ -71,7 +71,7 @@ const Nav = ({ isOpen, setIsOpen, darkTheme, setDarkTheme }) => {
 
   return (
     <>
-      <nav className="flex items-center justify-between bg-blue-500 fixed w-full top-0 h-[70px] z-10 px-4">
+      <nav className="flex items-center justify-between bg-blue-500 fixed w-full top-0 h-[70px] z-50 px-4">
         <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
         <motion.button
           whileHover={{ scale: 1.15 }}
@@ -85,7 +85,7 @@ const Nav = ({ isOpen, setIsOpen, darkTheme, setDarkTheme }) => {
         >
           <motion.span
             layout
-            className={`w-4 h-4 bg-stone-500 rounded-full shadow-sm`}
+            className={`w-4 h-4 bg-black rounded-full shadow-sm`}
           />
         </motion.button>
       </nav>
@@ -96,7 +96,7 @@ const Nav = ({ isOpen, setIsOpen, darkTheme, setDarkTheme }) => {
             animate="visible"
             initial="initial"
             exit="exit"
-            className="fixed top-[70px] bg-blue-500 flex flex-col items-center justify-center z-10 w-20 p-4"
+            className="fixed top-[70px] bg-blue-500 flex flex-col items-center justify-center z-50 w-20 p-4"
           >
             <Link to="/">
               <motion.p

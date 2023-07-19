@@ -8,49 +8,58 @@ import Logo from "../../components/Logo";
 
 const Home = ({ navIsOpen }) => {
   return (
-    <motion.section layout animate={navIsOpen ? open : closed} initial={false}
-    className="flex flex-col justify-center items-center w-screen top-20 relative"
-    >
-      <Logo />
-      <motion.h1
+    <div className="snap-y snap-mandatory h-screen w-screen overflow-scroll">
+      <motion.section
         layout
-        initial={{ x: "30vw", y: "10vh" }}
-        animate={{
-          x: 0,
-          y: 0,
-          opacity: [0, 0.1, 1],
-          transition: { delay: 0.5, duration: 1 },
-        }}
+        className="snap-center flex flex-col justify-center items-center w-screen relative h-screen"
       >
-        Matthew Kellner
-      </motion.h1>
-      <motion.h2
-        layout
-        initial={{ x: "30vw", y: "10vh" }}
-        animate={{
-          x: 0,
-          y: 0,
-          opacity: [0, 0.1, 1],
-          transition: { delay: 1, duration: 1 },
-        }}
-      >
-        Full Stack Web Developer
-      </motion.h2>
-      <motion.img
-        layout
-        src={Pic}
-        initial={{ opacity: 0, width: "100px" }}
-        animate={{
-          opacity: 1,
-          boxShadow: "0 0 5px var(--primary-color)",
-          width: "80vw",
-          transition: { duration: 2 },
-        }}
-      />
-      <Arrow />
-      <Projects />
-      <Footer />
-    </motion.section>
+        <div className="mb-10">
+          <Logo />
+        </div>
+        <motion.img
+          layout
+          className="rounded-full shadow-2xl sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-4"
+          src={Pic}
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+            transition: { duration: 2 },
+          }}
+        />
+        <motion.h1
+          layout
+          initial={{ x: "30vw", y: "10vh" }}
+          animate={{
+            x: 0,
+            y: 0,
+            opacity: [0, 0.1, 1],
+            transition: { delay: 0.5, duration: 1 },
+          }}
+          className="text-5xl text-center font-nunito"
+        >
+          Matthew Kellner
+        </motion.h1>
+        <motion.h2
+          layout
+          initial={{ x: "30vw", y: "10vh" }}
+          animate={{
+            x: 0,
+            y: 0,
+            opacity: [0, 0.1, 1],
+            transition: { delay: 1, duration: 1 },
+          }}
+        >
+          Full Stack Web Developer
+        </motion.h2>
+        <Arrow />
+      </motion.section>
+      <section className="snap-center h-screen w-screen flex flex-col items-center justify-center relative">
+        <Projects />
+        <div className="absolute bottom-0">
+          <Footer />
+        </div>
+      </section>
+    </div>
   );
 };
 

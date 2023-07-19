@@ -78,29 +78,29 @@ const Logo = () => {
 
   return (
     <div
-      className="text-teal-600 flex justify-center items-center top-20 absolute z-50"
+      className={"text-blue-500 flex justify-center items-center z-40"}
       onClick={handleChange}
     >
       <motion.div
         variants={variants}
         animate={logo}
         layout
-        className="absolute bg-blue-200 flex items-end justify-center border-gray-500 border-4"
+        className="absolute bg-blue-200 flex items-end justify-center border-gray-500 border-4 z-40"
       />
 
       <motion.div animate={logo} className="flex items-end justify-center">
-        <motion.p key="1" className="text-4xl z-50">
+        <motion.p key="1" className="text-4xl z-40">
           M
         </motion.p>
-        <motion.p key="2" variants={nameVars} animate={logo} className="pb-1">
+        <motion.p key="2" variants={nameVars} animate={logo} className="pb-1 z-40">
           atthew
         </motion.p>
       </motion.div>
       <motion.div animate={logo} className="flex items-end justify-center">
-        <motion.p key="3" className="text-4xl z-50">
+        <motion.p key="3" className="text-4xl z-40">
           K
         </motion.p>
-        <motion.p key="4" variants={nameVars} animate={logo} className="pb-1">
+        <motion.p key="4" variants={nameVars} animate={logo} className="pb-1 z-40">
           ellner
         </motion.p>
       </motion.div>
