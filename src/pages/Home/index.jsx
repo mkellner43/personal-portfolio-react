@@ -2,13 +2,13 @@ import Pic from "../../Images/profilePic2.png";
 import { motion } from "framer-motion";
 import Footer from "../../components/Footer";
 import Projects from "../../components/Projects";
-import { open, closed } from "../../components/Variants/Variants";
+// import { open, closed } from "../../components/Variants/Variants";
 import Arrow from "./Arrow";
 import Logo from "../../components/Logo";
 
 const Home = ({ navIsOpen }) => {
   return (
-    <div className="snap-mandatory snap-y w-screen h-screen overflow-scroll">
+    <div className="snap-mandatory snap-y w-screen h-screen overflow-scroll overscroll-none">
       <motion.section
         layout
         className="snap-center flex flex-col justify-center sm:justify-evenly items-center w-screen h-screen relative"

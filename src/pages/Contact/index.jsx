@@ -37,36 +37,39 @@ const Contact = ({ navIsOpen }) => {
   };
 
   return (
-    <motion.section animate={navIsOpen ? open : closed} initial={false} className="relative top-[70px] flex flex-col">
+    <motion.section animate={navIsOpen ? open : closed} initial={false} className="flex flex-col h-screen w-screen pt-[70px] overscroll-none">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration: 1.2 } }}
-        className=""
+        className="flex flex-col h-full w-full pt-20 px-4"
       >
         <motion.h1
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1, transition: { duration: 1 } }}
+          className="text-5xl text-center mb-4"
         >
           Contact me.
         </motion.h1>
-        <form ref={refForm} onSubmit={sendEmail}>
-          <motion.div>
-            <input name="name" placeholder="Name" required />
-            <input name="email" placeholder="Email" type="email" required />
+        <form ref={refForm} onSubmit={sendEmail} className="flex flex-col grow gap-2">
+          <motion.div className="flex gap-2">
+            <input name="name" placeholder="Name" required className="flex-auto py-2 w-2/4 border px-2"/>
+            <input name="email" placeholder="Email" type="email" required className="flex-auto py-2 w-2/4 border px-2"/>
           </motion.div>
-          <input name="subject" placeholder="Subject" required />
+          <input name="subject" placeholder="Subject" required className="py-2 border px-2"/>
           <textarea
             name="content"
             placeholder="Message"
             rows="8"
             cols="40"
             required
+            className="border p-2"
           ></textarea>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             type="submit"
             disabled={send}
+            className="flex items-center justify-center bg-blue-500 text-white rounded-full p-4"
           >
             <FontAwesomeIcon icon={faPaperPlane} size={"2x"} />
           </motion.button>

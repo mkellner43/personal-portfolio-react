@@ -9,9 +9,9 @@ const About = ({ navIsOpen }) => {
     <motion.section
       animate={navIsOpen ? open : closed}
       initial={false}
-      className="flex flex-col justify-center items-center relative top-[70px]"
+      className="flex justify-center items-center w-screen overscroll-none pt-[70px]"
     >
-      <div className="flex flex-col items-center justify-center max-w-xl overflow-hidden">
+      <div className="flex flex-col items-center justify-center max-w-xl w-full h-full overflow-hidden pt-20 px-4">
         <motion.h1
           initial={{ y: -100, opacity: 0 }}
           animate={{ opacity: 1, y: 0, transition: { duration: 1 } }}
