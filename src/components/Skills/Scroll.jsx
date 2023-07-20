@@ -21,8 +21,11 @@ function ParallaxText({ children, baseVelocity = 100 }) {
   const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
     clamp: false,
   });
+  // const x = useTransform(baseX, (v) => {
+  //   return `${wrap((-((children.length) * 80) / 432) * 100, (-((children.length) * 80) / 432) * 200, v)}%`;
+  // });
   const x = useTransform(baseX, (v) => {
-    return `${wrap((-((children.length) * 80) / 432) * 100, (-((children.length) * 80) / 432) * 200, v)}%`;
+    return `${wrap(-20, -45, v)}%`;
   });
 
   const directionFactor = useRef(1);
@@ -41,11 +44,14 @@ function ParallaxText({ children, baseVelocity = 100 }) {
   });
 
   return (
-    <motion.div style={{ x }} className="flex w-[432px] overflow-visible">
-      {children}
-      {children}
-      {children}
-    </motion.div>
+    <div className="relative h-24">
+      <motion.div style={{ x }} className="flex w-max absolute">
+        {children}
+        {children}
+        {children}
+        {children}
+      </motion.div>
+    </div>
   );
 }
 

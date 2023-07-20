@@ -45,16 +45,16 @@ const Logo = () => {
     stateOneAnimate: {
       opacity: [0, 1],
       width: ["0px", "50px"],
-      transition: { duration: 1, delay: 1,
-        opacity: {delay: 1.75, duration: 2}
+      transition: {
+        duration: 1,
+        delay: 1,
+        opacity: { delay: 1.75, duration: 2 },
       },
     },
     stateTwoAnimate: {
       opacity: [1, 0],
       width: ["50px", "0px"],
-      transition: { duration: 1,
-        opacity: {duration: 0.2}
-      },
+      transition: { duration: 1, opacity: { duration: 0.2 } },
     },
   };
 
@@ -78,7 +78,7 @@ const Logo = () => {
 
   return (
     <div
-      className={"text-blue-500 flex justify-center items-center z-40"}
+      className={"text-blue-500 flex justify-center items-center relative h-[100px] w-[100px]"}
       onClick={handleChange}
     >
       <motion.div
@@ -92,7 +92,12 @@ const Logo = () => {
         <motion.p key="1" className="text-4xl z-40">
           M
         </motion.p>
-        <motion.p key="2" variants={nameVars} animate={logo} className="pb-1 z-40">
+        <motion.p
+          key="2"
+          variants={nameVars}
+          animate={logo}
+          className="pb-1 z-40"
+        >
           atthew
         </motion.p>
       </motion.div>
@@ -100,7 +105,12 @@ const Logo = () => {
         <motion.p key="3" className="text-4xl z-40">
           K
         </motion.p>
-        <motion.p key="4" variants={nameVars} animate={logo} className="pb-1 z-40">
+        <motion.p
+          key="4"
+          variants={nameVars}
+          animate={logo}
+          className="pb-1 z-40"
+        >
           ellner
         </motion.p>
       </motion.div>
