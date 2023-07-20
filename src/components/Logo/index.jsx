@@ -23,24 +23,6 @@ const Logo = () => {
     },
   };
 
-  const afterVars = {
-    stateOneAnimate: {
-      inset: ["30px", "30px", "5px", "5px", "5px"],
-      borderRadius: ["50%", "50%", "1%", "1%", "1%"],
-      transition: {
-        duration: 2,
-        times: [0, 0.2, 0.5, 0.7, 1],
-      },
-    },
-    stateTwoAnimate: {
-      inset: "5px",
-      borderRadius: "1%",
-      transition: {
-        duration: 2,
-      },
-    },
-  };
-
   const nameVars = {
     stateOneAnimate: {
       opacity: [0, 1],
@@ -78,7 +60,9 @@ const Logo = () => {
 
   return (
     <div
-      className={"text-blue-500 flex justify-center items-center relative h-[100px] w-[100px]"}
+      className={
+        "text-blue-500 flex justify-center items-center relative h-[100px] w-[100px]"
+      }
       onClick={handleChange}
     >
       <motion.div
