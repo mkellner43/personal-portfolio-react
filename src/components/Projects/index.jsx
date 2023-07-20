@@ -114,12 +114,12 @@ const Projects = () => {
       <motion.div className="flex items-center justify-center p-4 mt-10">
         <AnimatePresence initial={false}>
           <motion.div
+            key={"left"}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.9 }}
             className="z-10 text-2xl mr-2"
           >
             <FontAwesomeIcon
-              key={"left"}
               icon={faChevronCircleLeft}
               onClick={handleClickLeft}
               style={{ color: "var(--secondary-color)" }}
@@ -148,12 +148,12 @@ const Projects = () => {
             />
           </motion.a>
           <motion.div
+            key={"right"}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.9 }}
             className="z-10 text-2xl ml-2"
           >
             <FontAwesomeIcon
-              key={"right"}
               icon={faChevronCircleRight}
               onClick={handleClickRight}
               style={{ color: "var(--secondary-color)" }}
@@ -162,6 +162,7 @@ const Projects = () => {
         </AnimatePresence>
       </motion.div>
       <motion.a
+        key={"right"}
         href={photos[index].code}
         target="_blank"
         rel="noopener noreferrer"
