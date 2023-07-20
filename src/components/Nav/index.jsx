@@ -7,6 +7,7 @@ import {
   faAddressCard,
   faFileSignature,
 } from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useRef } from "react";
 
 const Nav = ({ isOpen, setIsOpen, darkTheme, setDarkTheme }) => {
   const variant = {
@@ -68,11 +69,30 @@ const Nav = ({ isOpen, setIsOpen, darkTheme, setDarkTheme }) => {
   const changeTheme = () => {
     setDarkTheme((prevState) => !prevState);
   };
+  const dropdown = useRef(null);
+  const ham = useRef(null);
+  const closeDropdown = (e) => {
+    if (
+      dropdown.current &&
+      !dropdown.current.contains(e.target) &&
+      !ham.current.contains(e.target)
+    )
+      setIsOpen(false);
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", closeDropdown);
+    return () => {
+      document.removeEventListener("click", closeDropdown);
+    };
+  }, []);
 
   return (
     <>
       <nav className="flex items-center justify-between bg-blue-500 fixed w-full top-0 h-[70px] z-50 px-4">
-        <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
+        <div ref={ham}>
+          <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
+        </div>
         <motion.button
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.9 }}
@@ -92,24 +112,25 @@ const Nav = ({ isOpen, setIsOpen, darkTheme, setDarkTheme }) => {
       <AnimatePresence>
         {isOpen && (
           <motion.nav
+            ref={dropdown}
             variants={variant}
             animate="visible"
             initial="initial"
             exit="exit"
             className="fixed top-[70px] bg-blue-500 flex flex-col items-center justify-center z-50 w-20 p-4"
           >
-            <Link to="/">
-              <motion.p
+            <Link to="/" onClick={() => setIsOpen(false)}>
+              <motion.li
                 variants={item}
                 whileHover={{ scale: 1.15 }}
                 whileTap={{ scale: 0.9 }}
                 className="flex items-center justify-center w-10 h-10 bg-white rounded-full m-2"
               >
                 <FontAwesomeIcon icon={faHouse} />
-              </motion.p>
+              </motion.li>
             </Link>
-            <Link to="/about">
-              <motion.p
+            <Link to="/about" onClick={() => setIsOpen(false)}>
+              <motion.li
                 variants={item}
                 whileHover={{ scale: 1.15 }}
                 whileTap={{ scale: 0.9 }}
@@ -120,17 +141,17 @@ const Nav = ({ isOpen, setIsOpen, darkTheme, setDarkTheme }) => {
                   animate={{ pathLength: 1 }}
                   icon={faAddressCard}
                 />
-              </motion.p>
+              </motion.li>
             </Link>
-            <Link to="/contact">
-              <motion.p
+            <Link to="/contact" onClick={() => setIsOpen(false)}>
+              <motion.li
                 variants={item}
                 whileHover={{ scale: 1.15 }}
                 whileTap={{ scale: 0.9 }}
                 className="flex items-center justify-center w-10 h-10 bg-white rounded-full m-2"
               >
                 <FontAwesomeIcon icon={faFileSignature} />
-              </motion.p>
+              </motion.li>
             </Link>
           </motion.nav>
         )}
