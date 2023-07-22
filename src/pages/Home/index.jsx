@@ -8,10 +8,10 @@ import Logo from "../../components/Logo";
 
 const Home = ({ navIsOpen }) => {
   return (
-    <div className="snap-mandatory snap-y w-screen h-screen overflow-scroll overscroll-none">
+    <div className="snap-mandatory snap-y w-screen overflow-scroll mt-[70px] h-[calc(100vh-70px)]">
       <motion.section
         layout
-        className="snap-center flex flex-col justify-center sm:justify-evenly items-center w-screen h-screen relative"
+        className="snap-center flex flex-col justify-start sm:justify-evenly items-center w-screen h-[calc(100vh-70px)] relative"
       >
         <Logo />
         <motion.img
@@ -53,7 +53,7 @@ const Home = ({ navIsOpen }) => {
         </motion.div>
         <Arrow />
       </motion.section>
-      <section className="snap-center h-screen w-screen flex flex-col items-center justify-center relative">
+      <section className="snap-center h-[calc(100vh-70px)] w-screen flex flex-col items-center justify-center relative">
         <Projects />
         <div className="absolute bottom-0">
           <Footer />
