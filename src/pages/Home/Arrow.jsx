@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 
 const Arrow = ({theme, setTheme}) => {
-  console.log(  theme)
   const transition = {
     duration: 2,
     repeat: Infinity,

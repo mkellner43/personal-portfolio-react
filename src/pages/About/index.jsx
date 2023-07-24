@@ -13,7 +13,7 @@ const About = ({ navIsOpen }) => {
     <motion.section
       animate={navIsOpen ? open : closed}
       initial={false}
-      className="flex flex-col w-screen overflow-y-scroll mt-[70px] h-[calc(100vh-70px)] overflow-x-hidden gap-16 bg-primary-color text-secondary-color"
+      className="flex flex-col w-screen overflow-y-scroll mt-[70px] h-[calc(100vh-70px)] overflow-x-hidden gap-16 dark:bg-stone-500 dark:text-white"
       ref={aboutContainer}
     >
       <div className="m-auto max-w-4xl overflow-x-clip">

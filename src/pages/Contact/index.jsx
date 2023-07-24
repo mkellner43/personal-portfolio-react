@@ -37,7 +37,7 @@ const Contact = ({ navIsOpen }) => {
   };
 
   return (
-    <motion.section animate={navIsOpen ? open : closed} initial={false} className="flex flex-col h-screen w-screen pt-[70px] overscroll-none bg-">
+    <motion.section animate={navIsOpen ? open : closed} initial={false} className="flex flex-col h-screen w-screen pt-[70px] overscroll-none dark:bg-stone-500 dark:text-white">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration: 1.2 } }}
@@ -52,17 +52,17 @@ const Contact = ({ navIsOpen }) => {
         </motion.h1>
         <form ref={refForm} onSubmit={sendEmail} className="flex flex-col grow gap-2">
           <motion.div className="flex gap-2">
-            <input name="name" placeholder="Name" required className="flex-auto py-2 w-2/4 border px-2"/>
-            <input name="email" placeholder="Email" type="email" required className="flex-auto py-2 w-2/4 border px-2"/>
+            <input name="name" placeholder="Name" required className="flex-auto py-2 w-2/4 border px-2 rounded-sm"/>
+            <input name="email" placeholder="Email" type="email" required className="flex-auto py-2 w-2/4 border px-2 rounded-sm"/>
           </motion.div>
-          <input name="subject" placeholder="Subject" required className="py-2 border px-2"/>
+          <input name="subject" placeholder="Subject" required className="py-2 border px-2 rounded-sm"/>
           <textarea
             name="content"
             placeholder="Message"
             rows="8"
             cols="40"
             required
-            className="border p-2"
+            className="border p-2 rounded-sm resize-none"
           ></textarea>
           <motion.button
             whileHover={{ scale: 1.05 }}

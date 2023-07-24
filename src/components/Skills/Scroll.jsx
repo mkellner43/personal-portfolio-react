@@ -19,12 +19,10 @@ function ParallaxText({ children, baseVelocity = 100, aboutContainer }) {
   const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
     clamp: false,
   });
-  console.log(aboutContainer)
   const x = useTransform(baseX, (v) => {
     return `${wrap(-20, -45, v)}%`;
   });
   useEffect(() => { 
-    console.log(aboutContainer.current)
   }, [aboutContainer])
 
   const directionFactor = useRef(1);
@@ -55,7 +53,6 @@ function ParallaxText({ children, baseVelocity = 100, aboutContainer }) {
 }
 
 const Scroll = ({ data, baseVelocity = 50, aboutContainer }) => {
-  console.log(aboutContainer);
   return <ParallaxText baseVelocity={baseVelocity} aboutContainer={aboutContainer} >{data}</ParallaxText>;
 };
 

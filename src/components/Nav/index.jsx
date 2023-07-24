@@ -7,7 +7,7 @@ import {
   faAddressCard,
   faFileSignature,
 } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
   const variant = {
@@ -65,26 +65,15 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
     stiffness: 700,
     damping: 30,
   };
-  // const [theme, setTheme] = useState(localStorage.getItem("theme"));
 
-  // useEffect(() => {
-  //   if (localStorage.getItem("theme") === "dark") {
-  //     setTheme("dark");
-  //     document.documentElement.classList.add("dark");
-  //   } else {
-  //     setTheme("light");
-  //     document.documentElement.classList.remove("dark");
-  //   }
-  // }, []);
-  
   const changeTheme = () => {
     if (theme === "dark") {
       localStorage.setItem("theme", "light");
-      setTheme("light")
+      setTheme("light");
       document.documentElement.classList.remove("dark");
     } else {
       localStorage.setItem("theme", "dark");
-      setTheme("dark")
+      setTheme("dark");
       document.documentElement.classList.add("dark");
     }
   };
@@ -109,7 +98,7 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
 
   return (
     <>
-      <nav className="flex items-center justify-between bg-blue-500 dark:bg-stone-700 fixed w-full top-0 h-[70px] z-50 px-4">
+      <nav className="flex items-center justify-between bg-blue-500 dark:bg-stone-700 fixed w-full top-0 h-[70px] z-50 px-4 shadow">
         <div ref={ham}>
           <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
@@ -119,7 +108,7 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
           onClick={changeTheme}
           transition={spring}
           className={`flex items-center bg-white rounded-full w-12 h-6 px-1 ${
-            theme === 'dark' ? "justify-end" : "justify-start"
+            theme === "dark" ? "justify-end" : "justify-start"
           }`}
         >
           <motion.span
@@ -136,7 +125,7 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
             animate="visible"
             initial="initial"
             exit="exit"
-            className="fixed top-[70px] bg-blue-500 flex flex-col items-center justify-center z-50 w-20 p-4"
+            className="fixed top-[70px] bg-blue-500 dark:bg-stone-700 flex flex-col items-center justify-center z-50 w-20 p-4 shadow rounded-br-lg"
           >
             <Link to="/" onClick={() => setIsOpen(false)}>
               <motion.li
