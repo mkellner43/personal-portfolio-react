@@ -7,36 +7,23 @@ import Contact from "./pages/Contact";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-  const [darkTheme, setDarkTheme] = useState(
-    localStorage.getItem("darkTheme") === "true" ? true : false
-  );
+  const [theme, setTheme] = useState(localStorage.getItem("theme"));
+
   useEffect(() => {
-    const root = document.documentElement;
-    root?.style.setProperty(
-      "--primary-color",
-      darkTheme ? "#000401" : "#B0B0B0"
-    );
-    root?.style.setProperty(
-      "--secondary-color",
-      darkTheme ? "#E5E8E8" : "#262833"
-    );
-    root?.style.setProperty(
-      "--background-color",
-      darkTheme ? "#4E545C" : "#F5F5F5"
-    );
-    localStorage.setItem("darkTheme", darkTheme);
-  }, [darkTheme]);
+    if (localStorage.getItem("theme") === "dark") {
+      setTheme("dark");
+      document.documentElement.classList.add("dark");
+    } else {
+      setTheme("light");
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
 
   return (
     <>
-      <Nav
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-        darkTheme={darkTheme}
-        setDarkTheme={setDarkTheme}
-      />
+      <Nav isOpen={isOpen} setIsOpen={setIsOpen} setTheme={setTheme} theme={theme} />
       <Routes>
-        <Route default path="/" element={<Home navIsOpen={isOpen} />} />
+        <Route default path="/" element={<Home navIsOpen={isOpen} theme={theme} setTheme={setTheme} />} />
         <Route default path="/about" element={<About navIsOpen={isOpen} />} />
         <Route
           default

@@ -37,11 +37,11 @@ const Contact = ({ navIsOpen }) => {
   };
 
   return (
-    <motion.section animate={navIsOpen ? open : closed} initial={false} className="flex flex-col h-screen w-screen pt-[70px] overscroll-none">
+    <motion.section animate={navIsOpen ? open : closed} initial={false} className="flex flex-col h-screen w-screen pt-[70px] overscroll-none bg-">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration: 1.2 } }}
-        className="flex flex-col h-full w-full pt-20 px-4"
+        className="flex flex-col h-full w-full pt-20 px-4 max-w-2xl m-auto gap-4"
       >
         <motion.h1
           initial={{ y: -100, opacity: 0 }}

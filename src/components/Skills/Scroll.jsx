@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import {
   motion,
-  useScroll,
   useSpring,
   useTransform,
   useMotionValue,
@@ -12,7 +11,6 @@ import { wrap } from "@motionone/utils";
 
 function ParallaxText({ children, baseVelocity = 100, aboutContainer }) {
   const baseX = useMotionValue(0);
-  // const { scrollY } = useScroll({container: aboutContainer.current});
   const scrollVelocity = useVelocity(aboutContainer);
   const smoothVelocity = useSpring(scrollVelocity, {
     damping: 50,

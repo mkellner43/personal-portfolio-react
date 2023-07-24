@@ -7,9 +7,9 @@ import {
   faAddressCard,
   faFileSignature,
 } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
-const Nav = ({ isOpen, setIsOpen, darkTheme, setDarkTheme }) => {
+const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
   const variant = {
     initial: {
       opacity: 0,
@@ -65,12 +65,32 @@ const Nav = ({ isOpen, setIsOpen, darkTheme, setDarkTheme }) => {
     stiffness: 700,
     damping: 30,
   };
+  // const [theme, setTheme] = useState(localStorage.getItem("theme"));
 
+  // useEffect(() => {
+  //   if (localStorage.getItem("theme") === "dark") {
+  //     setTheme("dark");
+  //     document.documentElement.classList.add("dark");
+  //   } else {
+  //     setTheme("light");
+  //     document.documentElement.classList.remove("dark");
+  //   }
+  // }, []);
+  
   const changeTheme = () => {
-    setDarkTheme((prevState) => !prevState);
+    if (theme === "dark") {
+      localStorage.setItem("theme", "light");
+      setTheme("light")
+      document.documentElement.classList.remove("dark");
+    } else {
+      localStorage.setItem("theme", "dark");
+      setTheme("dark")
+      document.documentElement.classList.add("dark");
+    }
   };
   const dropdown = useRef(null);
   const ham = useRef(null);
+
   const closeDropdown = (e) => {
     if (
       dropdown.current &&
@@ -89,18 +109,17 @@ const Nav = ({ isOpen, setIsOpen, darkTheme, setDarkTheme }) => {
 
   return (
     <>
-      <nav className="flex items-center justify-between bg-blue-500 fixed w-full top-0 h-[70px] z-50 px-4">
+      <nav className="flex items-center justify-between bg-blue-500 dark:bg-stone-700 fixed w-full top-0 h-[70px] z-50 px-4">
         <div ref={ham}>
           <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
         <motion.button
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.9 }}
-          data-dark-theme={darkTheme}
           onClick={changeTheme}
           transition={spring}
           className={`flex items-center bg-white rounded-full w-12 h-6 px-1 ${
-            darkTheme ? "justify-end" : "justify-start"
+            theme === 'dark' ? "justify-end" : "justify-start"
           }`}
         >
           <motion.span

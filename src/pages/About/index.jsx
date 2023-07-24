@@ -16,7 +16,7 @@ const About = ({ navIsOpen }) => {
       className="flex flex-col w-screen overflow-y-scroll mt-[70px] h-[calc(100vh-70px)] overflow-x-hidden gap-16 bg-primary-color text-secondary-color"
       ref={aboutContainer}
     >
-      <div className="m-auto max-w-4xl overflow-hidden">
+      <div className="m-auto max-w-4xl overflow-x-clip">
         <div className="flex flex-col justify-center items-center p-2 gap-5 mt-4">
           <motion.h1
             initial={{ y: -100, opacity: 0 }}

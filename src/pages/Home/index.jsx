@@ -6,9 +6,9 @@ import Projects from "../../components/Projects";
 import Arrow from "./Arrow";
 import Logo from "../../components/Logo";
 
-const Home = ({ navIsOpen }) => {
+const Home = ({ navIsOpen, setTheme, theme }) => {
   return (
-    <div className="snap-mandatory snap-y w-screen overflow-scroll mt-[70px] h-[calc(100vh-70px)]">
+    <div className="snap-mandatory snap-y w-screen dark:bg-stone-500 dark:text-white overflow-scroll mt-[70px] h-[calc(100vh-70px)]">
       <motion.section
         layout
         className="snap-center flex flex-col justify-start sm:justify-evenly items-center w-screen h-[calc(100vh-70px)] relative"
@@ -51,7 +51,7 @@ const Home = ({ navIsOpen }) => {
             Full Stack Web Developer
           </motion.h2>
         </motion.div>
-        <Arrow />
+        <Arrow theme={theme} setTheme={setTheme} />
       </motion.section>
       <section className="snap-center h-[calc(100vh-70px)] w-screen flex flex-col items-center justify-center relative">
         <Projects />
