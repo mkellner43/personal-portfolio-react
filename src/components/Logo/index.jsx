@@ -61,7 +61,7 @@ const Logo = () => {
   return (
     <div
       className={
-        "text-blue-500 flex justify-center items-center relative h-[100px] w-[100px]"
+        "text-blue-500 dark:text-white flex justify-center items-center relative h-[100px] w-[100px]"
       }
       onClick={handleChange}
     >
@@ -69,7 +69,7 @@ const Logo = () => {
         variants={variants}
         animate={logo}
         layout
-        className="absolute bg-blue-200 flex items-end justify-center border-blue-500 border-4 z-40"
+        className="absolute bg-blue-200 dark:bg-stone-400 flex items-end justify-center border-blue-500 dark:border-stone-700 border-4 z-40"
       />
 
       <motion.div animate={logo} className="flex items-end justify-center">
