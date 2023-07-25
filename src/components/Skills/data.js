@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import framerIcon from "../../Images/framerIcon.svg";
 import mongoose from "../../Images/mongoose.png";
+import tailwind from "../../Images/tailwind-css-icon.svg";
+import vite from "../../Images/vite.svg";
+import typescript from "../../Images/typescript.svg";
 
 const frontend = [
   <motion.img
@@ -9,6 +12,27 @@ const frontend = [
     className="w-20 p-2"
     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg"
     alt="javascript"
+  />,
+  <motion.img
+    key={Math.random()}
+    whileHover={{ scale: 1.1 }}
+    className="w-20 p-2"
+    src={tailwind}
+    alt="tailwind"
+  />,
+  <motion.img
+    key={Math.random()}
+    whileHover={{ scale: 1.1 }}
+    className="w-20 p-2"
+    src={typescript}
+    alt="typescript"
+  />,
+  <motion.img
+    key={Math.random()}
+    whileHover={{ scale: 1.1 }}
+    className="w-20 p-2"
+    src={vite}
+    alt="vite"
   />,
   <motion.img
     key={Math.random()}
@@ -62,7 +86,13 @@ const backend = [
     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original-wordmark.svg"
     alt="ruby"
   />,
-
+  <motion.img
+    key={Math.random()}
+    whileHover={{ scale: 1.1 }}
+    className="w-20 p-2"
+    src={typescript}
+    alt="typescript"
+  />,
   <motion.img
     key={Math.random()}
     whileHover={{ scale: 1.1 }}
