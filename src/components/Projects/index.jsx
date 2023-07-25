@@ -6,6 +6,7 @@ import ticTacToe from "../../Images/ticTacToe.png";
 import toDoList from "../../Images/toDoList.png";
 import restaurant from "../../Images/restaurant.png";
 import waldo from "../../Images/Screenshot 2023-02-01 at 3.24.41 PM.png";
+import mattBook from "../../Images/mattBook.png";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
@@ -17,6 +18,12 @@ import {
 
 const Projects = () => {
   const photos = [
+    {
+      image: mattBook,
+      link: "https://mattbook-frontend.onrender.com",
+      code: "https://github.com/mkellner43/front-end-mb",
+      backend: "https://github.com/mkellner43/back-end-mb",
+    },
     {
       image: weatherChecker,
       link: "https://mkellner43.github.io/weather_api/",
@@ -161,17 +168,41 @@ const Projects = () => {
           </motion.div>
         </AnimatePresence>
       </motion.div>
-      <motion.a
-        key={"right"}
-        href={photos[index].code}
-        target="_blank"
-        rel="noopener noreferrer"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.9 }}
-        className="text-lg font-nunito bg-blue-500 p-2 rounded-full"
-      >
-        View Code
-      </motion.a>
+      {photos[index].backend ? (
+        <div className="flex justify-evenly items-center min-w-[300px]">
+          <motion.a
+            href={photos[index].code}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
+            className="text-lg font-nunito bg-blue-500 p-2 rounded-full"
+          >
+            Frontend
+          </motion.a>
+          <motion.a
+            href={photos[index].code}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
+            className="text-lg font-nunito bg-blue-500 p-2 rounded-full"
+          >
+            Backend
+          </motion.a>
+        </div>
+      ) : (
+        <motion.a
+          href={photos[index].code}
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.9 }}
+          className="text-lg font-nunito bg-blue-500 p-2 rounded-full"
+        >
+          View Code
+        </motion.a>
+      )}
     </motion.section>
   );
 };
