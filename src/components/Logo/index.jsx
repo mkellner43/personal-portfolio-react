@@ -5,8 +5,8 @@ const Logo = () => {
   const variants = {
     stateOneAnimate: {
       borderRadius: ["50%", "50%", "3%", "3%", "3%"],
-      width: ["100px", "170px", "100px", "100px", "170px"],
-      height: ["100px", "170px", "100px", "100px", "100px"],
+      width: ["60px", "100px", "60px", "60px", "180px"],
+      height: ["60px", "100px", "60px", "60px", "60px"],
       rotate: [0, 360, 360, 0, 0],
       transition: {
         duration: 1.5,
@@ -15,8 +15,8 @@ const Logo = () => {
     },
     stateTwoAnimate: {
       borderRadius: ["3%", "3%"],
-      width: ["160px", "100px"],
-      height: ["100px", "100px"],
+      width: ["180px", "60px"],
+      height: ["60px", "60px"],
       transition: {
         duration: 1.5,
       },
@@ -69,7 +69,7 @@ const Logo = () => {
         variants={variants}
         animate={logo}
         layout
-        className="absolute bg-blue-200 flex items-end justify-center border-gray-500 border-4 z-40"
+        className="absolute bg-blue-200 flex items-end justify-center border-blue-500 border-4 z-40"
       />
 
       <motion.div animate={logo} className="flex items-end justify-center">
@@ -86,7 +86,7 @@ const Logo = () => {
         </motion.p>
       </motion.div>
       <motion.div animate={logo} className="flex items-end justify-center">
-        <motion.p key="3" className="text-4xl z-40">
+        <motion.p key="3" className={`text-4xl z-40`}>
           K
         </motion.p>
         <motion.p
@@ -103,5 +103,3 @@ const Logo = () => {
 };
 
 export default Logo;
-
-//find out why letters arent moving x and y

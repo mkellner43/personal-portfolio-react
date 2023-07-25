@@ -41,7 +41,7 @@ function ParallaxText({ children, baseVelocity = 100, aboutContainer }) {
   });
 
   return (
-    <div className="relative h-24">
+    <div className="relative h-24 border-b border-opacity-10">
       <motion.div style={{ x }} className="flex w-max absolute">
         {children}
         {children}

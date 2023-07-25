@@ -11,12 +11,12 @@ const Home = ({ navIsOpen, setTheme, theme }) => {
     <div className="snap-mandatory snap-y w-screen dark:bg-stone-500 dark:text-white overflow-scroll mt-[70px] h-[calc(100vh-70px)]">
       <motion.section
         layout
-        className="snap-center flex flex-col justify-start sm:justify-evenly items-center w-screen h-[calc(100vh-70px)] relative"
+        className="snap-center flex flex-col justify-center sm:justify-evenly items-center w-screen h-[calc(100vh-70px)] relative"
       >
-        <Logo />
+        {/* <Logo /> */}
         <motion.img
           layout
-          className="rounded-full shadow-2xl sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-4"
+          className="rounded-full shadow-2xl w-10/12 sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-4"
           src={Pic}
           initial={{ opacity: 0 }}
           animate={{
