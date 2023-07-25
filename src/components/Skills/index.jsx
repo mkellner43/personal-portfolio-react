@@ -1,32 +1,18 @@
-import './style.scss';
-import Scroll from './Scroll';
-import { frontend, backend, other } from './data';
+import Scroll from "./Scroll";
+import { frontend, backend, other } from "./data";
 
-const Skills = () => {
+const Skills = ({aboutContainer}) => {
   return (
-    <section className='skills-container'>
-      <h1>Skills</h1>
-      <div className="tech-container">
-        <h2>Front-End</h2>
-        <div className='skills'>
-          <Scroll data={frontend}/>
-        </div>
-      </div>
-
-      <div className='tech-container'>
-        <h2>Back-End</h2>
-        <div className='skills'>
-          <Scroll data={backend} baseVelocity={-100}/>
-        </div>
-      </div>
-      <div className='tech-container'>
-        <h2>Other Technologies</h2>
-        <div className='skills'>
-          <Scroll data={other} />
-        </div>
-      </div>
+    <section className="flex flex-col gap-5 w-full relative px-2 mt-10">
+      <h1 className="text-5xl text-center font-nunito">Skills</h1>
+      <h2 className="text-xl text-left font-nunito">Frontend</h2>
+      <Scroll data={frontend} baseVelocity={-5} aboutContainer={aboutContainer}/>
+      <h2 className="text-xl text-left font-nunito">Backend</h2>
+      <Scroll data={backend} baseVelocity={5} aboutContainer={aboutContainer}/>
+      <h2 className="text-xl text-left font-nunito">Other</h2>
+      <Scroll data={other} baseVelocity={-5} aboutContainer={aboutContainer}/>
     </section>
-  )
-}
+  );
+};
 
 export default Skills;

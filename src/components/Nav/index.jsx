@@ -1,111 +1,171 @@
-import './style.scss';
-import { AnimatePresence, motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import Hamburger from '../Hamburger';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faAddressCard, faFileSignature } from '@fortawesome/free-solid-svg-icons';
+import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import Hamburger from "../Hamburger";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHouse,
+  faAddressCard,
+  faFileSignature,
+} from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useRef } from "react";
 
-const Nav = ({isOpen, setIsOpen, darkTheme, setDarkTheme}) => {
+const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
   const variant = {
     initial: {
       opacity: 0,
-      x: 100
+      x: -100,
     },
     visible: {
       opacity: 1,
       x: 0,
       transition: {
-        type: 'spring',
+        type: "spring",
         damping: 24,
-        staggerChildren: 0.07, 
-        delayChildren: 0.2
-      }
+        staggerChildren: 0.07,
+        delayChildren: 0.2,
+      },
     },
     exit: {
-      opacity: 0,
-      x: 100,
+      opacity: [1, 0],
+      x: -100,
       transition: {
-        type: 'spring',
+        type: "spring",
         damping: 24,
         delay: 0.2,
         staggerChildren: -0.07,
-        delayChildren: 0.2
-      }
-    }
-  }
+        delayChildren: 0.2,
+        duration: 0.5,
+      },
+    },
+  };
   const item = {
     initial: {
       opacity: 0,
-      x: 100,
+      x: -100,
     },
     visible: {
       opacity: 1,
       x: 0,
       transition: {
-        type: 'spring',
-        damping: 10
-      }
+        type: "spring",
+        damping: 24,
+      },
     },
     exit: {
       opacity: 0,
-      x: 100,
+      x: -100,
       transition: {
-        type: 'spring',
-        damping: 10
-      }
-    }
-  }
+        type: "spring",
+        damping: 24,
+      },
+    },
+  };
   const spring = {
     type: "spring",
     stiffness: 700,
-    damping: 30
+    damping: 30,
   };
-  
 
   const changeTheme = () => {
-    setDarkTheme(prevState => !prevState)
-  }
+    if (theme === "dark") {
+      localStorage.setItem("theme", "light");
+      setTheme("light");
+      document.documentElement.classList.remove("dark");
+    } else {
+      localStorage.setItem("theme", "dark");
+      setTheme("dark");
+      document.documentElement.classList.add("dark");
+    }
+  };
+  const dropdown = useRef(null);
+  const ham = useRef(null);
+
+  const closeDropdown = (e) => {
+    if (
+      dropdown.current &&
+      !dropdown.current.contains(e.target) &&
+      !ham.current.contains(e.target)
+    )
+      setIsOpen(false);
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", closeDropdown);
+    return () => {
+      document.removeEventListener("click", closeDropdown);
+    };
+  }, []);
 
   return (
     <>
-      <motion.div className='hamburger-container'>
-        <Hamburger className="" isOpen={isOpen} setIsOpen={setIsOpen}/>
-      </motion.div>
+      <nav className="flex items-center justify-between bg-blue-500 dark:bg-stone-700 fixed w-full top-0 h-[70px] z-50 px-4 shadow">
+        <div ref={ham}>
+          <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
+        </div>
+        <motion.button
+          whileHover={{ scale: 1.15 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={changeTheme}
+          transition={spring}
+          className={`flex items-center bg-white rounded-full w-12 h-6 px-1 ${
+            theme === "dark" ? "justify-end" : "justify-start"
+          }`}
+        >
+          <motion.span
+            layout
+            className={`w-4 h-4 bg-black rounded-full shadow-sm`}
+          />
+        </motion.button>
+      </nav>
       <AnimatePresence>
-      { isOpen && 
-        <motion.nav className='nav-container' variants={variant} animate='visible' initial='initial' exit='exit'>
-          <motion.button className='default' variants={item} whileHover={{scale: 1.15}} whileTap={{scale: 0.90}} data-dark-theme={darkTheme} onClick={changeTheme} transition={spring}>
-            <motion.span layout></motion.span>
-          </motion.button>
-          <Link to="/">
-            <motion.p variants={item} whileHover={{scale: 1.15}} whileTap={{scale: 0.90}}>
-              <FontAwesomeIcon icon={faHouse} />
-            </motion.p>
-          </Link>
-          <Link to="/about">
-            <motion.p variants={item} whileHover={{scale: 1.15}} whileTap={{scale: 0.90}}>
-              <FontAwesomeIcon initial={{pathLength: 0}} animate={{pathLength: 1}} icon={faAddressCard} />
-            </motion.p>
-          </Link>
-          <Link to='/contact'> 
-            <motion.p variants={item} whileHover={{scale: 1.15}} whileTap={{scale: 0.90}}>
-              <FontAwesomeIcon icon={faFileSignature} />
-            </motion.p>
-          </Link>
-        </motion.nav>
-      }
+        {isOpen && (
+          <motion.nav
+            ref={dropdown}
+            variants={variant}
+            animate="visible"
+            initial="initial"
+            exit="exit"
+            className="fixed top-[70px] bg-blue-500 dark:bg-stone-700 flex flex-col items-center justify-center z-50 w-20 p-4 shadow rounded-br-lg"
+          >
+            <Link to="/" onClick={() => setIsOpen(false)}>
+              <motion.li
+                variants={item}
+                whileHover={{ scale: 1.15 }}
+                whileTap={{ scale: 0.9 }}
+                className="flex items-center justify-center w-10 h-10 bg-white rounded-full m-2"
+              >
+                <FontAwesomeIcon icon={faHouse} />
+              </motion.li>
+            </Link>
+            <Link to="/about" onClick={() => setIsOpen(false)}>
+              <motion.li
+                variants={item}
+                whileHover={{ scale: 1.15 }}
+                whileTap={{ scale: 0.9 }}
+                className="flex items-center justify-center w-10 h-10 bg-white rounded-full m-2"
+              >
+                <FontAwesomeIcon
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  icon={faAddressCard}
+                />
+              </motion.li>
+            </Link>
+            <Link to="/contact" onClick={() => setIsOpen(false)}>
+              <motion.li
+                variants={item}
+                whileHover={{ scale: 1.15 }}
+                whileTap={{ scale: 0.9 }}
+                className="flex items-center justify-center w-10 h-10 bg-white rounded-full m-2"
+              >
+                <FontAwesomeIcon icon={faFileSignature} />
+              </motion.li>
+            </Link>
+          </motion.nav>
+        )}
       </AnimatePresence>
-      {/* <motion.div animate={{x: -5, zIndex: 1000, color: ['#000','#fff'], position:'absolute', transition: {duration: 1, repeat: Infinity, repeatType: 'reverse'}}}>
-        <FontAwesomeIcon icon={faChevronLeft} style={{color: 'inherit', zIndex: 1, position:'absolute', left: 110, top: 20}}/>
-      </motion.div>
-      <motion.div animate={{x: -5, zIndex: 1000, color: ['#000','#fff'], position:'absolute', transition: {duration: 1, delay: 0.1, repeat: Infinity, repeatType: 'reverse'}}}>
-        <FontAwesomeIcon icon={faChevronLeft} style={{color: 'inherit', zIndex: 1, position:'absolute', left: 120, top: 20}}/>
-      </motion.div>
-      <motion.div animate={{x: -5, zIndex: 1000, color: ['#000','#fff'], position:'absolute', transition: {duration: 1,delay: 0.2, repeat: Infinity, repeatType: 'reverse'}}}>
-        <FontAwesomeIcon icon={faChevronLeft} style={{color: 'inherit', zIndex: 1, position:'absolute', left: 130, top: 20}}/>
-      </motion.div> */}
     </>
-  )
-}
+  );
+};
 
 export default Nav;

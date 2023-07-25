@@ -1,168 +1,105 @@
-import './style.scss';
-import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 const Logo = () => {
   const variants = {
     stateOneAnimate: {
-      borderRadius: ['50%', '50%', '3%', '3%', '3%'],
-      width: ['100px','170px', '100px', '100px', '170px'],
-      height: ['100px','170px', '100px', '100px', '100px'],
+      borderRadius: ["50%", "50%", "3%", "3%", "3%"],
+      width: ["60px", "100px", "60px", "60px", "180px"],
+      height: ["60px", "100px", "60px", "60px", "60px"],
       rotate: [0, 360, 360, 0, 0],
       transition: {
-        duration: 2,
+        duration: 1.5,
         times: [0, 0.2, 0.5, 0.7, 0.98, 1],
-      }
+      },
     },
     stateTwoAnimate: {
-      borderRadius: ['3%','3%'],
-      width: ['160px','100px'],
-      height: ['100px', '100px'],
+      borderRadius: ["3%", "3%"],
+      width: ["180px", "60px"],
+      height: ["60px", "60px"],
       transition: {
-        duration: 1,
-      }
-    }
-  }
-
-  const afterVars = {
-    stateOneAnimate: {
-      inset: ['30px','30px', '5px', '5px', '5px'],
-      borderRadius: ['50%','50%', '1%', '1%', '1%'],
-      transition: {
-        duration: 2,
-        times: [0, 0.2, 0.5, 0.7, 1],
-      }
+        duration: 1.5,
+      },
     },
-    stateTwoAnimate: {
-      inset: '5px',
-      borderRadius: '1%',
-      transition: {
-        duration: 2
-      }
-    }
-  }
+  };
 
   const nameVars = {
     stateOneAnimate: {
-      opacity:[0, 1], 
-      transition: {delay: 2, duration: 1}
-    },
-    stateTwoAnimate: {
-      opacity:[1, 0], 
-    }
-  }
-
-  const mVar = {
-    stateOneAnimate: {
-      x: [50, 5],
-      transition: {
-        delay: 1.2,
-        duration: 1,
-      }
-    },
-    stateTwoAnimate: {
-      x: [5, 50],
+      opacity: [0, 1],
+      width: ["0px", "50px"],
       transition: {
         duration: 1,
-      }
-    }
-  }
-
-  const kVar = {
-    stateOneAnimate: {
-      x: [-15, -5],
-      transition: {
-        delay: 1.5,
-      }
+        delay: 1,
+        opacity: { delay: 1.75, duration: 2 },
+      },
     },
     stateTwoAnimate: {
-      x: [-5, -15],
-    }
-  }
+      opacity: [1, 0],
+      width: ["50px", "0px"],
+      transition: { duration: 1, opacity: { duration: 0.2 } },
+    },
+  };
 
-  const [logo, setLogo] = useState('stateOneAnimate')
+  const [logo, setLogo] = useState("stateOneAnimate");
 
   useEffect(() => {
     setTimeout(() => {
-      setLogo('stateTwoAnimate')
-    }, 3000)
-  }, [])
+      setLogo("stateTwoAnimate");
+    }, 5000);
+  }, []);
 
   const handleChange = () => {
-    setLogo(prevState => {
-      if(prevState === 'stateOneAnimate') {
-        return 'stateTwoAnimate'
+    setLogo((prevState) => {
+      if (prevState === "stateOneAnimate") {
+        return "stateTwoAnimate";
       } else {
-        return 'stateOneAnimate'
+        return "stateOneAnimate";
       }
-    })
-  }
+    });
+  };
 
   return (
-    <div className='logo-container'>
+    <div
+      className={
+        "text-blue-500 dark:text-white flex justify-center items-center relative h-[100px] w-[100px]"
+      }
+      onClick={handleChange}
+    >
       <motion.div
-        className='logo'
         variants={variants}
         animate={logo}
-        onClick={handleChange}
         layout
-      >
-        <motion.div 
-          className='before'
-        >
-        </motion.div>
-        <motion.div 
-          className='after'
-          variants={afterVars}
+        className="absolute bg-blue-200 dark:bg-stone-400 flex items-end justify-center border-blue-500 dark:border-stone-700 border-4 z-40"
+      />
+
+      <motion.div animate={logo} className="flex items-end justify-center">
+        <motion.p key="1" className="text-4xl z-40">
+          M
+        </motion.p>
+        <motion.p
+          key="2"
+          variants={nameVars}
           animate={logo}
+          className="pb-1 z-40"
         >
-        </motion.div>
+          atthew
+        </motion.p>
       </motion.div>
-      <motion.div 
-        className='logo-content-container'
-        onClick={handleChange}
-      >
-        <motion.div 
-          className="left"
-          variants={mVar}
-          animate={logo}
-        >
-          <motion.span
-            className='initial-letter'
-          >
-            M
-          </motion.span>
-          <motion.span
-          className='letters'
+      <motion.div animate={logo} className="flex items-end justify-center">
+        <motion.p key="3" className={`text-4xl z-40`}>
+          K
+        </motion.p>
+        <motion.p
+          key="4"
           variants={nameVars}
           animate={logo}
-          >
-            atthew
-          </motion.span>
-        </motion.div>
-        <motion.div 
-          className='right'
-          variants={kVar}
-          animate={logo}
+          className="pb-1 z-40"
         >
-          <motion.span
-          className='initial-letter'
-          >
-            K
-          </motion.span>
-          <motion.span
-          className='letters'
-          variants={nameVars}
-          animate={logo}
-          >
-            ellner
-          </motion.span>
-        </motion.div>
+          ellner
+        </motion.p>
       </motion.div>
     </div>
-  )
-}
+  );
+};
 
 export default Logo;
-
-//find out why letters arent moving x and y
