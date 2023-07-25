@@ -2,8 +2,8 @@ import Pic from "../../Images/profilePic2.png";
 import { motion } from "framer-motion";
 import Footer from "../../components/Footer";
 import Projects from "../../components/Projects";
-// import { open, closed } from "../../components/Variants/Variants";
 import Arrow from "./Arrow";
+import Logo from "../../components/Logo";
 
 const Home = ({ navIsOpen, setTheme, theme }) => {
   return (
@@ -12,6 +12,7 @@ const Home = ({ navIsOpen, setTheme, theme }) => {
         layout
         className="snap-center flex flex-col justify-center sm:justify-evenly items-center w-screen h-[calc(100vh-70px)] relative"
       >
+        <Logo />
         <motion.img
           layout
           className="rounded-full shadow-2xl w-10/12 sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-4"

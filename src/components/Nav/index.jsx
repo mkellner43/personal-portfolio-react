@@ -8,7 +8,6 @@ import {
   faFileSignature,
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useRef } from "react";
-import Logo from "../Logo";
 
 const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
   const variant = {
@@ -103,7 +102,6 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
         <div ref={ham}>
           <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
-        <Logo />
         <motion.button
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.9 }}
