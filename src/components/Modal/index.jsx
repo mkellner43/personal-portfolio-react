@@ -40,11 +40,15 @@ const Modal = ({ sent, sendError, setSent, setSend, setError }) => {
         animate="animate"
         initial="initial"
         exit="initial"
+        className="absolute top-0 left-0 w-screen h-screen bg-black bg-opacity-70 flex flex-col justify-center items-center z-50"
       >
         {!sent && (
           <>
-            <h1>Sending</h1>
-            <FontAwesomeIcon icon={faSpinner} className="fa-spin loader" />
+            <h1 className="text-4xl">Sending</h1>
+            <FontAwesomeIcon
+              icon={faSpinner}
+              className="fa-spin loader text-4xl"
+            />
           </>
         )}
         {sent && !sendError && (
@@ -57,10 +61,11 @@ const Modal = ({ sent, sendError, setSent, setSend, setError }) => {
               }}
               whileTap={{ scale: 0.9 }}
               onClick={handleClick}
+              className="absolute top-20 right-5"
             >
-              <FontAwesomeIcon icon={faXmark} />
+              <FontAwesomeIcon icon={faXmark} className="text-xl text-red-500" />
             </motion.button>
-            <h1>Message Sent!</h1>
+            <h1 className="text-4xl">Message Sent!</h1>
             <Check />
           </>
         )}
@@ -79,7 +84,7 @@ const Modal = ({ sent, sendError, setSent, setSend, setError }) => {
             </motion.button>
             <h1>Message Error</h1>
             <FontAwesomeIcon icon={faSkullCrossbones} />
-            <p >{sendError}</p>
+            <p>{sendError}</p>
           </>
         )}
       </motion.div>

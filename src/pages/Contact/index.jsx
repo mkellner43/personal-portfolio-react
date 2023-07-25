@@ -50,7 +50,7 @@ const Contact = ({ navIsOpen }) => {
         >
           Contact me.
         </motion.h1>
-        <form ref={refForm} onSubmit={sendEmail} className="flex flex-col grow gap-2">
+        <form ref={refForm} onSubmit={sendEmail} className="flex flex-col grow gap-2 text-stone-700">
           <motion.div className="flex gap-2">
             <input name="name" placeholder="Name" required className="flex-auto py-2 w-2/4 border px-2 rounded-sm"/>
             <input name="email" placeholder="Email" type="email" required className="flex-auto py-2 w-2/4 border px-2 rounded-sm"/>

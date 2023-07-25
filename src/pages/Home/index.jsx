@@ -4,6 +4,7 @@ import Footer from "../../components/Footer";
 import Projects from "../../components/Projects";
 import Arrow from "./Arrow";
 import Logo from "../../components/Logo";
+import Background from "../../components/Background";
 
 const Home = ({ navIsOpen, setTheme, theme }) => {
   return (
@@ -12,6 +13,7 @@ const Home = ({ navIsOpen, setTheme, theme }) => {
         layout
         className="snap-center flex flex-col justify-start sm:justify-start items-center w-screen h-[calc(100vh-70px)] relative"
       >
+        {/* <Background /> */}
         <Logo />
 
         <motion.div className="flex flex-col justify-center items-center grow">
