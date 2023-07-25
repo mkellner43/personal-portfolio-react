@@ -4,7 +4,7 @@ import Footer from "../../components/Footer";
 import Projects from "../../components/Projects";
 import Arrow from "./Arrow";
 import Logo from "../../components/Logo";
-import Background from "../../components/Background";
+// import Background from "../../components/Background";
 
 const Home = ({ navIsOpen, setTheme, theme }) => {
   return (
