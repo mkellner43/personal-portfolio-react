@@ -21,9 +21,20 @@ function App() {
 
   return (
     <>
-      <Nav isOpen={isOpen} setIsOpen={setIsOpen} setTheme={setTheme} theme={theme} />
+      <Nav
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        setTheme={setTheme}
+        theme={theme}
+      />
       <Routes>
-        <Route default path="/" element={<Home navIsOpen={isOpen} theme={theme} setTheme={setTheme} />} />
+        <Route
+          default
+          path="/"
+          element={
+            <Home navIsOpen={isOpen} theme={theme} setTheme={setTheme} />
+          }
+        />
         <Route default path="/about" element={<About navIsOpen={isOpen} />} />
         <Route
           default

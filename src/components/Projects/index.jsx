@@ -112,13 +112,14 @@ const Projects = () => {
 
   return (
     <motion.section
+      className="h-screen w-screen flex flex-col items-center justify-center relative bg-inherit text-inherit"
+    >
+      <h1 className="text-5xl text-center font-nunito">Projects</h1>
+      <motion.div 
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1, transition: { duration: 2 } }}
       viewport={{ amount: 0.2, once: true }}
-      className="flex flex-col items-center justify-center bg-primary-color text-secondary-color"
-    >
-      <h1 className="text-5xl text-center font-nunito">Projects</h1>
-      <motion.div className="flex items-center justify-center p-4 mt-10">
+      className="flex items-center justify-center p-4 mt-10">
         <AnimatePresence initial={false}>
           <motion.div
             key={"left"}

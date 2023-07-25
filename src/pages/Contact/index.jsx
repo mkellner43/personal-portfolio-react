@@ -3,11 +3,10 @@ import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
-import { open, closed } from "../../components/Variants/Variants";
 import Footer from "../../components/Footer";
 import Modal from "../../components/Modal";
 
-const Contact = ({ navIsOpen }) => {
+const Contact = () => {
   const refForm = useRef();
   const [sent, setSent] = useState(false);
   const [send, setSend] = useState(false);
@@ -37,7 +36,7 @@ const Contact = ({ navIsOpen }) => {
   };
 
   return (
-    <motion.section animate={navIsOpen ? open : closed} initial={false} className="flex flex-col h-screen w-screen pt-[70px] overscroll-none dark:bg-stone-500 dark:text-white">
+    <motion.section className="flex flex-col h-screen w-screen pt-[70px] overscroll-none bg-slate-200 dark:bg-stone-500 dark:text-white">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration: 1.2 } }}
@@ -50,12 +49,32 @@ const Contact = ({ navIsOpen }) => {
         >
           Contact me.
         </motion.h1>
-        <form ref={refForm} onSubmit={sendEmail} className="flex flex-col grow gap-2 text-stone-700">
+        <form
+          ref={refForm}
+          onSubmit={sendEmail}
+          className="flex flex-col grow gap-2 text-stone-700"
+        >
           <motion.div className="flex gap-2">
-            <input name="name" placeholder="Name" required className="flex-auto py-2 w-2/4 border px-2 rounded-sm"/>
-            <input name="email" placeholder="Email" type="email" required className="flex-auto py-2 w-2/4 border px-2 rounded-sm"/>
+            <input
+              name="name"
+              placeholder="Name"
+              required
+              className="flex-auto py-2 w-2/4 border px-2 rounded-sm"
+            />
+            <input
+              name="email"
+              placeholder="Email"
+              type="email"
+              required
+              className="flex-auto py-2 w-2/4 border px-2 rounded-sm"
+            />
           </motion.div>
-          <input name="subject" placeholder="Subject" required className="py-2 border px-2 rounded-sm"/>
+          <input
+            name="subject"
+            placeholder="Subject"
+            required
+            className="py-2 border px-2 rounded-sm"
+          />
           <textarea
             name="content"
             placeholder="Message"

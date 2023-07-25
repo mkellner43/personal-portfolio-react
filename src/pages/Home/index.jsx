@@ -4,18 +4,15 @@ import Footer from "../../components/Footer";
 import Projects from "../../components/Projects";
 import Arrow from "./Arrow";
 import Logo from "../../components/Logo";
-// import Background from "../../components/Background";
 
-const Home = ({ navIsOpen, setTheme, theme }) => {
+const Home = ({ setTheme, theme }) => {
   return (
-    <div className="snap-mandatory snap-y w-screen dark:bg-stone-500 dark:text-white overflow-scroll mt-[70px] h-[calc(100vh-70px)]">
+    <div className="w-screen bg-slate-200 dark:bg-stone-500 dark:text-white mt-[70px] h-[calc(100vh-70px)]">
       <motion.section
         layout
-        className="snap-center flex flex-col justify-start sm:justify-start items-center w-screen h-[calc(100vh-70px)] relative"
+        className=" flex flex-col justify-start sm:justify-start items-center w-screen h-[calc(100vh-70px)] "
       >
-        {/* <Background /> */}
         <Logo />
-
         <motion.div className="flex flex-col justify-center items-center grow">
           <motion.img
             layout
@@ -58,16 +55,10 @@ const Home = ({ navIsOpen, setTheme, theme }) => {
           <Arrow theme={theme} setTheme={setTheme} />
         </div>
       </motion.section>
-      <section className="snap-center h-[calc(100vh-70px)] w-screen flex flex-col items-center justify-start relative pt-10">
-        <Projects />
-        <div className="absolute bottom-0">
-          <Footer />
-        </div>
-      </section>
+      <Projects />
+      <Footer />
     </div>
   );
 };
 
 export default Home;
-
-//! removed all styles restyle with tailwind css

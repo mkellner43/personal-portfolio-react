@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import {
   motion,
   useSpring,
@@ -6,12 +6,14 @@ import {
   useMotionValue,
   useVelocity,
   useAnimationFrame,
+  useScroll,
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
 
-function ParallaxText({ children, baseVelocity = 100, aboutContainer }) {
+function ParallaxText({ children, baseVelocity = 100 }) {
   const baseX = useMotionValue(0);
-  const scrollVelocity = useVelocity(aboutContainer);
+  const { scrollY } = useScroll();
+  const scrollVelocity = useVelocity(scrollY);
   const smoothVelocity = useSpring(scrollVelocity, {
     damping: 50,
     stiffness: 400,
@@ -22,8 +24,6 @@ function ParallaxText({ children, baseVelocity = 100, aboutContainer }) {
   const x = useTransform(baseX, (v) => {
     return `${wrap(-20, -45, v)}%`;
   });
-  useEffect(() => { 
-  }, [aboutContainer])
 
   const directionFactor = useRef(1);
   useAnimationFrame((t, delta) => {
@@ -52,8 +52,8 @@ function ParallaxText({ children, baseVelocity = 100, aboutContainer }) {
   );
 }
 
-const Scroll = ({ data, baseVelocity = 50, aboutContainer }) => {
-  return <ParallaxText baseVelocity={baseVelocity} aboutContainer={aboutContainer} >{data}</ParallaxText>;
+const Scroll = ({ data, baseVelocity = 50 }) => {
+  return <ParallaxText baseVelocity={baseVelocity} >{data}</ParallaxText>;
 };
 
 export default Scroll;
