@@ -97,7 +97,7 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
   }, []);
 
   return (
-    <>
+    <header>
       <nav className="flex items-center justify-between bg-blue-500 dark:bg-stone-700 fixed w-full top-0 h-[70px] z-50 px-4 shadow">
         <div ref={ham}>
           <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -164,7 +164,7 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
           </motion.nav>
         )}
       </AnimatePresence>
-    </>
+    </header>
   );
 };
 
