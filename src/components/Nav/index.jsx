@@ -98,7 +98,7 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
 
   return (
     <>
-      <motion.nav className="fixed w-screen top-0 flex items-center justify-between bg-blue-500 dark:bg-stone-700 h-[70px] z-50 px-4">
+      <motion.nav className="fixed w-screen top-[-1px] flex items-center justify-between bg-blue-500 dark:bg-stone-700 h-[70px] z-50 px-4">
         <motion.div ref={ham}>
           <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
         </motion.div>
