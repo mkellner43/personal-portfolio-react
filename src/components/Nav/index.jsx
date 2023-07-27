@@ -1,4 +1,4 @@
-import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Hamburger from "../Hamburger";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -62,8 +62,8 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
   };
   const spring = {
     type: "spring",
-    stiffness: 700,
-    damping: 30,
+    damping: 20,
+    stiffness: 400,
   };
 
   const changeTheme = () => {
@@ -110,7 +110,15 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
         >
           <motion.span
             initial={{ x: 0 }}
-            animate={theme === "dark" ? { x: 0 } : { x: 24 }}
+            animate={
+              theme === "dark"
+                ? {
+                    x: 0,
+                  }
+                : {
+                    x: 24,
+                  }
+            }
             transition={spring}
             className={` w-4 h-4 bg-black rounded-full`}
           />
