@@ -209,4 +209,5 @@ const Projects = () => {
 };
 
 export default Projects;
-//add wheres waldo to projects and maybe remove slide animate as it is choppy af
+
+//! try to make project container swipable and weird animation on toggle

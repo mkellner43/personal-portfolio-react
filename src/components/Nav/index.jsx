@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Hamburger from "../Hamburger";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -97,26 +97,25 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
   }, []);
 
   return (
-    <header>
-      <nav className="flex items-center justify-between bg-blue-500 dark:bg-stone-700 fixed w-full top-0 h-[70px] z-50 px-4 shadow">
-        <div ref={ham}>
+    <>
+      <motion.nav className="fixed w-screen top-0 flex items-center justify-between bg-blue-500 dark:bg-stone-700 h-[70px] z-50 px-4">
+        <motion.div ref={ham}>
           <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
-        </div>
+        </motion.div>
         <motion.button
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.9 }}
           onClick={changeTheme}
-          transition={spring}
-          className={`flex items-center bg-white rounded-full w-12 h-6 px-1 ${
-            theme === "dark" ? "justify-end" : "justify-start"
-          }`}
+          className={`flex bg-white rounded-full w-12 h-6 px-1 items-center`}
         >
           <motion.span
-            layout
-            className={`w-4 h-4 bg-black rounded-full shadow-sm`}
+            initial={{ x: 0 }}
+            animate={theme === "dark" ? { x: 0 } : { x: 24 }}
+            transition={spring}
+            className={` w-4 h-4 bg-black rounded-full`}
           />
         </motion.button>
-      </nav>
+      </motion.nav>
       <AnimatePresence>
         {isOpen && (
           <motion.nav
@@ -164,7 +163,7 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
           </motion.nav>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 };
 
