@@ -209,5 +209,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
-//! try to make project container swipable and weird animation on toggle

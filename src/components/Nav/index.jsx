@@ -22,7 +22,7 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
         type: "spring",
         damping: 24,
         staggerChildren: 0.07,
-        delayChildren: 0.2,
+        delayChildren: 0.1,
       },
     },
     exit: {
@@ -34,7 +34,7 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
         delay: 0.2,
         staggerChildren: -0.07,
         delayChildren: 0.2,
-        duration: 0.5,
+        duration: 0.2,
       },
     },
   };
@@ -98,7 +98,7 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
 
   return (
     <>
-      <motion.nav className="fixed w-screen top-[-1px] flex items-center justify-between bg-blue-500 dark:bg-stone-700 h-[70px] z-50 px-4">
+      <motion.nav className="fixed w-screen top-[-1px] flex items-center justify-between bg-blue-500 dark:bg-stone-700 h-[71px] z-50 px-4 shadow">
         <motion.div ref={ham}>
           <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
         </motion.div>
