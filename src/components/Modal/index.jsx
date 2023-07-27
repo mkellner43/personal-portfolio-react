@@ -63,7 +63,10 @@ const Modal = ({ sent, sendError, setSent, setSend, setError }) => {
               onClick={handleClick}
               className="absolute top-20 right-5"
             >
-              <FontAwesomeIcon icon={faXmark} className="text-xl text-red-500" />
+              <FontAwesomeIcon
+                icon={faXmark}
+                className="text-xl text-red-500"
+              />
             </motion.button>
             <h1 className="text-4xl">Message Sent!</h1>
             <Check />

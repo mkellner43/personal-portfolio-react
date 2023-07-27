@@ -17,8 +17,8 @@ const Hamburger = ({ isOpen, setIsOpen }) => {
       stroke: "#FF0000",
       translateY: 10,
       transition: {
-        duration: .2
-      }
+        duration: 0.2,
+      },
     },
   };
 
@@ -34,8 +34,8 @@ const Hamburger = ({ isOpen, setIsOpen }) => {
       opacity: 0,
       stroke: "#FF0000",
       transition: {
-        duration: .2
-      }
+        duration: 0.2,
+      },
     },
   };
 
@@ -53,8 +53,8 @@ const Hamburger = ({ isOpen, setIsOpen }) => {
       translateY: -10,
       stroke: "#FF0000",
       transition: {
-        duration: .2
-      }
+        duration: 0.2,
+      },
     },
   };
 

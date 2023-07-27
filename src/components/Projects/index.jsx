@@ -105,38 +105,37 @@ const Projects = () => {
       return {
         x: direction < 0 ? 1000 : -1000,
         opacity: 0,
-        zIndex: 0,
       };
     },
   };
 
   return (
-    <motion.section
-      className="h-screen w-screen flex flex-col items-center justify-center relative bg-inherit text-inherit"
-    >
+    <motion.section className="w-screen h-screen flex flex-col items-center justify-center relative bg-inherit text-inherit pb-10">
       <h1 className="text-5xl text-center font-nunito">Projects</h1>
-      <motion.div 
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1, transition: { duration: 2 } }}
-      viewport={{ amount: 0.2, once: true }}
-      className="flex items-center justify-center p-4 mt-10">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1, transition: { duration: 2 } }}
+        viewport={{ amount: 0.2, once: true }}
+        className="flex items-center my-10 relative max-w-7xl"
+      >
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.9 }}
+          className="z-10 text-2xl absolute left-2 h-6 w-6 flex justify-center items-center drop-shadow-lg"
+        >
+          <motion.span className="absolute dark:bg-black bg-white w-4 h-4 rounded-full" />
+          <FontAwesomeIcon
+            icon={faChevronCircleLeft}
+            onClick={handleClickLeft}
+            className="absolute text-4xl"
+          />
+        </motion.div>
         <AnimatePresence initial={false}>
-          <motion.div
-            key={"left"}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.9 }}
-            className="z-10 text-2xl mr-2"
-          >
-            <FontAwesomeIcon
-              icon={faChevronCircleLeft}
-              onClick={handleClickLeft}
-              style={{ color: "var(--secondary-color)" }}
-            />
-          </motion.div>
           <motion.a
             href={photos[index].link}
             target="_blank"
             rel="noopener noreferrer"
+            className="select-none"
           >
             <motion.img
               layout
@@ -152,25 +151,25 @@ const Projects = () => {
               key={index}
               src={photos[index].image}
               alt="memory game"
-              className="h-96 w-96 object-cover rounded-lg shadow-xl"
+              className="object-cover rounded-lg shadow-xl w-96 h-96 sm:w-full sm:h-auto sm:aspect-square sm:max-h-[70vh]"
             />
           </motion.a>
-          <motion.div
-            key={"right"}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.9 }}
-            className="z-10 text-2xl ml-2"
-          >
-            <FontAwesomeIcon
-              icon={faChevronCircleRight}
-              onClick={handleClickRight}
-              style={{ color: "var(--secondary-color)" }}
-            />
-          </motion.div>
         </AnimatePresence>
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.9 }}
+          className="z-10 text-2xl absolute right-2 h-6 w-6 flex justify-center items-center drop-shadow-lg"
+        >
+          <motion.span className="absolute  w-4 h-4 rounded-full dark:bg-black bg-white" />
+          <FontAwesomeIcon
+            icon={faChevronCircleRight}
+            onClick={handleClickRight}
+            className="absolute text-4xl"
+          />
+        </motion.div>
       </motion.div>
       {photos[index].backend ? (
-        <div className="flex justify-evenly items-center min-w-[300px]">
+        <div className="flex justify-evenly items-center min-w-[300px] select-none">
           <motion.a
             href={photos[index].code}
             target="_blank"
@@ -199,7 +198,7 @@ const Projects = () => {
           rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
-          className="text-lg font-nunito bg-blue-500 p-2 rounded-full"
+          className="text-lg font-nunito bg-blue-500 p-2 rounded-full select-none"
         >
           View Code
         </motion.a>

@@ -10,7 +10,7 @@ const Home = ({ setTheme, theme }) => {
     <div className="w-screen bg-slate-200 dark:bg-stone-500 dark:text-white pt-[70px] overflow-x-clip">
       <motion.section
         layout
-        className=" flex flex-col justify-start sm:justify-start items-center w-screen"
+        className=" flex flex-col justify-start sm:justify-start items-center w-screen "
       >
         <Logo />
         <motion.div className="flex flex-col justify-center items-center grow">

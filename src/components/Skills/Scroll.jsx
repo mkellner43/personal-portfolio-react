@@ -41,7 +41,7 @@ function ParallaxText({ children, baseVelocity = 100 }) {
   });
 
   return (
-    <div className="relative h-24 border-b border-opacity-10">
+    <div className="relative h-24">
       <motion.div style={{ x }} className="flex w-max absolute">
         {children}
         {children}
@@ -53,7 +53,7 @@ function ParallaxText({ children, baseVelocity = 100 }) {
 }
 
 const Scroll = ({ data, baseVelocity = 50 }) => {
-  return <ParallaxText baseVelocity={baseVelocity} >{data}</ParallaxText>;
+  return <ParallaxText baseVelocity={baseVelocity}>{data}</ParallaxText>;
 };
 
 export default Scroll;
