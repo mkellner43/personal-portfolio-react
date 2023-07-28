@@ -7,7 +7,7 @@ import Logo from "../../components/Logo";
 
 const Home = ({ setTheme, theme }) => {
   return (
-    <div className="w-screen bg-slate-200 dark:bg-stone-500 dark:text-white pt-[70px] overflow-x-clip">
+    <div className="w-screen h-full bg-slate-200 dark:bg-stone-500 dark:text-white overflow-y-scroll">
       <motion.section
         layout
         className=" flex flex-col justify-start sm:justify-start items-center w-screen h-[90vh]"

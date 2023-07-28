@@ -5,8 +5,8 @@ import resume from "../../Images/resume.pdf";
 
 const About = () => {
   return (
-    <motion.section className="flex flex-col w-screen justify-center items-center pt-20 mt-10 gap-16 bg-slate-200 dark:bg-stone-500 dark:text-white">
-      <div className="flex flex-col justify-center items-center max-w-xl overflow-x-clip px-5 gap-5">
+    <motion.section className="w-screen h-full justify-center items-center gap-16 bg-slate-200 dark:bg-stone-500 dark:text-white overflow-y-scroll">
+      <div className="flex flex-col justify-center items-center max-w-xl overflow-x-clip px-5 gap-5 pt-10">
         <motion.h1
           initial={{ y: -100, opacity: 0 }}
           animate={{ opacity: 1, y: 0, transition: { duration: 1 } }}

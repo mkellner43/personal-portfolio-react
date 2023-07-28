@@ -110,7 +110,7 @@ const Projects = () => {
   };
 
   return (
-    <motion.section className="w-screen h-screen flex flex-col items-center justify-center relative bg-inherit text-inherit pb-10">
+    <motion.section className="w-screen flex flex-col items-center justify-center relative bg-inherit text-inherit pb-10">
       <h1 className="text-5xl text-center font-nunito">Projects</h1>
       <motion.div
         initial={{ opacity: 0 }}

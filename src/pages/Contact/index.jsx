@@ -36,11 +36,11 @@ const Contact = () => {
   };
 
   return (
-    <motion.section className="flex flex-col h-screen w-screen pt-[70px] overscroll-none bg-slate-200 dark:bg-stone-500 dark:text-white">
+    <motion.section className="h-full w-screen bg-slate-200 dark:bg-stone-500 dark:text-white overflow-y-scroll flex flex-col">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration: 1.2 } }}
-        className="flex flex-col h-full w-full pt-20 px-4 max-w-2xl m-auto gap-4"
+        className="flex flex-col w-full pt-10 px-4 max-w-2xl grow gap-4"
       >
         <motion.h1
           initial={{ y: -100, opacity: 0 }}
@@ -52,7 +52,7 @@ const Contact = () => {
         <form
           ref={refForm}
           onSubmit={sendEmail}
-          className="flex flex-col grow gap-2 text-stone-700"
+          className="flex flex-col gap-2 text-stone-700"
         >
           <motion.div className="flex gap-2">
             <input

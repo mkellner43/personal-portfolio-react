@@ -10,6 +10,8 @@ import {
 import { useEffect, useRef } from "react";
 
 const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
+  const dropdown = useRef(null);
+  const ham = useRef(null);
   const variant = {
     initial: {
       opacity: 0,
@@ -77,8 +79,6 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
       document.documentElement.classList.add("dark");
     }
   };
-  const dropdown = useRef(null);
-  const ham = useRef(null);
 
   const closeDropdown = (e) => {
     if (
@@ -98,7 +98,7 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
 
   return (
     <>
-      <motion.nav className="fixed w-screen top-[-1px] flex items-center justify-between bg-blue-500 dark:bg-stone-700 h-[71px] z-50 px-4 shadow">
+      <motion.nav className="fixed top-0 w-screen flex items-center justify-between bg-blue-500 dark:bg-stone-700 min-h-[70px] z-50 px-4 shadow">
         <motion.div ref={ham}>
           <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
         </motion.div>
@@ -176,3 +176,4 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
 };
 
 export default Nav;
+//fix line in nav bar ugh
