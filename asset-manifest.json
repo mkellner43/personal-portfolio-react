@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/personal-portfolio-react/static/css/main.3983a1f4.css",
-    "main.js": "/personal-portfolio-react/static/js/main.3243d02e.js",
+    "main.css": "/personal-portfolio-react/static/css/main.765bb1b5.css",
+    "main.js": "/personal-portfolio-react/static/js/main.e446619e.js",
     "static/media/Screenshot 2023-02-01 at 3.24.41 PM.png": "/personal-portfolio-react/static/media/Screenshot 2023-02-01 at 3.24.41 PM.e6202bca0760259e6504.png",
     "static/media/memoryGame.png": "/personal-portfolio-react/static/media/memoryGame.1b1a0f7f48355213b947.png",
     "static/media/Screenshot 2023-01-31 at 6.30.08 PM.png": "/personal-portfolio-react/static/media/Screenshot 2023-01-31 at 6.30.08 PM.3d3d2aa75556df2f6f2e.png",
@@ -18,11 +18,11 @@
     "static/media/typescript.svg": "/personal-portfolio-react/static/media/typescript.a6305a733dd55243980aec55f96f70c5.svg",
     "static/media/tailwind-css-icon.svg": "/personal-portfolio-react/static/media/tailwind-css-icon.d84a6f369e7170891c4a19587ccf78e1.svg",
     "static/media/framerIcon.svg": "/personal-portfolio-react/static/media/framerIcon.9d03b0377ba615640aff457f52e34021.svg",
-    "main.3983a1f4.css.map": "/personal-portfolio-react/static/css/main.3983a1f4.css.map",
-    "main.3243d02e.js.map": "/personal-portfolio-react/static/js/main.3243d02e.js.map"
+    "main.765bb1b5.css.map": "/personal-portfolio-react/static/css/main.765bb1b5.css.map",
+    "main.e446619e.js.map": "/personal-portfolio-react/static/js/main.e446619e.js.map"
   },
   "entrypoints": [
-    "static/css/main.3983a1f4.css",
-    "static/js/main.3243d02e.js"
+    "static/css/main.765bb1b5.css",
+    "static/js/main.e446619e.js"
   ]
 }
