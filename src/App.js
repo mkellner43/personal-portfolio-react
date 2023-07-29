@@ -10,12 +10,12 @@ function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme"));
 
   useEffect(() => {
-    if (localStorage.getItem("theme") === "dark") {
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
-    } else {
+    if (localStorage.getItem("theme") === "light") {
       setTheme("light");
       document.documentElement.classList.remove("dark");
+    } else {
+      setTheme("light");
+      document.documentElement.classList.add("dark");
     }
   }, []);
 

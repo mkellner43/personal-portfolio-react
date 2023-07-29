@@ -36,8 +36,8 @@ const Contact = () => {
   };
 
   return (
-    <section className="mt-safe-top fixed h-full overflow-y-scroll pt-[70px]">
-      <motion.section className="h-full w-screen bg-slate-200 dark:bg-stone-500 dark:text-white overflow-y-scroll flex flex-col">
+    <section className="mt-safe-top absolute overflow-scroll flex h-full">
+      <motion.section className="h-full w-screen bg-slate-200 dark:bg-stone-500 dark:text-white flex flex-col pt-[70px]">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { duration: 1.2 } }}
