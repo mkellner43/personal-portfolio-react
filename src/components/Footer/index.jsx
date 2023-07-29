@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="flex w-screen justify-center items-center p-2 bg-blue-500 dark:bg-stone-700 min-h-[80px] relative">
+    <footer className="flex w-screen justify-center items-center p-2 bg-blue-500 dark:bg-stone-700 min-h-[80px]">
       <motion.div className="flex max-w-md w-screen items-center justify-evenly text-2xl text-white">
         <motion.a
           whileHover={{ scale: 1.1, color: "#0072b1", backgroundColor: "#fff" }}

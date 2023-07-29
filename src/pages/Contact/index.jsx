@@ -36,77 +36,79 @@ const Contact = () => {
   };
 
   return (
-    <motion.section className="h-full w-screen bg-slate-200 dark:bg-stone-500 dark:text-white overflow-y-scroll flex flex-col">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { duration: 1.2 } }}
-        className="flex flex-col w-full pt-10 px-4 max-w-2xl grow gap-4"
-      >
-        <motion.h1
-          initial={{ y: -100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1, transition: { duration: 1 } }}
-          className="text-5xl text-center mb-4"
+    <section className="mt-safe-top fixed h-full overflow-y-scroll pt-[70px]">
+      <motion.section className="h-full w-screen bg-slate-200 dark:bg-stone-500 dark:text-white overflow-y-scroll flex flex-col">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { duration: 1.2 } }}
+          className="flex flex-col w-full pt-10 px-4 max-w-2xl grow gap-4 m-auto"
         >
-          Contact me.
-        </motion.h1>
-        <form
-          ref={refForm}
-          onSubmit={sendEmail}
-          className="flex flex-col gap-2 text-stone-700"
-        >
-          <motion.div className="flex gap-2">
-            <input
-              name="name"
-              placeholder="Name"
-              required
-              className="flex-auto py-2 w-2/4 border px-2 rounded-sm"
-            />
-            <input
-              name="email"
-              placeholder="Email"
-              type="email"
-              required
-              className="flex-auto py-2 w-2/4 border px-2 rounded-sm"
-            />
-          </motion.div>
-          <input
-            name="subject"
-            placeholder="Subject"
-            required
-            className="py-2 border px-2 rounded-sm"
-          />
-          <textarea
-            name="content"
-            placeholder="Message"
-            rows="8"
-            cols="40"
-            required
-            className="border p-2 rounded-sm resize-none"
-          ></textarea>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            type="submit"
-            disabled={send}
-            className="flex items-center justify-center bg-blue-500 text-white rounded-full p-4"
+          <motion.h1
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1, transition: { duration: 1 } }}
+            className="text-5xl text-center mb-4"
           >
-            <FontAwesomeIcon icon={faPaperPlane} size={"2x"} />
-          </motion.button>
-        </form>
-        <AnimatePresence>
-          {send && (
-            <Modal
-              sent={sent}
-              setSent={setSent}
-              setSend={setSend}
-              sendError={error}
-              setError={setError}
+            Contact me.
+          </motion.h1>
+          <form
+            ref={refForm}
+            onSubmit={sendEmail}
+            className="flex flex-col gap-2 text-stone-700"
+          >
+            <motion.div className="flex gap-2">
+              <input
+                name="name"
+                placeholder="Name"
+                required
+                className="flex-auto py-2 w-2/4 border px-2 rounded-sm"
+              />
+              <input
+                name="email"
+                placeholder="Email"
+                type="email"
+                required
+                className="flex-auto py-2 w-2/4 border px-2 rounded-sm"
+              />
+            </motion.div>
+            <input
+              name="subject"
+              placeholder="Subject"
+              required
+              className="py-2 border px-2 rounded-sm"
             />
-          )}
-        </AnimatePresence>
-      </motion.div>
-      <Footer />
-    </motion.section>
+            <textarea
+              name="content"
+              placeholder="Message"
+              rows="8"
+              cols="40"
+              required
+              className="border p-2 rounded-sm resize-none"
+            ></textarea>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              type="submit"
+              disabled={send}
+              className="flex items-center justify-center bg-blue-500 text-white rounded-full p-4"
+            >
+              <FontAwesomeIcon icon={faPaperPlane} size={"2x"} />
+            </motion.button>
+          </form>
+          <AnimatePresence>
+            {send && (
+              <Modal
+                sent={sent}
+                setSent={setSent}
+                setSend={setSend}
+                sendError={error}
+                setError={setError}
+              />
+            )}
+          </AnimatePresence>
+        </motion.div>
+        <Footer />
+      </motion.section>
+    </section>
   );
 };
 

@@ -20,7 +20,7 @@ function App() {
   }, []);
 
   return (
-    <div className="h-[calc(100vh-70px)] w-screen absolute top-[70px] overflow-hidden">
+    <>
       <Nav
         isOpen={isOpen}
         setIsOpen={setIsOpen}
@@ -42,7 +42,7 @@ function App() {
           element={<Contact navIsOpen={isOpen} />}
         />
       </Routes>
-    </div>
+    </>
   );
 }
 
