@@ -7,8 +7,7 @@ import Logo from "../../components/Logo";
 
 const Home = ({ setTheme, theme }) => {
   return (
-    <section className="mt-safe-top absolute overflow-scroll">
-      <div className="w-screen bg-slate-200 dark:bg-stone-500 dark:text-white pt-[70px]">
+      <div className="w-screen bg-slate-200 dark:bg-stone-500 dark:text-white pt-[70px] mt-10">
         <motion.section
           layout
           className="flex flex-col justify-start sm:justify-start items-center w-screen"
@@ -57,9 +56,8 @@ const Home = ({ setTheme, theme }) => {
           </div>
         </motion.section>
         <Projects />
-        <Footer />
+        {/* <Footer /> */}
       </div>
-    </section>
   );
 };
 

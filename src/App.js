@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +15,7 @@ function App() {
       setTheme("light");
       document.documentElement.classList.remove("dark");
     } else {
-      setTheme("light");
+      setTheme("dark");
       document.documentElement.classList.add("dark");
     }
   }, []);
@@ -42,6 +43,7 @@ function App() {
           element={<Contact navIsOpen={isOpen} />}
         />
       </Routes>
+      <Footer />
     </>
   );
 }
