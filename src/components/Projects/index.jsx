@@ -121,7 +121,8 @@ const Projects = () => {
         <motion.div
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
-          className="z-10 text-2xl absolute left-2 h-6 w-6 flex justify-center items-center drop-shadow-lg"
+          className="z-10 text-2xl h-full absolute left-2 w-12 flex justify-center items-center drop-shadow-lg"
+          onClick={handleClickLeft}
         >
           <motion.span className="absolute dark:bg-black bg-white w-4 h-4 rounded-full" />
           <FontAwesomeIcon
@@ -158,7 +159,8 @@ const Projects = () => {
         <motion.div
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
-          className="z-10 text-2xl absolute right-2 h-6 w-6 flex justify-center items-center drop-shadow-lg"
+          className="z-10 text-2xl absolute h-full right-2 w-12 flex justify-center items-center drop-shadow-lg"
+          onClick={handleClickRight}
         >
           <motion.span className="absolute  w-4 h-4 rounded-full dark:bg-black bg-white" />
           <FontAwesomeIcon
