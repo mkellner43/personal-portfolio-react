@@ -8,17 +8,11 @@ const Hamburger = ({ isOpen, setIsOpen }) => {
       rotate: 0,
       stroke: "#ffffff",
       translateY: 0,
-      transition: {
-        delay: 0.5,
-      },
     },
     opened: {
       rotate: 45,
       stroke: "#FF0000",
       translateY: 10,
-      transition: {
-        duration: 0.2,
-      },
     },
   };
 
@@ -26,16 +20,10 @@ const Hamburger = ({ isOpen, setIsOpen }) => {
     closed: {
       opacity: 1,
       stroke: "#ffffff",
-      transition: {
-        delay: 0.5,
-      },
     },
     opened: {
       opacity: 0,
       stroke: "#FF0000",
-      transition: {
-        duration: 0.2,
-      },
     },
   };
 
@@ -44,17 +32,11 @@ const Hamburger = ({ isOpen, setIsOpen }) => {
       rotate: 0,
       stroke: "#ffffff",
       translateY: 0,
-      transition: {
-        delay: 0.5,
-      },
     },
     opened: {
       rotate: -45,
       translateY: -10,
       stroke: "#FF0000",
-      transition: {
-        duration: 0.2,
-      },
     },
   };
 
