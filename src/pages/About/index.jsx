@@ -20,11 +20,7 @@ const About = () => {
             viewport={{ once: true }}
             className="text-justify font-nunito text-xl"
           >
-            Hi, I'm Matt, a full stack web developer with 3 years of experience
-            building websites. Much of my growth came through my undying
-            curiosity for how technology works. I enjoy challenging myself to
-            learn new technologies. Lifetime learning and continuous growth is
-            my passion!
+            Hello, I'm Matt, a seasoned full-stack web developer with a track record of 3 years in crafting exceptional websites. My journey in this dynamic field has been fueled by an insatiable curiosity for understanding the intricacies of technology. I thrive on challenging myself to embrace emerging technologies and methodologies, making continuous learning and personal growth the driving forces behind my career. Welcome to my portfolio, where you can explore my passion for creating innovative digital experiences!
           </motion.p>
           <motion.div className="flex justify-center items-center">
             <motion.a
