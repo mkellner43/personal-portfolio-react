@@ -30,6 +30,7 @@ const About = () => {
             <motion.a
               href={resume}
               download
+              target="_blank"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.9 }}
               className="text-lg font-nunito bg-blue-500 p-2 rounded-full"
