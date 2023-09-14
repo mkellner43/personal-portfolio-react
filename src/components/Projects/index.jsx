@@ -21,8 +21,8 @@ const Projects = () => {
     {
       image: mattBook,
       link: "https://mattbook-frontend.onrender.com",
-      code: "https://github.com/mkellner43/front-end-mb",
-      backend: "https://github.com/mkellner43/back-end-mb",
+      code: "https://github.com/mkellner43/front-end-mb/tree/main",
+      backend: "https://github.com/mkellner43/back-end-mb/tree/main",
     },
     {
       image: weatherChecker,
