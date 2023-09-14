@@ -72,7 +72,7 @@ const Projects = () => {
     setDirection(1);
     setIndex((prevState) => {
       if (prevState === 0) {
-        return 7;
+        return 8;
       } else {
         return prevState - 1;
       }
@@ -82,7 +82,7 @@ const Projects = () => {
   const handleClickRight = () => {
     setDirection(-1);
     setIndex((prevState) => {
-      if (prevState === 7) {
+      if (prevState === 8) {
         return 0;
       } else {
         return prevState + 1;
