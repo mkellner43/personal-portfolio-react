@@ -107,6 +107,7 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
           whileTap={{ scale: 0.9 }}
           onClick={changeTheme}
           className={`flex bg-white rounded-full w-12 h-6 px-1 items-center`}
+          aria-label="dark mode toggle"
         >
           <motion.span
             initial={{ x: 0 }}

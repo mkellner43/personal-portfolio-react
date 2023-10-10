@@ -1,12 +1,30 @@
 import memoryGame from "../../Images/memoryGame.webp";
+import memoryGame_sm from "../../Images/memoryGame-sm.webp";
+import memoryGame_md from "../../Images/memoryGame-md.webp";
 import myShop from "../../Images/myShop.webp";
+import myShop_sm from "../../Images/myShop-sm.webp";
+import myShop_md from "../../Images/myShop-md.webp";
 import cvBuilder from "../../Images/cvBuilder.webp";
+import cvBuilder_sm from "../../Images/cvBuilder-sm.webp";
+import cvBuilder_md from "../../Images/cvBuilder-md.webp";
 import weatherChecker from "../../Images/weatherChecker.webp";
+import weatherChecker_sm from "../../Images/weatherChecker-sm.webp";
+import weatherChecker_md from "../../Images/weatherChecker-md.webp";
 import ticTacToe from "../../Images/ticTacToe.webp";
+import ticTacToe_sm from "../../Images/ticTacToe-sm.webp";
+import ticTacToe_md from "../../Images/ticTacToe-md.webp";
 import toDoList from "../../Images/toDoList.webp";
+import toDoList_sm from "../../Images/toDoList-sm.webp";
+import toDoList_md from "../../Images/toDoList-md.webp";
 import restaurant from "../../Images/restaurant.webp";
+import restaurant_sm from "../../Images/restaurant-sm.webp";
+import restaurant_md from "../../Images/restaurant-md.webp";
 import waldo from "../../Images/wheresWaldo.webp";
+import waldo_sm from "../../Images/wheresWaldo-sm.webp";
+import waldo_md from "../../Images/wheresWaldo-md.webp";
 import mattBook from "../../Images/mattBook.webp";
+import mattBook_sm from "../../Images/mattBook-sm.webp";
+import mattBook_md from "../../Images/mattBook-md.webp";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
@@ -19,48 +37,48 @@ import {
 const Projects = () => {
   const photos = [
     {
-      image: mattBook,
+      image: [mattBook, mattBook_sm, mattBook_md],
       link: "https://mattbook-frontend.onrender.com",
       code: "https://github.com/mkellner43/front-end-mb/tree/main",
       backend: "https://github.com/mkellner43/back-end-mb/tree/main",
     },
     {
-      image: weatherChecker,
+      image: [weatherChecker, weatherChecker_sm, weatherChecker_md],
       link: "https://mkellner43.github.io/weather_api/",
       code: "https://github.com/mkellner43/weather_api",
     },
     {
-      image: memoryGame,
+      image: [memoryGame, memoryGame_sm, memoryGame_md],
       link: "https://mkellner43.github.io/memory-game/",
       code: "https://github.com/mkellner43/memory-game",
     },
     {
-      image: myShop,
+      image: [myShop, myShop_sm, myShop_md],
       link: "https://mkellner43.github.io/shop_react/",
       code: "https://github.com/mkellner43/shop_react",
     },
     {
-      image: cvBuilder,
+      image: [cvBuilder, cvBuilder_sm, cvBuilder_md],
       link: "https://mkellner43.github.io/cv-project/",
       code: "https://github.com/mkellner43/cv-project",
     },
     {
-      image: ticTacToe,
+      image: [ticTacToe, ticTacToe_sm, ticTacToe_md],
       link: "https://mkellner43.github.io/ticTacToeJs/",
       code: "https://github.com/mkellner43/ticTacToeJs",
     },
     {
-      image: toDoList,
+      image: [toDoList, toDoList_sm, toDoList_md],
       link: "https://mkellner43.github.io/toDoListJS/",
       code: "https://github.com/mkellner43/toDoListJs",
     },
     {
-      image: restaurant,
+      image: [restaurant, restaurant_sm, restaurant_md],
       link: "https://mkellner43.github.io/restaurant_page/",
       code: "https://github.com/mkellner43/restaurant_page",
     },
     {
-      image: waldo,
+      image: [waldo, waldo_sm, waldo_md],
       link: "https://mkellner43.github.io/wheres_waldo_frontend/",
       code: "https://github.com/mkellner43/wheres_waldo_frontend",
     },
@@ -150,9 +168,14 @@ const Projects = () => {
                 opacity: { duration: 0.2 },
               }}
               key={index}
-              src={photos[index].image}
+              src={photos[index].image[0]}
+              srcSet={`
+                ${photos[index].image[0]} 1200w,
+                ${photos[index].image[2]} 800W,
+                ${photos[index].image[1]} 400W,
+              `}
               alt="memory game"
-              className="object-cover rounded-lg shadow-xl w-96 h-96 sm:w-full sm:h-auto sm:aspect-square sm:max-h-[70vh]"
+              className="object-cover rounded-lg shadow-xl w-96 h-96 sm:w-full sm:h-auto sm:aspect-square sm:max-h-[70vh] aspect-square"
             />
           </motion.a>
         </AnimatePresence>
