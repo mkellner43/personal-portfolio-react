@@ -1,0 +1,8 @@
+{
+  "name": "Personal Portfolio",
+  "short_name": "Portfolio",
+  "description": "My personal portfolio website",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#e5e7eb"
+}
