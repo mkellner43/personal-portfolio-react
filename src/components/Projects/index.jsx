@@ -1,12 +1,12 @@
-import memoryGame from "../../Images/memoryGame.png";
-import myShop from "../../Images/Screenshot 2023-01-31 at 6.30.08 PM.png";
-import cvBuilder from "../../Images/cvBuilder.png";
-import weatherChecker from "../../Images/weatherChecker.png";
-import ticTacToe from "../../Images/ticTacToe.png";
-import toDoList from "../../Images/toDoList.png";
-import restaurant from "../../Images/restaurant.png";
-import waldo from "../../Images/Screenshot 2023-02-01 at 3.24.41 PM.png";
-import mattBook from "../../Images/mattBook.png";
+import memoryGame from "../../Images/memoryGame.webp";
+import myShop from "../../Images/myShop.webp";
+import cvBuilder from "../../Images/cvBuilder.webp";
+import weatherChecker from "../../Images/weatherChecker.webp";
+import ticTacToe from "../../Images/ticTacToe.webp";
+import toDoList from "../../Images/toDoList.webp";
+import restaurant from "../../Images/restaurant.webp";
+import waldo from "../../Images/wheresWaldo.webp";
+import mattBook from "../../Images/mattBook.webp";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";

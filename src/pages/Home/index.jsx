@@ -1,4 +1,4 @@
-import Pic from "../../Images/profilePic2.png";
+import Pic from "../../Images/profilePic.webp";
 import { motion } from "framer-motion";
 import Footer from "../../components/Footer";
 import Projects from "../../components/Projects";
