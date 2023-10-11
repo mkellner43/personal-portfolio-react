@@ -8,9 +8,9 @@ import Logo from "../../components/Logo";
 
 const Home = ({ setTheme, theme }) => {
   return (
-    <div className="w-screen bg-slate-200 dark:bg-stone-500 dark:text-white pt-[70px] overflow-hidden">
+    <div className="w-screen bg-slate-200 dark:bg-stone-500 dark:text-white pt-[70px] overflow-hidden pb-20">
       <motion.section
-        className="flex flex-col justify-start sm:justify-start items-center w-screen h-[95vh]"
+        className="flex flex-col justify-start sm:justify-start items-center w-screen h-screen"
       >
         <motion.div className="flex flex-col items-center grow mt-2">
           <Logo />

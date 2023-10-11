@@ -134,12 +134,12 @@ const Projects = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1, transition: { duration: 2 } }}
         viewport={{ amount: 0.2, once: true }}
-        className="flex items-center justify-center my-10 relative w-full max-w-2xl grow"
+        className="flex items-center justify-center my-10 relative w-full max-w-2xl min-h-[60vh] h-auto"
       >
         <motion.div
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
-          className="z-10 text-2xl h-full absolute left-2 w-12 flex justify-center items-center drop-shadow-lg"
+          className="z-10 text-2xl absolute left-2 w-12 flex justify-center items-center drop-shadow-lg h-full"
           onClick={handleClickLeft}
         >
           <motion.span className="absolute dark:bg-black bg-white w-4 h-4 rounded-full" />
@@ -154,7 +154,7 @@ const Projects = () => {
             href={photos[index].link}
             target="_blank"
             rel="noopener noreferrer"
-            className="select-none"
+            className="select-none h-full"
           >
             <motion.img
               layout
@@ -175,7 +175,7 @@ const Projects = () => {
                 ${photos[index].image[1]} 400W,
               `}
               alt="memory game"
-              className="object-cover rounded-lg shadow-xl w-96 h-96 sm:w-full sm:h-auto sm:aspect-square sm:max-h-[70vh] aspect-square"
+              className="object-cover rounded-lg shadow-xl w-96 h-96 sm:w-full sm:h-auto sm:aspect-square aspect-square"
             />
           </motion.a>
         </AnimatePresence>
