@@ -134,7 +134,7 @@ const Projects = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1, transition: { duration: 2 } }}
         viewport={{ amount: 0.2, once: true }}
-        className="flex items-center my-10 relative max-w-7xl"
+        className="flex items-center justify-center my-10 relative w-full max-w-2xl grow"
       >
         <motion.div
           whileHover={{ scale: 1.05 }}
