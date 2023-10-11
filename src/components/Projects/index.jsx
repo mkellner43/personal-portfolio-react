@@ -128,7 +128,7 @@ const Projects = () => {
   };
 
   return (
-    <motion.section className="w-screen flex flex-col items-center justify-center bg-inherit text-inherit pb-10 min-h-screen">
+    <motion.section className="w-screen flex flex-col items-center justify-center bg-inherit text-inherit pb-10">
       <h1 className="text-5xl text-center font-nunito">Projects</h1>
       <motion.div
         initial={{ opacity: 0 }}
@@ -149,7 +149,7 @@ const Projects = () => {
             className="absolute text-4xl"
           />
         </motion.div>
-        <AnimatePresence initial={false}>
+        <AnimatePresence>
           <motion.a
             href={photos[index].link}
             target="_blank"
