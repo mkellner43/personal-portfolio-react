@@ -51,7 +51,7 @@ const Home = ({ setTheme, theme }) => {
               Full Stack Web Developer
             </motion.h2>
           </div>
-          <div className="flex-grow absolute bottom-40">
+          <div className="min-h-[150px] absolute bottom-40">
             <Arrow theme={theme} setTheme={setTheme} />
           </div>
         </motion.div>
