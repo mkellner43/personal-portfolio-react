@@ -12,7 +12,13 @@ import {
 
 let theme = createTheme({
   typography: {
+    p: {
+      fontWeight: "300",
+    },
     h3: {
+      fontWeight: "300",
+    },
+    h6: {
       fontWeight: "300",
     },
   },

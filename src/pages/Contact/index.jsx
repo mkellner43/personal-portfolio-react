@@ -3,8 +3,8 @@ import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
-import Footer from "../../components/Footer";
 import Modal from "../../components/Modal";
+import { Typewriter } from "../../components/Typewriter";
 
 const Contact = () => {
   const refForm = useRef();
@@ -42,13 +42,7 @@ const Contact = () => {
           animate={{ opacity: 1, transition: { duration: 1.2 } }}
           className="flex flex-col w-full pt-10 px-4 max-w-2xl grow gap-4 m-auto"
         >
-          <motion.h1
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1, transition: { duration: 1 } }}
-            className="text-5xl text-center mb-4"
-          >
-            Contact me.
-          </motion.h1>
+        <Typewriter text='Contact me.' variant='h2' component='h1'/>
           <form
             ref={refForm}
             onSubmit={sendEmail}
@@ -105,7 +99,6 @@ const Contact = () => {
             )}
           </AnimatePresence>
         </motion.div>
-        {/* <Footer /> */}
       </motion.section>
   );
 };

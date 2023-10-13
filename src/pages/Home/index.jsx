@@ -120,7 +120,7 @@ function Home({ setTheme, theme }) {
             />
             <Typewriter
               text="Web Developer"
-              delay={4000}
+              delay={3000}
               variant={"h3"}
               component={"h2"}
             />

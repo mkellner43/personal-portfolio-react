@@ -1,7 +1,13 @@
 import React, { useState, useLayoutEffect } from "react";
 import { Typography } from "@mui/material";
 
-export const Typewriter = ({ text, delay = 0, variant, component }) => {
+export const Typewriter = ({
+  text,
+  delay = 0,
+  variant,
+  component,
+  typingSpeed = 100,
+}) => {
   const [content, setContent] = useState("");
   const [typingText, setTypingText] = useState(text);
   const [shouldRender, setShouldRender] = useState(false);
@@ -19,17 +25,17 @@ export const Typewriter = ({ text, delay = 0, variant, component }) => {
 
   useLayoutEffect(() => {
     // render content for each letter for typing effect
-    if (typingText.length > 0 && shouldRender) {
+    if (typingText?.length > 0 && shouldRender) {
       const timeout = setTimeout(() => {
         setContent((prevText) => prevText + typingText[0]);
-        setTypingText((prevText) => prevText.slice(1));
-      }, 100);
+        setTypingText((prevText) => prevText?.slice(1));
+      }, typingSpeed);
       return () => clearTimeout(timeout);
     } else {
       //remove cursor blinking after all letters are rendered
       const timeout = setTimeout(() => {
         const elm = document.getElementById(
-          `cursor-${text.length + text.slice(0, 4)}`
+          `cursor-${text?.length + text?.slice(0, 4)}`
         );
         elm.classList.remove("animate-blink");
       }, 1000 + delay);
@@ -40,11 +46,11 @@ export const Typewriter = ({ text, delay = 0, variant, component }) => {
   if (!shouldRender) return;
 
   return (
-    <Typography variant={variant} component={component} >
+    <Typography variant={variant} component={component}>
       {content}
       <span
         className="invisible animate-blink"
-        id={`cursor-${text.length + text.slice(0, 4)}`}
+        id={`cursor-${text?.length + text?.slice(0, 4)}`}
       >
         _
       </span>
