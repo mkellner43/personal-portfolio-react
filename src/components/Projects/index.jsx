@@ -5,7 +5,7 @@ import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 
 const Projects = ({ photos }) => {
   const [imageIndex, setImageIndex] = useState(0);
@@ -30,7 +30,9 @@ const Projects = ({ photos }) => {
 
   return (
     <motion.section className="w-screen flex flex-col items-center justify-center bg-inherit text-inherit pb-10">
-      <h1 className="text-5xl text-center font-nunito select-none">Projects</h1>
+      <Typography variant="h3" component={'h3'}>
+        Projects
+      </Typography>
       <motion.div className="flex items-center justify-center max-w-2xl p-4">
         <div className="flex overflow-hidden rounded-lg relative">
           <motion.div

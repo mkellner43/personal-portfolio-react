@@ -125,9 +125,6 @@ function Home({ setTheme, theme }) {
               component={"h2"}
             />
           </div>
-          {/* <div className="min-h-[150px] mt-5">
-            <Arrow theme={theme} setTheme={setTheme} />
-          </div> */}
         </motion.div>
       </motion.section>
       <Projects photos={photos} />
