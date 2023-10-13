@@ -9,7 +9,7 @@ const About = () => {
       <div className="flex flex-col lg:items-start justify-center items-center max-w-xl m-auto overflow-x-clip px-5 gap-5 pt-10">
         <div className="w-full">
           <Typewriter text="About me." variant={"h2"} component={"h1"} />
-          <div className="flex items-center min-h-[330px] py-4">
+          <div className="min-h-[330px] py-4">
             <Typewriter
               text=" Hello, I'm Matt, a seasoned full-stack web developer with a track
             record of 3 years in crafting exceptional websites. My journey in this
