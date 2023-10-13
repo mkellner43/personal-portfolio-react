@@ -1,7 +1,15 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import '@fontsource/roboto/300.css';
+@import '@fontsource/roboto/400.css';
+@import '@fontsource/roboto/500.css';
+@import '@fontsource/roboto/700.css';
 
 body {
   -webkit-tap-highlight-color: transparent;
+}
+
+.slider-img {
+  transition: translate 300ms ease-in-out;
 }

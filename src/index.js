@@ -1,15 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { HashRouter } from 'react-router-dom';
-import App from './App';
-import './style.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { HashRouter } from "react-router-dom";
+import App from "./App";
+import "./style.css";
+import {
+  createTheme,
+  responsiveFontSizes,
+  ThemeProvider,
+  StyledEngineProvider,
+} from "@mui/material/styles";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+let theme = createTheme({
+  typography: {
+    h3: {
+      fontWeight: "300",
+    },
+  },
+});
+theme = responsiveFontSizes(theme);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <HashRouter>
     <React.StrictMode>
-      <App />
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
+      </StyledEngineProvider>
     </React.StrictMode>
   </HashRouter>
 );
-
