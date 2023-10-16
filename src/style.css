@@ -8,8 +8,6 @@
 
 body {
   -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
 }
 
-.slider-img {
-  transition: translate 300ms ease-in-out;
-}

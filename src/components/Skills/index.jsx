@@ -4,7 +4,7 @@ import { Typewriter } from "../Typewriter";
 
 const Skills = ({ aboutContainer }) => {
   return (
-    <section className="flex flex-col gap-5 w-full relative px-2">
+    <section className="flex flex-col gap-5 w-full relative pb-20">
       <div className="min-h-[60px]">
         <Typewriter text="Skills" variant="h2" component="h2" />
       </div>

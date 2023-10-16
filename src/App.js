@@ -21,7 +21,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div className="flex flex-col items-center w-screen min-h-screen bg-slate-200 dark:bg-stone-500 dark:text-slate-200 overflow-x-hidden">
       <Nav
         isOpen={isOpen}
         setIsOpen={setIsOpen}
@@ -44,7 +44,7 @@ function App() {
         />
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 }
 

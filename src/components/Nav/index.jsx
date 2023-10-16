@@ -1,13 +1,8 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Hamburger from "../Hamburger";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHouse,
-  faAddressCard,
-  faFileSignature,
-} from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useRef } from "react";
+import { Button, Typography } from "@mui/material";
 
 const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
   const dropdown = useRef(null);
@@ -15,11 +10,11 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
   const variant = {
     initial: {
       opacity: 0,
-      x: -100,
+      height: 0,
     },
     visible: {
       opacity: 1,
-      x: 0,
+      height: "100vh",
       transition: {
         type: "spring",
         damping: 24,
@@ -29,7 +24,7 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
     },
     exit: {
       opacity: [1, 0],
-      x: -100,
+      height: 0,
       transition: {
         type: "spring",
         damping: 24,
@@ -43,11 +38,11 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
   const item = {
     initial: {
       opacity: 0,
-      x: -100,
+      y: -1000,
     },
     visible: {
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: {
         type: "spring",
         damping: 24,
@@ -55,7 +50,7 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
     },
     exit: {
       opacity: 0,
-      x: -100,
+      y: -100,
       transition: {
         type: "spring",
         damping: 24,
@@ -98,7 +93,7 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
 
   return (
     <>
-      <motion.nav className="fixed top-0 w-screen flex items-center justify-between bg-blue-500 dark:bg-stone-700 min-h-[70px] z-50 px-4 shadow">
+      <motion.nav className="fixed top-0 w-full flex items-center justify-between bg-blue-500 dark:bg-stone-700 h-[70px] px-4 z-50">
         <motion.div ref={ham}>
           <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
         </motion.div>
@@ -127,49 +122,44 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
       </motion.nav>
       <AnimatePresence>
         {isOpen && (
-          <motion.nav
+          <motion.div
             ref={dropdown}
             variants={variant}
             animate="visible"
             initial="initial"
             exit="exit"
-            className="fixed top-[70px] bg-blue-500 dark:bg-stone-700 flex flex-col items-center justify-center z-50 w-20 p-4 shadow rounded-br-lg"
+            className="fixed top-[70px] bg-slate-200 dark:bg-stone-700 dark:text-slate-200 flex flex-col items-center h-screen w-screen z-50 gap-10 pt-[5vh]"
           >
-            <Link to="/" onClick={() => setIsOpen(false)}>
-              <motion.li
-                variants={item}
-                whileHover={{ scale: 1.15 }}
-                whileTap={{ scale: 0.9 }}
-                className="flex items-center justify-center w-10 h-10 bg-white rounded-full m-2"
-              >
-                <FontAwesomeIcon icon={faHouse} />
-              </motion.li>
+            <Link to="/" onClick={() => setIsOpen(false)} className="w-full">
+              <Button className="w-full text-inherit">
+                <Typography variant="h2" component="h1">
+                  Home
+                </Typography>
+              </Button>
             </Link>
-            <Link to="/about" onClick={() => setIsOpen(false)}>
-              <motion.li
-                variants={item}
-                whileHover={{ scale: 1.15 }}
-                whileTap={{ scale: 0.9 }}
-                className="flex items-center justify-center w-10 h-10 bg-white rounded-full m-2"
-              >
-                <FontAwesomeIcon
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  icon={faAddressCard}
-                />
-              </motion.li>
+            <Link
+              to="/about"
+              onClick={() => setIsOpen(false)}
+              className="w-full"
+            >
+              <Button className="w-full text-inherit">
+                <Typography variant="h2" component="h1">
+                  About
+                </Typography>
+              </Button>
             </Link>
-            <Link to="/contact" onClick={() => setIsOpen(false)}>
-              <motion.li
-                variants={item}
-                whileHover={{ scale: 1.15 }}
-                whileTap={{ scale: 0.9 }}
-                className="flex items-center justify-center w-10 h-10 bg-white rounded-full m-2"
-              >
-                <FontAwesomeIcon icon={faFileSignature} />
-              </motion.li>
+            <Link
+              to="/contact"
+              onClick={() => setIsOpen(false)}
+              className="w-full"
+            >
+              <Button className="w-full text-inherit">
+                <Typography variant="h2" component="h1">
+                  Contact me
+                </Typography>
+              </Button>
             </Link>
-          </motion.nav>
+          </motion.div>
         )}
       </AnimatePresence>
     </>

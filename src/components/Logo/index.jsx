@@ -61,7 +61,7 @@ const Logo = () => {
   return (
     <div
       className={
-        "text-blue-500 dark:text-white flex justify-center items-center relative h-[100px] w-[100px]"
+        "text-blue-500 dark:text-[#e3e3e3] flex justify-center items-center relative h-[100px] w-[100px]"
       }
       onClick={handleChange}
     >

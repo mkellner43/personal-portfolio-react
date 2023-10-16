@@ -7,6 +7,7 @@ export const Typewriter = ({
   variant,
   component,
   typingSpeed = 100,
+  classes
 }) => {
   const [content, setContent] = useState("");
   const [typingText, setTypingText] = useState(text);
@@ -41,15 +42,15 @@ export const Typewriter = ({
       }, 1000 + delay);
       return () => clearTimeout(timeout);
     }
-  }, [typingText, content, text, shouldRender, delay]);
+  }, [typingText, content, text, shouldRender, delay, typingSpeed]);
 
-  if (!shouldRender) return;
+  if(!shouldRender) classes += "invisible"
 
   return (
-    <Typography variant={variant} component={component}>
+    <Typography variant={variant} component={component} className={classes}>
       {content}
       <span
-        className="invisible animate-blink"
+        className={!shouldRender ? "invisible" : "invisible animate-blink"}
         id={`cursor-${text?.length + text?.slice(0, 4)}`}
       >
         _

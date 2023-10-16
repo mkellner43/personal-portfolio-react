@@ -6,6 +6,7 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { Button, Typography } from "@mui/material";
+import { Typewriter } from "../Typewriter";
 
 const Projects = ({ photos }) => {
   const [imageIndex, setImageIndex] = useState(0);
@@ -29,11 +30,14 @@ const Projects = ({ photos }) => {
   };
 
   return (
-    <motion.section className="w-screen flex flex-col items-center justify-center bg-inherit text-inherit pb-10">
-      <Typography variant="h3" component={'h3'}>
-        Projects
-      </Typography>
-      <motion.div className="flex items-center justify-center max-w-2xl p-4">
+    <motion.section className="w-full max-w-2xl flex flex-col items-center justify-center bg-inherit text-inherit mb-20">
+      <Typewriter
+        text="Projects"
+        variant="h3"
+        component={"h3"}
+        classes={"w-full justify-self-start"}
+      />
+      <motion.div className="flex items-center justify-center max-w-2xl py-4">
         <div className="flex overflow-hidden rounded-lg relative">
           <motion.div
             className="z-10 text-2xl absolute left-0 w-12 p-2 flex justify-center items-center h-full transition ease-in-out duration-500 hover:bg-opacity-10 hover:bg-black"
@@ -50,7 +54,7 @@ const Projects = ({ photos }) => {
               key={photo.link}
               alt={photo.alt}
               aria-hidden={imageIndex !== index}
-              className="object-cover shadow-xl aspect-square slider-img select-none"
+              className="object-cover shadow-xl aspect-square slider-img select-none transition-translate duration-300 ease-in-out;"
               style={{ translate: `${-100 * imageIndex}%` }}
             />
           ))}

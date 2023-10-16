@@ -12,7 +12,10 @@ import {
 
 let theme = createTheme({
   typography: {
-    p: {
+    body1: {
+      fontWeight: "300",
+    },
+    h4: {
       fontWeight: "300",
     },
     h3: {
