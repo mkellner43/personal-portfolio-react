@@ -16,45 +16,15 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
       opacity: 1,
       height: "100vh",
       transition: {
-        type: "spring",
-        damping: 24,
-        staggerChildren: 0.07,
-        delayChildren: 0.1,
-      },
+        duration: 0.5
+      }
     },
     exit: {
-      opacity: [1, 0],
+      opacity: 0,
       height: 0,
       transition: {
-        type: "spring",
-        damping: 24,
-        delay: 0.2,
-        staggerChildren: -0.07,
-        delayChildren: 0.2,
-        duration: 0.2,
-      },
-    },
-  };
-  const item = {
-    initial: {
-      opacity: 0,
-      y: -1000,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        damping: 24,
-      },
-    },
-    exit: {
-      opacity: 0,
-      y: -100,
-      transition: {
-        type: "spring",
-        damping: 24,
-      },
+        duration: 0.5
+      }
     },
   };
   const spring = {
@@ -128,7 +98,7 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
             animate="visible"
             initial="initial"
             exit="exit"
-            className="fixed top-[70px] bg-slate-200 dark:bg-stone-700 dark:text-slate-200 flex flex-col items-center h-screen w-screen z-50 gap-10 pt-[5vh]"
+            className="fixed top-[70px] bg-slate-200 dark:bg-stone-700 dark:text-slate-200 flex flex-col items-center h-screen w-screen z-50 gap-10 pt-[5vh] overflow-hidden"
           >
             <Link to="/" onClick={() => setIsOpen(false)} className="w-full">
               <Button className="w-full text-inherit">
