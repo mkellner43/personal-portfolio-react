@@ -94,7 +94,6 @@ const photos = [
 ];
 
 function Home({ setTheme, theme }) {
-  const [viewProjects, setViewProjects] = useState(false);
   return (
     <motion.section className="flex flex-col items-center w-full max-w-5xl m-auto flex-grow relative top-[70px] gap-20 mb-20">
       <motion.div className="flex flex-col items-center mt-2">
@@ -121,7 +120,7 @@ function Home({ setTheme, theme }) {
             component={"h1"}
           />
           <Typewriter
-            text="Web Developer"
+            text="Web Developer."
             delay={3000}
             variant={"h4"}
             component={"subtitle"}

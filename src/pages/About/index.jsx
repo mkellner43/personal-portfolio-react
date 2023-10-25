@@ -9,7 +9,7 @@ const About = () => {
       <div className="flex flex-col max-w-xl w-full mt-[100px]">
         <div className="w-full">
           <Typewriter text="About me." variant={"h2"} component={"h1"} />
-          <div className="min-h-[21vh] py-4">
+          <div className="min-h-[32vh] sm:min-h-[22vh] py-4">
             <Typewriter
               text=" Hello, I'm Matt, a seasoned full-stack web developer with a track
             record of 3 years in crafting exceptional websites. My journey in this
@@ -22,10 +22,10 @@ const About = () => {
               variant="body1"
               component="p"
               delay={1000}
-              typingSpeed={25}
+              typingSpeed={20}
             />
           </div>
-          <motion.div className="flex justify-center items-center">
+          <motion.div className="flex justify-center items-center mt-2">
             <Button
               href={resume}
               variant="contained"
@@ -37,7 +37,7 @@ const About = () => {
             </Button>
           </motion.div>
         </div>
-        <div className="w-full overflow-hidden">
+        <div className="w-full overflow-hidden mt-10">
           <Skills />
         </div>
       </div>

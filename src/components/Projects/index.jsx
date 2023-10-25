@@ -32,20 +32,21 @@ const Projects = ({ photos }) => {
   return (
     <motion.section className="w-full max-w-2xl flex flex-col items-center justify-center bg-inherit text-inherit mb-20">
       <Typewriter
-        text="Projects"
+        text="Projects."
         variant="h3"
         component={"h3"}
+        delay={8000}
         classes={"w-full justify-self-start"}
       />
       <motion.div className="flex items-center justify-center max-w-2xl py-4">
         <div className="flex overflow-hidden rounded-lg relative">
           <motion.div
-            className="z-10 text-2xl absolute left-0 w-12 p-2 flex justify-center items-center h-full transition ease-in-out duration-500 hover:bg-opacity-10 hover:bg-black"
+            className="z-10 text-2xl absolute left-0 w-12 p-2 flex justify-center items-center h-full bg-opacity-10 bg-gray-800"
             onClick={showPrevImage}
           >
             <FontAwesomeIcon
               icon={faChevronLeft}
-              className="text-4xl drop-shadow-[0_0_10px_black] transition-transform duration-300 ease-in-out hover:translate-x-[-5px]"
+              className="text-4xl drop-shadow-[0_0_10px_black]"
             />
           </motion.div>
           {photos.map((photo, index) => (
@@ -59,12 +60,12 @@ const Projects = ({ photos }) => {
             />
           ))}
           <motion.div
-            className="z-10 text-2xl absolute h-full right-0 p-2 w-12 flex justify-center items-center transition ease-in-out duration-500 hover:bg-opacity-10 hover:bg-black"
+            className="z-10 text-2xl absolute h-full right-0 p-2 w-12 flex justify-center items-center bg-opacity-10 bg-gray-800"
             onClick={showNextImage}
           >
             <FontAwesomeIcon
               icon={faChevronRight}
-              className="absolute text-4xl drop-shadow-[0_0_10px_black] transition-transform duration-300 ease-in-out hover:translate-x-[5px]"
+              className="absolute text-4xl drop-shadow-[0_0_10px_black]"
             />
           </motion.div>
         </div>
