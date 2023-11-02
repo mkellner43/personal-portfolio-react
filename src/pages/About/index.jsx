@@ -24,7 +24,7 @@ const About = () => {
             career. Welcome to my portfolio, where you can explore my passion
             for creating innovative digital experiences!"
           </Typography>
-          <motion.div className="flex justify-center items-center mt-2">
+          <motion.div className="flex justify-center items-center mt-4">
             <Button
               href={resume}
               variant="contained"

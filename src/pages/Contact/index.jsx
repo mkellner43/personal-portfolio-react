@@ -1,8 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import Modal from "../../components/Modal";
 import { Typewriter } from "../../components/Typewriter";
 import { Button } from "@mui/material";
@@ -37,7 +35,7 @@ const Contact = () => {
   };
 
   return (
-    <motion.section className="h-screen w-screen bg-slate-200 dark:bg-stone-500 flex flex-col pt-[70px]">
+    <motion.section className="w-screen bg-slate-200 dark:bg-stone-500 flex flex-col pt-[70px] grow">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration: 1.2 } }}
