@@ -6,8 +6,8 @@ export const Typewriter = ({
   delay = 0,
   variant,
   component,
-  typingSpeed = 100,
-  classes
+  typingSpeed = 50,
+  classes,
 }) => {
   const [content, setContent] = useState("");
   const [typingText, setTypingText] = useState(text);
@@ -39,12 +39,12 @@ export const Typewriter = ({
           `cursor-${text?.length + text?.slice(0, 4)}`
         );
         elm.classList.remove("animate-blink");
-      }, 1000 + delay);
+      }, delay / 2);
       return () => clearTimeout(timeout);
     }
   }, [typingText, content, text, shouldRender, delay, typingSpeed]);
 
-  if(!shouldRender) classes += "invisible"
+  if (!shouldRender) classes += "invisible";
 
   return (
     <Typography variant={variant} component={component} className={classes}>

@@ -35,93 +35,99 @@ const Projects = ({ photos }) => {
         text="Projects."
         variant="h3"
         component={"h3"}
-        delay={8000}
+        delay={4000}
         classes={"w-full justify-self-start"}
       />
-      <motion.div className="flex items-center justify-center max-w-2xl py-4">
-        <div className="flex overflow-hidden rounded-lg relative">
-          <motion.div
-            className="z-10 text-2xl absolute left-0 w-12 p-2 flex justify-center items-center h-full bg-opacity-10 bg-gray-800"
-            onClick={showPrevImage}
-          >
-            <FontAwesomeIcon
-              icon={faChevronLeft}
-              className="text-4xl drop-shadow-[0_0_10px_black]"
-            />
-          </motion.div>
-          {photos.map((photo, index) => (
-            <img
-              src={photo.image[0]}
-              key={photo.link}
-              alt={photo.alt}
-              aria-hidden={imageIndex !== index}
-              className="object-cover shadow-xl aspect-square slider-img select-none transition-translate duration-300 ease-in-out;"
-              style={{ translate: `${-100 * imageIndex}%` }}
-            />
-          ))}
-          <motion.div
-            className="z-10 text-2xl absolute h-full right-0 p-2 w-12 flex justify-center items-center bg-opacity-10 bg-gray-800"
-            onClick={showNextImage}
-          >
-            <FontAwesomeIcon
-              icon={faChevronRight}
-              className="absolute text-4xl drop-shadow-[0_0_10px_black]"
-            />
-          </motion.div>
-        </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { delay: 4, duration: 1, ease: "easeInOut" } }}
+        className="flex flex-col justify-center items-center"
+      >
+        <motion.div className="flex items-center justify-center max-w-2xl py-4">
+          <div className="flex overflow-hidden rounded-lg relative">
+            <motion.div
+              className="z-10 text-2xl absolute left-0 w-12 p-2 flex justify-center items-center h-full bg-opacity-10 bg-gray-800"
+              onClick={showPrevImage}
+            >
+              <FontAwesomeIcon
+                icon={faChevronLeft}
+                className="text-4xl drop-shadow-[0_0_10px_black]"
+              />
+            </motion.div>
+            {photos.map((photo, index) => (
+              <img
+                src={photo.image[0]}
+                key={photo.link}
+                alt={photo.alt}
+                aria-hidden={imageIndex !== index}
+                className="object-cover shadow-xl aspect-square slider-img select-none transition-translate duration-300 ease-in-out;"
+                style={{ translate: `${-100 * imageIndex}%` }}
+              />
+            ))}
+            <motion.div
+              className="z-10 text-2xl absolute h-full right-0 p-2 w-12 flex justify-center items-center bg-opacity-10 bg-gray-800"
+              onClick={showNextImage}
+            >
+              <FontAwesomeIcon
+                icon={faChevronRight}
+                className="absolute text-4xl drop-shadow-[0_0_10px_black]"
+              />
+            </motion.div>
+          </div>
+        </motion.div>
+        {photos[imageIndex].backend ? (
+          <div className="flex">
+            <Button
+              variant="contained"
+              className="dark:bg-stone-700 dark:hover:bg-stone-600 bg-blue-500 hover:bg-blue-400 mx-1"
+              href={photos[imageIndex].code}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Frontend
+            </Button>
+            <Button
+              variant="contained"
+              className="dark:bg-stone-700 dark:hover:bg-stone-500 bg-blue-500 hover:bg-blue-400 mx-1"
+              href={photos[imageIndex].backend}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Backend
+            </Button>
+            <Button
+              variant="contained"
+              className="dark:bg-stone-700 dark:hover:bg-stone-600 bg-blue-500 hover:bg-blue-400 mx-1"
+              href={photos[imageIndex].link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Live Preview
+            </Button>
+          </div>
+        ) : (
+          <div className="flex">
+            <Button
+              variant="contained"
+              className="dark:bg-stone-700 dark:hover:bg-stone-600 bg-blue-500 hover:bg-blue-400 mx-1"
+              href={photos[imageIndex].code}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Code
+            </Button>
+            <Button
+              variant="contained"
+              className="dark:bg-stone-700 dark:hover:bg-stone-600 bg-blue-500 hover:bg-blue-400 mx-1"
+              href={photos[imageIndex].link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Live Preview
+            </Button>
+          </div>
+        )}
       </motion.div>
-      {photos[imageIndex].backend ? (
-        <div className="flex">
-          <Button
-            variant="contained"
-            className="dark:bg-stone-700 dark:hover:bg-stone-600 bg-blue-500 hover:bg-blue-400 mx-1"
-            href={photos[imageIndex].code}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Frontend
-          </Button>
-          <Button
-            variant="contained"
-            className="dark:bg-stone-700 dark:hover:bg-stone-500 bg-blue-500 hover:bg-blue-400 mx-1"
-            href={photos[imageIndex].backend}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Backend
-          </Button>
-          <Button
-            variant="contained"
-            className="dark:bg-stone-700 dark:hover:bg-stone-600 bg-blue-500 hover:bg-blue-400 mx-1"
-            href={photos[imageIndex].link}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Live Preview
-          </Button>
-        </div>
-      ) : (
-        <div className="flex">
-          <Button
-            variant="contained"
-            className="dark:bg-stone-700 dark:hover:bg-stone-600 bg-blue-500 hover:bg-blue-400 mx-1"
-            href={photos[imageIndex].code}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View Code
-          </Button>
-          <Button
-            variant="contained"
-            className="dark:bg-stone-700 dark:hover:bg-stone-600 bg-blue-500 hover:bg-blue-400 mx-1"
-            href={photos[imageIndex].link}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Live Preview
-          </Button>
-        </div>
-      )}
     </motion.section>
   );
 };

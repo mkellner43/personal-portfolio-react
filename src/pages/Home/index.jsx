@@ -34,7 +34,6 @@ import waldo_md from "../../Images/wheresWaldo-md.webp";
 import mattBook from "../../Images/mattBook.webp";
 import mattBook_sm from "../../Images/mattBook-sm.webp";
 import mattBook_md from "../../Images/mattBook-md.webp";
-import { useState } from "react";
 const photos = [
   {
     image: [mattBook, mattBook_sm, mattBook_md],
@@ -93,7 +92,7 @@ const photos = [
   },
 ];
 
-function Home({ setTheme, theme }) {
+function Home() {
   return (
     <motion.section className="flex flex-col items-center w-full max-w-5xl m-auto flex-grow relative top-[70px] gap-20 mb-20">
       <motion.div className="flex flex-col items-center mt-2">
@@ -119,12 +118,7 @@ function Home({ setTheme, theme }) {
             variant={"h2"}
             component={"h1"}
           />
-          <Typewriter
-            text="Web Developer."
-            delay={3000}
-            variant={"h4"}
-            component={"subtitle"}
-          />
+          <Typewriter text="Web Developer." delay={2000} variant={"h4"} />
         </div>
       </motion.div>
       <Projects photos={photos} />
