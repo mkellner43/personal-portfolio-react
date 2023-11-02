@@ -16,14 +16,14 @@ const Nav = ({ isOpen, setIsOpen, theme, setTheme }) => {
       opacity: 1,
       height: "100vh",
       transition: {
-        duration: 0.5
+        duration: 0.3
       }
     },
     exit: {
       opacity: 0,
       height: 0,
       transition: {
-        duration: 0.5
+        duration: 0.3
       }
     },
   };
