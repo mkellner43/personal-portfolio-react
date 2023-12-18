@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/personal-portfolio-react/static/css/main.55060dfd.css",
-    "main.js": "/personal-portfolio-react/static/js/main.742e985b.js",
+    "main.js": "/personal-portfolio-react/static/js/main.87069ed7.js",
     "static/media/wheresWaldo.webp": "/personal-portfolio-react/static/media/wheresWaldo.8bcf0fbe112b8f49ec33.webp",
-    "static/media/resume.pdf": "/personal-portfolio-react/static/media/resume.92fc2c0e532a27ff0ec8.pdf",
     "static/media/memoryGame.webp": "/personal-portfolio-react/static/media/memoryGame.82c997f2387a60bc06a5.webp",
     "static/media/wheresWaldo-md.webp": "/personal-portfolio-react/static/media/wheresWaldo-md.be25bb02fb82611ec9af.webp",
     "static/media/myShop.webp": "/personal-portfolio-react/static/media/myShop.be6f708aa0e8fc81d0c7.webp",
     "static/media/memoryGame-md.webp": "/personal-portfolio-react/static/media/memoryGame-md.326d7df6eb91484ebe96.webp",
+    "static/media/resume.pdf": "/personal-portfolio-react/static/media/resume.9d95ccaff7865657d760.pdf",
     "static/media/myShop-md.webp": "/personal-portfolio-react/static/media/myShop-md.a906ee80d2acb2545384.webp",
     "static/media/restaurant.webp": "/personal-portfolio-react/static/media/restaurant.7bb2ba3e4ca802e73e40.webp",
     "static/media/cvBuilder.webp": "/personal-portfolio-react/static/media/cvBuilder.ed434e93ab05dc801299.webp",
@@ -95,10 +95,10 @@
     "static/media/tailwind-css-icon.svg": "/personal-portfolio-react/static/media/tailwind-css-icon.d84a6f369e7170891c4a19587ccf78e1.svg",
     "static/media/framerIcon.svg": "/personal-portfolio-react/static/media/framerIcon.9d03b0377ba615640aff457f52e34021.svg",
     "main.55060dfd.css.map": "/personal-portfolio-react/static/css/main.55060dfd.css.map",
-    "main.742e985b.js.map": "/personal-portfolio-react/static/js/main.742e985b.js.map"
+    "main.87069ed7.js.map": "/personal-portfolio-react/static/js/main.87069ed7.js.map"
   },
   "entrypoints": [
     "static/css/main.55060dfd.css",
-    "static/js/main.742e985b.js"
+    "static/js/main.87069ed7.js"
   ]
 }
